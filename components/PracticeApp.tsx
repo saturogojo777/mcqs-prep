@@ -2,136 +2,54 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getSupabase, type CatalogRow } from '@/lib/supabase'
-import { shapeCatalog, type Book, type Category, type Mcq } from '@/lib/catalog'
-import { getLang, getProgress, saveProgress, resetProgress, setLang, type Lang } from '@/lib/progress'
-
-const TEST_SIZE = 10
+import { shapeCatalog, type Category, type Mcq } from '@/lib/catalog'
+import {
+  getAllProgress,
+  getLang,
+  getProgress,
+  resetProgress,
+  saveProgress,
+  setLang,
+  type CategoryProgress,
+  type Lang,
+} from '@/lib/progress'
+import { copyFor } from '@/lib/copy'
+import type { AnswerRecord, Mode, Session } from '@/lib/session'
+import { TEST_SIZE, shuffle } from '@/lib/session'
+import { IconLogo } from '@/components/icons'
+import Home from '@/components/Home'
+import Quiz from '@/components/Quiz'
+import Result from '@/components/Result'
 
 type View = 'home' | 'quiz' | 'result'
-type Mode = 'practice' | 'test'
 
-type AnswerRecord = { question: Mcq; chosen: string; correct: boolean }
-
-type Session = {
-  id: number
-  mode: Mode
-  category: Category
-  questions: Mcq[]
-  index: number
-  selected: string | null
-  locked: boolean
-  records: AnswerRecord[]
-}
-
-const num = (v: string | null | undefined) => {
-  if (v == null || v === '') return null
-  const n = Number(v)
-  return Number.isFinite(n) ? n : null
+const num = (value: string | null | undefined) => {
+  if (value == null || value === '') return null
+  const parsed = Number(value)
+  return Number.isFinite(parsed) ? parsed : null
 }
 
 function bySourceOrder(a: Mcq, b: Mcq): number {
-  const na = num(a.source_ref)
-  const nb = num(b.source_ref)
-  if (na !== null && nb !== null) return na - nb
+  const left = num(a.source_ref)
+  const right = num(b.source_ref)
+  if (left !== null && right !== null) return left - right
   return 0
 }
-
-function shuffle<T>(items: T[]): T[] {
-  const out = [...items]
-  // Fisher-Yates. Answers are matched by option TEXT, so shuffling is always safe.
-  for (let i = out.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    const tmp = out[i]
-    out[i] = out[j]
-    out[j] = tmp
-  }
-  return out
-}
-
-const COPY = {
-  en: {
-    appName: 'MCQ Practice',
-    lede: 'Pick a book and a topic. Progress is saved on this device.',
-    mode: 'Mode',
-    practice: 'Practice',
-    test: 'Test',
-    book: 'Book',
-    topics: 'Topics',
-    questions: (n: number) => `${n} question${n === 1 ? '' : 's'}`,
-    stats: (answered: number, correct: number) => `${answered} answered · ${correct} correct`,
-    next: 'Next question',
-    finish: 'See results',
-    correct: 'Correct',
-    wrong: 'Not quite',
-    answerWas: 'Correct answer',
-    practiceDone: 'You reached the end of this topic.',
-    testDone: 'Test complete.',
-    score: 'Score',
-    review: 'What to review',
-    yourAnswer: 'Your answer',
-    tryAgain: 'Try again',
-    changeTopic: 'Change topic',
-    restart: 'Start over',
-    loading: 'Loading…',
-    loadError: 'Could not load questions. Check your connection and try again.',
-    notConfigured: 'The database is not configured yet.',
-    noTopics: 'No topics yet.',
-    counter: (i: number, n: number) => `${i} / ${n}`,
-    testHint: (n: number) => `${n} random questions. Answers shown at the end.`,
-    footer: 'No account needed · progress saved in this browser',
-  },
-  ur: {
-    appName: 'ایم سی کیو پریکٹس',
-    lede: 'کتاب اور موضوع منتخب کریں۔ پیش رفت اسی ڈیوائس پر محفوظ رہتی ہے۔',
-    mode: 'حالت',
-    practice: 'مشق',
-    test: 'ٹیسٹ',
-    book: 'کتاب',
-    topics: 'موضوعات',
-    questions: (n: number) => `${n} سوالات`,
-    stats: (answered: number, correct: number) => `${answered} حل کیے · ${correct} درست`,
-    next: 'اگلا سوال',
-    finish: 'نتیجہ دیکھیں',
-    correct: 'درست جواب',
-    wrong: 'غلط جواب',
-    answerWas: 'درست جواب',
-    practiceDone: 'آپ اس موضوع کے آخر تک پہنچ گئے۔',
-    testDone: 'ٹیسٹ مکمل ہو گیا۔',
-    score: 'اسکور',
-    review: 'جائزہ لیں',
-    yourAnswer: 'آپ کا جواب',
-    tryAgain: 'دوبارہ کوشش',
-    changeTopic: 'موضوع تبدیل کریں',
-    restart: 'دوبارہ شروع',
-    loading: 'لوڈ ہو رہا ہے…',
-    loadError: 'سوالات لوڈ نہیں ہو سکے۔ کنکشن چیک کر کے دوبارہ کوشش کریں۔',
-    notConfigured: 'ڈیٹا بیس ابھی ترتیب نہیں دیا گیا۔',
-    noTopics: 'ابھی کوئی موضوع نہیں۔',
-    counter: (i: number, n: number) => `${i} / ${n}`,
-    testHint: (n: number) => `${n} بے ترتیب سوالات۔ جوابات آخر میں۔`,
-    footer: 'اکاؤنٹ کی ضرورت نہیں · پیش رفت اسی براؤزر میں محفوظ',
-  },
-} as const
-
-type Copy = (typeof COPY)['en'] | (typeof COPY)['ur']
 
 export default function PracticeApp({ initialCatalog }: { initialCatalog?: CatalogRow[] | null }) {
   const [lang, setLangState] = useState<Lang>('en')
   const [ready, setReady] = useState(false)
   const [view, setView] = useState<View>('home')
-  const [mode, setMode] = useState<Mode>('practice')
-
   const [catalog, setCatalog] = useState<CatalogRow[] | null>(initialCatalog ?? null)
   const [catalogError, setCatalogError] = useState<string | null>(null)
   const [selectedBook, setSelectedBook] = useState<string | null>(null)
-  const [busyCategory, setBusyCategory] = useState<string | null>(null)
-
   const [session, setSession] = useState<Session | null>(null)
+  const [busy, setBusy] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [, setProgressTick] = useState(0)
+  const [tick, setTick] = useState(0)
 
   const cache = useRef(new Map<string, Mcq[]>())
-  const t: Copy = COPY[lang]
+  const t = copyFor(lang)
 
   useEffect(() => {
     setLangState(getLang())
@@ -153,7 +71,6 @@ export default function PracticeApp({ initialCatalog }: { initialCatalog?: Catal
 
   useEffect(() => {
     let cancelled = false
-    // The catalog is server rendered; only fall back to the browser fetch when it is missing.
     if (initialCatalog) {
       const shaped = shapeCatalog(initialCatalog)
       setSelectedBook((prev) => prev ?? shaped.books[0]?.id ?? null)
@@ -161,15 +78,15 @@ export default function PracticeApp({ initialCatalog }: { initialCatalog?: Catal
     }
     const supabase = getSupabase()
     if (!supabase) {
-      setCatalogError(COPY.en.notConfigured)
+      setCatalogError(copyFor(getLang()).notConfigured)
       setCatalog([])
       return
     }
     ;(async () => {
-      const { data, error: err } = await supabase.from('catalog').select('*')
+      const { data, error: fetchError } = await supabase.from('catalog').select('*')
       if (cancelled) return
-      if (err) {
-        setCatalogError(COPY.en.loadError)
+      if (fetchError) {
+        setCatalogError(copyFor(getLang()).loadError)
         setCatalog([])
         return
       }
@@ -186,31 +103,65 @@ export default function PracticeApp({ initialCatalog }: { initialCatalog?: Catal
   const { books, categories } = useMemo(() => shapeCatalog(catalog ?? []), [catalog])
 
   const bookCategories = useMemo(
-    () => categories.filter((c) => c.bookId === selectedBook),
+    () => categories.filter((category) => category.bookId === selectedBook),
     [categories, selectedBook],
   )
 
-  // ---------------------------------------------------------------- loading
+  const progress = useMemo<Record<string, CategoryProgress>>(() => {
+    if (!ready) return {}
+    void tick
+    void view
+    return getAllProgress()
+  }, [ready, tick, view])
+
+  const stats = useMemo(() => {
+    let answered = 0
+    let correct = 0
+    for (const category of bookCategories) {
+      const saved = progress[category.id]
+      if (!saved) continue
+      answered += saved.answered
+      correct += saved.correct
+    }
+    return {
+      answered,
+      correct,
+      accuracy: answered > 0 ? Math.round((correct / answered) * 100) : 0,
+    }
+  }, [bookCategories, progress])
+
+  const resume = useMemo(() => {
+    const candidates = bookCategories
+      .map((category) => ({ category, saved: progress[category.id] }))
+      .filter(
+        (entry): entry is { category: Category; saved: CategoryProgress } =>
+          Boolean(entry.saved) && entry.saved!.position > 0 && entry.saved!.answered > 0,
+      )
+      .sort((a, b) => b.saved.updatedAt - a.saved.updatedAt)
+    return candidates[0] ?? null
+  }, [bookCategories, progress])
+
+  // ---------------------------------------------------------------- data
 
   const loadQuestions = useCallback(async (category: Category): Promise<Mcq[]> => {
     const cached = cache.current.get(category.id)
     if (cached) return cached
     const supabase = getSupabase()
     if (!supabase) throw new Error('not-configured')
-    const { data, error: err } = await supabase
+    const { data, error: fetchError } = await supabase
       .from('mcqs')
       .select('id,question_en,question_ur,options,correct_text,explanation,source_ref')
       .eq('category_id', category.id)
-    if (err) throw err
+    if (fetchError) throw fetchError
     const list = ((data ?? []) as Mcq[]).sort(bySourceOrder)
     cache.current.set(category.id, list)
     return list
   }, [])
 
   const start = useCallback(
-    async (category: Category, nextMode: Mode) => {
+    async (category: Category, mode: Mode) => {
       setError(null)
-      setBusyCategory(category.id)
+      setBusy(category.id)
       try {
         const all = await loadQuestions(category)
         if (all.length === 0) {
@@ -219,106 +170,110 @@ export default function PracticeApp({ initialCatalog }: { initialCatalog?: Catal
         }
         let questions: Mcq[]
         let index = 0
-        if (nextMode === 'test') {
+        if (mode === 'test') {
           questions = shuffle(all).slice(0, Math.min(TEST_SIZE, all.length))
         } else {
           questions = all
           const saved = getProgress(category.id).position
           index = saved > 0 && saved < all.length ? saved : 0
         }
-        setMode(nextMode)
         setSession({
           id: Date.now(),
-          mode: nextMode,
+          mode,
           category,
           questions,
           index,
           selected: null,
           locked: false,
           records: [],
+          startedAt: Date.now(),
         })
         setView('quiz')
       } catch {
         setError(t.loadError)
       } finally {
-        setBusyCategory(null)
+        setBusy(null)
       }
     },
     [loadQuestions, t],
   )
 
-  // ---------------------------------------------------------------- answering
+  // ---------------------------------------------------------------- answers
 
-  const current = session?.questions[session.index] ?? null
+  const answer = (option: string) => {
+    const active = session
+    if (!active || active.locked) return
+    const question = active.questions[active.index]
+    const correct = option === question.correct_text
 
-  const optionList = useMemo(() => {
-    if (!current) return []
-    const values = Object.values(current.options ?? {}).filter(
-      (v): v is string => typeof v === 'string' && v.trim() !== '',
-    )
-    return shuffle(Array.from(new Set(values)))
-  }, [current])
+    if (active.mode === 'practice') {
+      const saved = getProgress(active.category.id)
+      const atEnd = active.index + 1 >= active.questions.length
+      saveProgress(active.category.id, {
+        answered: saved.answered + 1,
+        correct: saved.correct + (correct ? 1 : 0),
+        position: atEnd ? 0 : active.index + 1,
+      })
+      setTick((value) => value + 1)
+      setSession({
+        ...active,
+        selected: option,
+        locked: true,
+        records: [...active.records, { question, chosen: option, correct }],
+      })
+      return
+    }
 
-  const finishTest = (s: Session, records: AnswerRecord[]) => {
-    const progress = getProgress(s.category.id)
-    saveProgress(s.category.id, {
-      answered: progress.answered + records.length,
-      correct: progress.correct + records.filter((r) => r.correct).length,
+    setSession({ ...active, selected: option })
+  }
+
+  const finish = (active: Session, records: AnswerRecord[]) => {
+    const saved = getProgress(active.category.id)
+    saveProgress(active.category.id, {
+      answered: saved.answered + records.length,
+      correct: saved.correct + records.filter((record) => record.correct).length,
     })
-    setProgressTick((n) => n + 1)
-    setSession({ ...s, records, selected: null, locked: true })
+    setTick((value) => value + 1)
+    setSession({ ...active, records, locked: true })
     setView('result')
   }
 
-  const record = (chosen: string) => {
-    const s = session
-    if (!s || s.locked) return
-    const question = s.questions[s.index]
-    const correct = chosen === question.correct_text
-    const records = [...s.records, { question, chosen, correct }]
+  const next = () => {
+    const active = session
+    if (!active) return
+    const question = active.questions[active.index]
+    const atEnd = active.index + 1 >= active.questions.length
 
-    if (s.mode === 'practice') {
-      const progress = getProgress(s.category.id)
-      const atEnd = s.index + 1 >= s.questions.length
-      saveProgress(s.category.id, {
-        answered: progress.answered + 1,
-        correct: progress.correct + (correct ? 1 : 0),
-        position: atEnd ? 0 : s.index + 1,
-      })
-      setProgressTick((n) => n + 1)
-      setSession({ ...s, selected: chosen, locked: true, records })
+    if (active.mode === 'test') {
+      if (!active.selected) return
+      const records = [
+        ...active.records,
+        {
+          question,
+          chosen: active.selected,
+          correct: active.selected === question.correct_text,
+        },
+      ]
+      if (atEnd) {
+        finish(active, records)
+        return
+      }
+      setSession({ ...active, index: active.index + 1, selected: null, locked: false, records })
       return
     }
 
-    if (s.index + 1 >= s.questions.length) {
-      finishTest(s, records)
-      return
-    }
-    setSession({ ...s, locked: true, records })
-    window.setTimeout(() => {
-      setSession((prev) =>
-        prev && prev.mode === 'test' && prev.id === s.id
-          ? { ...prev, index: prev.index + 1, selected: null, locked: false }
-          : prev,
-      )
-    }, 150)
-  }
-
-  const advance = () => {
-    const s = session
-    if (!s) return
-    if (s.index + 1 >= s.questions.length) {
+    if (atEnd) {
       setView('result')
       return
     }
-    setSession({ ...s, index: s.index + 1, selected: null, locked: false })
+    setSession({ ...active, index: active.index + 1, selected: null, locked: false })
   }
 
   const goHome = () => {
     setView('home')
     setSession(null)
     setError(null)
-    setProgressTick((n) => n + 1)
+    setTick((value) => value + 1)
   }
 
   const restart = async () => {
@@ -329,263 +284,73 @@ export default function PracticeApp({ initialCatalog }: { initialCatalog?: Catal
 
   // ---------------------------------------------------------------- render
 
-  const shellClass = `shell${lang === 'ur' ? ' urdu' : ''}`
-
   return (
-    <div className={shellClass} dir={lang === 'ur' ? 'rtl' : 'ltr'}>
-      <header className="topbar">
-        <div className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            MCQ
-          </span>
-          <h1>{ready ? t.appName : COPY.en.appName}</h1>
+    <div className="page" dir={lang === 'ur' ? 'rtl' : 'ltr'}>
+      <header className="nav">
+        <div className="container nav-inner">
+          <div className="brand">
+            <span className="brand-mark" aria-hidden="true">
+              <IconLogo />
+            </span>
+            <span className="brand-name">{ready ? t.appName : 'MCQ Practice'}</span>
+          </div>
+          <div className="nav-actions">
+            <button
+              type="button"
+              className="lang-toggle"
+              onClick={toggleLang}
+              aria-label={t.language}
+            >
+              {lang === 'ur' ? 'English' : 'اردو'}
+            </button>
+          </div>
         </div>
-        <button className="lang-toggle" onClick={toggleLang} type="button">
-          {lang === 'ur' ? 'English' : 'اردو'}
-        </button>
       </header>
 
-      {view === 'home' && (
-        <main>
-          <p className="lede">{t.lede}</p>
-
-          <div className="segmented" role="group" aria-label={t.mode}>
-            <button type="button" aria-pressed={mode === 'practice'} onClick={() => setMode('practice')}>
-              {t.practice}
-            </button>
-            <button type="button" aria-pressed={mode === 'test'} onClick={() => setMode('test')}>
-              {t.test}
-            </button>
-          </div>
-          {mode === 'test' && (
-            <p className="lede" style={{ marginTop: 10, marginBottom: 0 }}>
-              {t.testHint(TEST_SIZE)}
-            </p>
-          )}
-
-          {books.length > 0 && (
-            <p className="section-label">{t.book}</p>
-          )}
-          {books.length === 1 && <p className="book-single">{books[0].title}</p>}
-          {books.length > 1 && (
-            <>
-              <div className="book-row">
-                {books.map((b: Book) => (
-                  <button
-                    key={b.id}
-                    type="button"
-                    className="chip"
-                    aria-pressed={selectedBook === b.id}
-                    onClick={() => setSelectedBook(b.id)}
-                  >
-                    {b.title}
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
-
-          <p className="section-label">{t.topics}</p>
-
-          {catalog === null ? (
-            <div className="empty">{t.loading}</div>
-          ) : catalogError ? (
-            <div className="empty">{catalogError}</div>
-          ) : bookCategories.length === 0 ? (
-            <div className="empty">{t.noTopics}</div>
-          ) : (
-            <div className="cat-list">
-              {bookCategories.map((cat) => {
-                const saved = ready
-                  ? getProgress(cat.id)
-                  : { answered: 0, correct: 0, position: 0, updatedAt: 0 }
-                const pct =
-                  cat.count > 0 ? Math.min(100, Math.round((saved.position / cat.count) * 100)) : 0
-                return (
-                  <button
-                    key={cat.id}
-                    type="button"
-                    className="cat"
-                    onClick={() => start(cat, mode)}
-                    disabled={busyCategory !== null}
-                  >
-                    <span className="cat-main">
-                      <span className="cat-name">{cat.name}</span>
-                      <span className="cat-meta">
-                        <span>{t.questions(cat.count)}</span>
-                        {saved.answered > 0 && <span>{t.stats(saved.answered, saved.correct)}</span>}
-                      </span>
-                      {saved.position > 0 && (
-                        <span className="cat-bar" aria-hidden="true">
-                          <span style={{ width: `${pct}%` }} />
-                        </span>
-                      )}
-                    </span>
-                    <span className="cat-arrow" aria-hidden="true">
-                      {busyCategory === cat.id ? '…' : lang === 'ur' ? '←' : '→'}
-                    </span>
-                  </button>
-                )
-              })}
-            </div>
-          )}
-
-          {error && <div className="empty">{error}</div>}
-        </main>
-      )}
-
-      {view === 'quiz' && session && current && (
-        <main>
-          <div className="quiz-top">
-            <button className="icon-btn" onClick={goHome} aria-label={t.changeTopic} type="button">
-              {lang === 'ur' ? '→' : '←'}
-            </button>
-            <span className="counter">{t.counter(session.index + 1, session.questions.length)}</span>
-            <button className="icon-btn" onClick={restart} aria-label={t.restart} type="button">
-              ↺
-            </button>
-          </div>
-
-          <div className="bar" aria-hidden="true">
-            <span
-              style={{
-                width: `${((session.index + (session.selected ? 1 : 0)) / session.questions.length) * 100}%`,
-              }}
-            />
-          </div>
-
-          <section className="qcard" key={current.id}>
-            <span className="qtag">{session.category.name}</span>
-            <p className={`qtext${lang === 'ur' && current.question_ur ? ' urdu-text' : ''}`}>
-              {lang === 'ur' && current.question_ur ? current.question_ur : current.question_en}
-            </p>
-          </section>
-
-          <div className="options" key={`${current.id}-options`}>
-            {optionList.map((option, i) => {
-              let state: 'idle' | 'correct' | 'wrong' | 'muted' = 'idle'
-              if (session.selected) {
-                if (option === current.correct_text) state = 'correct'
-                else if (option === session.selected) state = 'wrong'
-                else state = 'muted'
+      <main className="main">
+        <div className="container">
+          {view === 'home' && (
+            <Home
+              t={t}
+              books={books}
+              categories={bookCategories}
+              selectedBook={selectedBook}
+              onSelectBook={setSelectedBook}
+              progress={progress}
+              answered={stats.answered}
+              accuracy={stats.accuracy}
+              resume={
+                ready && resume ? { category: resume.category, progress: resume.saved } : null
               }
-              return (
-                <button
-                  key={`${option}-${i}`}
-                  type="button"
-                  className="option"
-                  data-state={state}
-                  disabled={session.locked}
-                  onClick={() => record(option)}
-                >
-                  <span className="option-key">{String.fromCharCode(65 + i)}</span>
-                  <span className="option-text">{option}</span>
-                </button>
-              )
-            })}
-          </div>
-
-          {session.mode === 'practice' && session.selected !== null && (
-            <>
-              <div
-                className="feedback"
-                data-kind={session.selected === current.correct_text ? 'correct' : 'wrong'}
-                role="status"
-                aria-live="polite"
-              >
-                {session.selected === current.correct_text ? (
-                  <strong>{t.correct}</strong>
-                ) : (
-                  <>
-                    <strong>{t.wrong}</strong>
-                    <span className="answer">
-                      {t.answerWas}: {current.correct_text}
-                    </span>
-                  </>
-                )}
-                {current.explanation && <span className="answer">{current.explanation}</span>}
-              </div>
-
-              <button className="primary" type="button" onClick={advance}>
-                {session.index + 1 >= session.questions.length ? t.finish : t.next}
-              </button>
-            </>
+              showResume={ready}
+              loading={catalog === null || busy !== null}
+              error={error ?? catalogError}
+              onStart={start}
+              onContinue={() => resume && start(resume.category, 'practice')}
+            />
           )}
-        </main>
-      )}
 
-      {view === 'result' && session && (
-        <main>
-          <ResultView session={session} lang={lang} t={t} onRetry={restart} onHome={goHome} />
-        </main>
-      )}
+          {view === 'quiz' && session && (
+            <Quiz
+              session={session}
+              lang={lang}
+              t={t}
+              onAnswer={answer}
+              onNext={next}
+              onBack={goHome}
+              onRestart={restart}
+            />
+          )}
 
-      <p className="footer-note">{t.footer}</p>
-    </div>
-  )
-}
-
-function ResultView({
-  session,
-  lang,
-  t,
-  onRetry,
-  onHome,
-}: {
-  session: Session
-  lang: Lang
-  t: Copy
-  onRetry: () => void
-  onHome: () => void
-}) {
-  const total = session.mode === 'test' ? session.questions.length : session.records.length
-  const correct = session.records.filter((r) => r.correct).length
-  const wrong = session.records.filter((r) => !r.correct)
-
-  return (
-    <>
-      <section className="card result">
-        <p>{session.mode === 'test' ? t.testDone : t.practiceDone}</p>
-        <div className="score">
-          {correct}
-          <small> / {total}</small>
+          {view === 'result' && session && (
+            <Result session={session} lang={lang} t={t} onRetry={restart} onHome={goHome} />
+          )}
         </div>
-        <p>
-          {t.score} · {Math.round((correct / Math.max(1, total)) * 100)}%
-        </p>
-      </section>
+      </main>
 
-      <div style={{ display: 'grid', gap: 10, marginTop: 16 }}>
-        <button className="primary" style={{ marginTop: 0 }} type="button" onClick={onRetry}>
-          {t.tryAgain}
-        </button>
-        <button className="primary ghost" style={{ marginTop: 0 }} type="button" onClick={onHome}>
-          {t.changeTopic}
-        </button>
-      </div>
-
-      {wrong.length > 0 && (
-        <>
-          <p className="section-label">{t.review}</p>
-          <div className="review">
-            {wrong.map((r, i) => (
-              <div className="review-item" key={`${r.question.id}-${i}`}>
-                <p className={`q${lang === 'ur' && r.question.question_ur ? ' urdu-text' : ''}`}>
-                  {lang === 'ur' && r.question.question_ur ? r.question.question_ur : r.question.question_en}
-                </p>
-                <div className="row bad">
-                  <span>{t.yourAnswer}:</span>
-                  <span>{r.chosen}</span>
-                </div>
-                <div className="row good">
-                  <span>{t.answerWas}:</span>
-                  <span>{r.question.correct_text}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-    </>
+      <footer className="footer">
+        <div className="container">{t.footer}</div>
+      </footer>
+    </div>
   )
 }

@@ -75,3 +75,8 @@ export function setLang(lang: Lang) {
     /* ignore */
   }
 }
+
+/** Snapshot of every topic's stored progress (front-end only). */
+export function getAllProgress(): Record<string, CategoryProgress> {
+  return readProgress()
+}

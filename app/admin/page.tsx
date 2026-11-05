@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { IconLogo } from '@/components/icons'
 
 type PreviewRow = {
   line: number
@@ -30,9 +31,33 @@ type ImportResult = {
   categories: string[]
 }
 
-const TEMPLATE_COLUMNS = 'book, category, question_en, question_ur, option_a, option_b, option_c, option_d, correct_answer, explanation'
+const TEMPLATE_COLUMNS =
+  'book, category, question_en, question_ur, option_a, option_b, option_c, option_d, correct_answer, explanation'
 const TEMPLATE_URL =
   'https://docs.google.com/spreadsheets/d/13d2QDw9kvtUgHj-YofgBuwZPJIQMHJu05Qd-XlNhLV8/edit'
+
+function Shell({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="page">
+      <header className="nav">
+        <div className="container nav-inner">
+          <div className="brand">
+            <span className="brand-mark" aria-hidden="true">
+              <IconLogo />
+            </span>
+            <span className="brand-name">Admin import</span>
+          </div>
+        </div>
+      </header>
+      <main className="main">
+        <div className="container container--narrow">{children}</div>
+      </main>
+      <footer className="footer">
+        <div className="container">MCQ Practice</div>
+      </footer>
+    </div>
+  )
+}
 
 export default function AdminPage() {
   const [email, setEmail] = useState<string | null | undefined>(undefined)
@@ -153,29 +178,29 @@ export default function AdminPage() {
 
   if (email === undefined) {
     return (
-      <div className="shell admin-wrap">
-        <p className="lede">Loading…</p>
-      </div>
+      <Shell>
+        <div className="empty">Loading…</div>
+      </Shell>
     )
   }
 
   if (email === null) {
     return (
-      <div className="shell admin-wrap">
-        <header className="topbar">
-          <div className="brand">
-            <span className="brand-mark">MCQ</span>
-            <h1>Admin import</h1>
+      <Shell>
+        <div className="admin-head">
+          <div>
+            <h1 className="admin-title">Sign in</h1>
+            <p className="home-sub">Only the admin account can import questions.</p>
           </div>
-        </header>
-        <form className="card admin-card" onSubmit={login}>
+        </div>
+        <form className="card" onSubmit={login}>
           <label className="field">
             <span>Your email</span>
             <input
               type="email"
               autoComplete="username"
               value={loginEmail}
-              onChange={(e) => setLoginEmail(e.target.value)}
+              onChange={(event) => setLoginEmail(event.target.value)}
               required
             />
           </label>
@@ -185,34 +210,35 @@ export default function AdminPage() {
               type="password"
               autoComplete="current-password"
               value={accessKey}
-              onChange={(e) => setAccessKey(e.target.value)}
+              onChange={(event) => setAccessKey(event.target.value)}
               required
             />
           </label>
           {loginError && <p className="note err">{loginError}</p>}
-          <button className="primary" type="submit" disabled={loggingIn}>
+          <button className="btn btn-dark btn-block" type="submit" disabled={loggingIn}>
             {loggingIn ? 'Checking…' : 'Sign in'}
           </button>
         </form>
-      </div>
+      </Shell>
     )
   }
 
   return (
-    <div className="shell admin-wrap">
-      <header className="topbar">
-        <div className="brand">
-          <span className="brand-mark">MCQ</span>
-          <h1>Admin import</h1>
+    <Shell>
+      <div className="admin-head">
+        <div>
+          <h1 className="admin-title">Import questions</h1>
+          <p className="home-sub">Signed in as {email}</p>
         </div>
-        <button className="lang-toggle" type="button" onClick={logout}>
+        <button className="btn btn-outline" type="button" onClick={logout}>
           Sign out
         </button>
-      </header>
+      </div>
 
-      <p className="lede">Signed in as {email}</p>
+      <section className="card">
+        <h2 className="card-title">Source</h2>
+        <p className="card-sub">Paste a Google Sheet link, rows, or upload a JSON / CSV file.</p>
 
-      <section className="card admin-card">
         <div className="tabs">
           <button type="button" aria-pressed={tab === 'sheet'} onClick={() => setTab('sheet')}>
             Google Sheet link
@@ -229,7 +255,7 @@ export default function AdminPage() {
               type="url"
               placeholder="https://docs.google.com/spreadsheets/d/…"
               value={sheetUrl}
-              onChange={(e) => setSheetUrl(e.target.value)}
+              onChange={(event) => setSheetUrl(event.target.value)}
             />
           </label>
         ) : (
@@ -238,7 +264,7 @@ export default function AdminPage() {
               <span>Rows (CSV, TSV or JSON)</span>
               <textarea
                 value={pasted}
-                onChange={(e) => setPasted(e.target.value)}
+                onChange={(event) => setPasted(event.target.value)}
                 placeholder={`${TEMPLATE_COLUMNS}\nGeneral Knowledge,Science,Water is made of?,پانی کیا ہے؟,H2O,CO2,O2,NaCl,A,`}
               />
             </label>
@@ -249,14 +275,14 @@ export default function AdminPage() {
           </>
         )}
 
-        <div style={{ display: 'grid', gap: 12, gridTemplateColumns: '1fr 1fr' }}>
+        <div className="field-row">
           <label className="field" style={{ marginBottom: 0 }}>
             <span>Default book (optional)</span>
             <input
               type="text"
               placeholder="e.g. General Knowledge (500 Questions)"
               value={book}
-              onChange={(e) => setBook(e.target.value)}
+              onChange={(event) => setBook(event.target.value)}
             />
           </label>
           <label className="field" style={{ marginBottom: 0 }}>
@@ -265,17 +291,17 @@ export default function AdminPage() {
               type="text"
               placeholder="e.g. Science & Computer"
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(event) => setCategory(event.target.value)}
             />
           </label>
         </div>
 
-        <p className="note" style={{ marginTop: 12 }}>
+        <p className="note">
           Columns: <code>{TEMPLATE_COLUMNS}</code>. <code>book</code> and <code>category</code> fall
           back to the defaults above. Answers can be a letter (A–D) or the exact option text; they are
           always stored as the option text.
         </p>
-        <p className="note" style={{ marginTop: 8 }}>
+        <p className="note">
           Starting a new book? Copy the{' '}
           <a href={TEMPLATE_URL} target="_blank" rel="noreferrer">
             Google Sheet template
@@ -284,32 +310,37 @@ export default function AdminPage() {
           the rows instead).
         </p>
 
-        <button className="primary" type="button" onClick={runPreview} disabled={previewing}>
-          {previewing ? 'Checking rows…' : 'Preview'}
-        </button>
+        <div style={{ marginTop: 18 }}>
+          <button className="btn btn-dark" type="button" onClick={runPreview} disabled={previewing}>
+            {previewing ? 'Checking rows…' : 'Preview'}
+          </button>
+        </div>
 
         {error && <p className="note err">{error}</p>}
       </section>
 
       {summary && (
-        <section className="card admin-card" style={{ marginTop: 14 }}>
+        <section className="card">
+          <h2 className="card-title">Preview</h2>
           <div className="summary">
             <span className="pill">{summary.total} rows</span>
             <span className="pill new">{summary.newCount} new</span>
-            <span className="pill dup">{summary.duplicateCount} duplicates</span>
-            <span className="pill bad">{summary.invalidCount} invalid</span>
+            <span className="pill">{summary.duplicateCount} duplicates</span>
+            <span className="pill">{summary.invalidCount} invalid</span>
           </div>
 
           {summary.newCount > 0 ? (
-            <button className="primary" type="button" onClick={runImport} disabled={importing}>
-              {importing ? 'Importing…' : `Import ${summary.newCount} new question${summary.newCount === 1 ? '' : 's'}`}
+            <button className="btn btn-dark" type="button" onClick={runImport} disabled={importing}>
+              {importing
+                ? 'Importing…'
+                : `Import ${summary.newCount} new question${summary.newCount === 1 ? '' : 's'}`}
             </button>
           ) : (
             <p className="note">Nothing new to import.</p>
           )}
 
           {summary.truncated && (
-            <p className="note" style={{ marginTop: 10 }}>
+            <p className="note">
               Showing the first {summary.rows.length} rows. The import uses every row.
             </p>
           )}
@@ -330,15 +361,19 @@ export default function AdminPage() {
               <tbody>
                 {summary.rows.map((row) => (
                   <tr key={row.line}>
-                    <td>{row.line}</td>
-                    <td>
+                    <td data-label="Row">{row.line}</td>
+                    <td data-label="Status">
                       <span className={`badge ${row.status}`}>{row.status}</span>
                     </td>
-                    <td className="qcell">{row.question_en || '—'}</td>
-                    <td>{row.book || '—'}</td>
-                    <td>{row.category || '—'}</td>
-                    <td>{row.answer || '—'}</td>
-                    <td>{row.messages.join('; ') || '—'}</td>
+                    <td className="qcell" data-label="Question">
+                      {row.question_en || '—'}
+                    </td>
+                    <td data-label="Book">{row.book || '—'}</td>
+                    <td data-label="Category">{row.category || '—'}</td>
+                    <td data-label="Answer">{row.answer || '—'}</td>
+                    <td className={row.status === 'invalid' ? 'err-cell' : undefined} data-label="Notes">
+                      {row.messages.join('; ') || '—'}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -348,11 +383,12 @@ export default function AdminPage() {
       )}
 
       {result && (
-        <section className="card admin-card" style={{ marginTop: 14 }}>
-          <p className="note ok">
-            Imported {result.imported} question{result.imported === 1 ? '' : 's'}.
-            {result.skippedDuplicates > 0 && ` Skipped ${result.skippedDuplicates} duplicate(s).`}
-            {result.skippedInvalid > 0 && ` Rejected ${result.skippedInvalid} invalid row(s).`}
+        <section className="card">
+          <h2 className="card-title">Imported</h2>
+          <p className="note" style={{ marginTop: 0 }}>
+            {result.imported} question{result.imported === 1 ? '' : 's'} added.
+            {result.skippedDuplicates > 0 && ` ${result.skippedDuplicates} duplicate(s) skipped.`}
+            {result.skippedInvalid > 0 && ` ${result.skippedInvalid} invalid row(s) rejected.`}
           </p>
           {result.categories.length > 0 && (
             <p className="note">
@@ -361,11 +397,13 @@ export default function AdminPage() {
               Categories: {result.categories.join(', ') || '—'}
             </p>
           )}
-          <button className="primary ghost" type="button" onClick={() => setResult(null)}>
-            Import another file
-          </button>
+          <div style={{ marginTop: 18 }}>
+            <button className="btn btn-outline" type="button" onClick={() => setResult(null)}>
+              Import another file
+            </button>
+          </div>
         </section>
       )}
-    </div>
+    </Shell>
   )
 }

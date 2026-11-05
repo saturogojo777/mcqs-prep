@@ -40,6 +40,25 @@ Vercel environment variables only. A successful sign in sets a signed, HttpOnly 
 route re-checks the signature and the email against `ADMIN_EMAIL`, so nobody else can import. The
 browser never sees the service role key: writes only ever happen inside those server routes.
 
+## Design system
+
+The whole UI is one monochrome token set in `app/globals.css`:
+
+| Token | Light | Dark |
+| --- | --- | --- |
+| `--bg` / `--surface` | `#ffffff` | `#000000` / `#0b0b0b` |
+| `--text` / `--muted` | `#0a0a0a` / `#6b6b6b` | `#f7f7f7` / `#a3a3a3` |
+| `--line` / `--line-strong` | `#e7e7e7` / `#d4d4d4` | `#232323` / `#383838` |
+| `--btn` | black button, white text | white button, black text |
+
+- Colour carries meaning in exactly one place: right / wrong answer feedback
+  (`--ok-*` / `--bad-*`, tint + border + icon). Everything else is black, white and grey.
+- Type: Inter Variable for English, bundled Noto Nastaliq Urdu for اردو. RTL flips through
+  `document.documentElement.dir`, and every Urdu string gets the Nastaliq face plus a wider line height.
+- Numbers are wrapped in `<span class="num">` so they stay left-to-right (and in the Latin face)
+  inside Urdu sentences; copy strings isolate interpolated numbers with bidi control characters.
+- Motion is CSS only and honours `prefers-reduced-motion`.
+
 ## Local development
 
 ```bash
@@ -48,6 +67,18 @@ cp .env.example .env.local   # fill in the Supabase values
 npm run dev                  # http://localhost:3000
 npm test                     # import validation / dedupe tests
 npm run test:ui              # headless (jsdom) run of the practice + test flow
+npm run audit:ui             # optional: Playwright screenshots + layout/colour audit
+```
+
+`npm run audit:ui` drives a real Chromium against `http://127.0.0.1:3100` with stubbed Supabase
+responses, screenshots every page at 360 / 390 / 768 / 1024 / 1280 / 1920 in English and Urdu,
+light and dark, and fails if anything scrolls sideways, clips text or uses a colour outside the
+palette. It expects `playwright-core` and `@sparticuz/chromium` (dev tooling, not shipped):
+
+```bash
+npm i --no-save playwright-core @sparticuz/chromium
+npx next build && npx next start -p 3100 &
+node scripts/dev/shots.mjs http://127.0.0.1:3100   # screenshots land in screenshots/
 ```
 
 ## Environment variables
