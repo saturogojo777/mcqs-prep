@@ -17,6 +17,7 @@ for (const name of ['al2023.tar.br', 'swiftshader.tar.br', 'fonts.tar.br', 'chro
 }
 
 const run = (args) => execFileSync('tar', args, { stdio: 'inherit' })
+fs.mkdirSync(`${dir}/root`, { recursive: true })
 if (!fs.existsSync(`${dir}/root/lib`)) run(['-xf', `${dir}/al2023.tar`, '-C', `${dir}/root`])
 if (!fs.existsSync(`${dir}/sw`)) {
   fs.mkdirSync(`${dir}/sw`, { recursive: true })
