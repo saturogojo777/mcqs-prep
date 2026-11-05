@@ -1,67 +1,79 @@
 'use client'
 
-import { useEffect, useState, type CSSProperties } from 'react'
-import type { Copy } from '@/lib/copy'
-import type { Lang } from '@/lib/progress'
-import type { Session } from '@/lib/session'
+import { useEffect, useState } from 'react'
+import { Num } from '@/components/text'
+import { copyFor } from '@/lib/copy'
+import { formatClock, questionText, score } from '@/lib/session'
+import type { Answer, Lang, PreparedQuestion } from '@/lib/types'
 
-const RADIUS = 62
+const RADIUS = 54
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
 type Props = {
-  session: Session
+  questions: PreparedQuestion[]
+  answers: Answer[]
+  elapsed: number
   lang: Lang
-  t: Copy
-  onRetry: () => void
+  mistakeCount: number
+  onTryAgain: () => void
+  onMistakes: () => void
   onHome: () => void
 }
 
-export default function Result({ session, lang, t, onRetry, onHome }: Props) {
-  const total = session.mode === 'test' ? session.questions.length : session.records.length
-  const correct = session.records.filter((record) => record.correct).length
-  const wrongCount = Math.max(0, total - correct)
-  const percent = Math.round((correct / Math.max(1, total)) * 100)
-  const missed = session.records.filter((record) => !record.correct)
+export default function Result({
+  questions,
+  answers,
+  elapsed,
+  lang,
+  mistakeCount,
+  onTryAgain,
+  onMistakes,
+  onHome,
+}: Props) {
+  const t = copyFor(lang)
+  const { right, total, percent } = score(answers)
+  const wrong = answers.filter((answer) => !answer.right)
+  const byId = new Map(questions.map((question) => [question.id, question]))
 
   const [displayPercent, setDisplayPercent] = useState(0)
   const [ringPercent, setRingPercent] = useState(0)
 
   useEffect(() => {
     const reduce =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-
+      typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
     setRingPercent(percent)
     if (reduce) {
       setDisplayPercent(percent)
       return
     }
-
     let frame = 0
     const start = performance.now()
     const step = (now: number) => {
-      const progress = Math.min(1, (now - start) / 850)
+      const progress = Math.min(1, (now - start) / 750)
       const eased = 1 - Math.pow(1 - progress, 3)
-      setDisplayPercent(Math.round(percent * eased))
-      if (progress < 1) frame = requestAnimationFrame(step)
-      else setDisplayPercent(percent)
+      if (progress < 1) {
+        setDisplayPercent(Math.round(percent * eased))
+        frame = requestAnimationFrame(step)
+      } else {
+        setDisplayPercent(percent)
+      }
     }
     frame = requestAnimationFrame(step)
     return () => cancelAnimationFrame(frame)
   }, [percent])
 
   return (
-    <>
+    <div className="result">
       <section className="result-card">
-        <p className="eyebrow">{session.mode === 'test' ? t.resultTest : t.resultSession}</p>
+        <p className="eyebrow">{t.result}</p>
 
         <div className="ring">
-          <svg viewBox="0 0 168 168" aria-hidden="true">
-            <circle className="ring-track" cx="84" cy="84" r={RADIUS} />
+          <svg viewBox="0 0 140 140" aria-hidden="true">
+            <circle className="ring-track" cx="70" cy="70" r={RADIUS} />
             <circle
-              className="ring-value-stroke"
-              cx="84"
-              cy="84"
+              className="ring-value"
+              cx="70"
+              cy="70"
               r={RADIUS}
               strokeDasharray={CIRCUMFERENCE}
               strokeDashoffset={CIRCUMFERENCE * (1 - ringPercent / 100)}
@@ -70,67 +82,74 @@ export default function Result({ session, lang, t, onRetry, onHome }: Props) {
           <div className="ring-center">
             <span className="ring-percent result-percent num">{displayPercent}%</span>
             <span className="ring-sub num">
-              {correct} / {total}
+              {right} / {total}
             </span>
           </div>
         </div>
 
-        <div className="result-counts">
-          <div className="result-count">
-            <strong className="num">{correct}</strong>
-            <span>{t.correctCount}</span>
+        <div className="result-facts">
+          <div className="fact">
+            <span className="fact-value num">{right}</span>
+            <span className="fact-label">{t.correct}</span>
           </div>
-          <div className="result-count">
-            <strong className="num">{wrongCount}</strong>
-            <span>{t.wrongCount}</span>
+          <div className="fact">
+            <span className="fact-value num">{total - right}</span>
+            <span className="fact-label">{t.wrong}</span>
+          </div>
+          <div className="fact">
+            <span className="fact-value num">{formatClock(elapsed)}</span>
+            <span className="fact-label">{t.time}</span>
           </div>
         </div>
 
         <div className="result-actions">
-          <button type="button" className="btn btn-dark btn-lg btn-retry" onClick={onRetry}>
-            {t.retry}
+          <button type="button" className="btn btn-dark btn-lg btn-try-again" onClick={onTryAgain}>
+            {t.tryAgain}
           </button>
-          <button type="button" className="btn btn-outline btn-lg btn-home" onClick={onHome}>
+          {mistakeCount > 0 && (
+            <button type="button" className="btn btn-outline btn-lg btn-mistakes" onClick={onMistakes}>
+              {t.practiceMistakes}
+            </button>
+          )}
+          <button type="button" className="btn btn-ghost btn-lg btn-home" onClick={onHome}>
             {t.home}
           </button>
         </div>
       </section>
 
-      {missed.length > 0 ? (
-        <>
-          <div className="review-head">
-            <h2 className="section-title">{t.review}</h2>
-            <span className="section-meta">{t.reviewSub(missed.length)}</span>
-          </div>
-          <div className="review-list">
-            {missed.map((record, index) => (
-              <div
-                className="review-item"
-                key={record.question.id}
-                style={{ '--i': index } as CSSProperties}
-              >
-                <p className={`review-q${lang === 'ur' && record.question.question_ur ? ' urdu' : ''}`}>
-                  {lang === 'ur' && record.question.question_ur
-                    ? record.question.question_ur
-                    : record.question.question_en}
-                </p>
-                <div className="review-rows">
-                  <dl className="review-row">
-                    <dt>{t.yourAnswer}:</dt>
-                    <dd>{record.chosen}</dd>
-                  </dl>
-                  <dl className="review-row review-row--correct">
-                    <dt>{t.correctAnswer}:</dt>
-                    <dd>{record.question.correct_text}</dd>
-                  </dl>
-                </div>
-              </div>
-            ))}
-          </div>
-        </>
+      {wrong.length > 0 ? (
+        <section className="review">
+          <h2 className="section-title">{t.reviewTitle}</h2>
+          <ul className="review-list">
+            {wrong.map((answer, i) => {
+              const question = byId.get(answer.questionId)
+              if (!question) return null
+              const urdu = lang === 'ur' && Boolean(question.question_ur)
+              return (
+                <li className="review-item" key={answer.questionId} style={{ '--i': i } as React.CSSProperties}>
+                  <p className={urdu ? 'review-q qtext--ur' : 'review-q'} dir={urdu ? 'rtl' : 'ltr'}>
+                    {questionText(question, lang)}
+                  </p>
+                  <p className="review-row">
+                    <span className="review-label">{t.yourAnswer}</span>
+                    <span className="review-value" dir="auto">
+                      {answer.chosen}
+                    </span>
+                  </p>
+                  <p className="review-row review-row--right">
+                    <span className="review-label">{t.correctAnswer}</span>
+                    <span className="review-value" dir="auto">
+                      {question.correct}
+                    </span>
+                  </p>
+                </li>
+              )
+            })}
+          </ul>
+        </section>
       ) : (
-        total > 0 && <p className="note">{t.noMistakes}</p>
+        <p className="note">{t.noMistakes}</p>
       )}
-    </>
+    </div>
   )
 }

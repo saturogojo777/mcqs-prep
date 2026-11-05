@@ -228,3 +228,76 @@ test('correct answer is always one of the stored options', () => {
     assert.ok(values.includes(candidate.correct_text), 'answer must be an option text')
   }
 })
+
+// ------------------------------------------------------- JSON book imports
+
+test('reads subject and exams from a JSON book row', () => {
+  const json = JSON.stringify([
+    {
+      id: 1,
+      question_en: 'Which gas do plants take in?',
+      question_ur: 'پودے کون سی گیس لیتے ہیں؟',
+      options: { A: 'Carbon dioxide', B: 'Oxygen', C: 'Nitrogen', D: 'Hydrogen' },
+      correct_answer: 'Carbon dioxide',
+      subject: 'everyday-science',
+      exams: ['ppsc', 'nts-pts-ots'],
+      explanation: 'Plants use carbon dioxide.',
+    },
+  ])
+  const result = parseJsonInput(json, { book: 'Science Starter' })
+  const row = result.rows[0]
+  assert.equal(row.status, 'new')
+  assert.equal(row.candidate?.subject, 'everyday-science')
+  assert.deepEqual(row.candidate?.exams, ['ppsc', 'nts-pts-ots'])
+  assert.equal(row.candidate?.category, 'everyday-science', 'category falls back to the subject')
+  assert.equal(row.candidate?.explanation, 'Plants use carbon dioxide.')
+})
+
+test('accepts exams as a comma separated string and cleans duplicates', () => {
+  const { candidate } = validateCandidate({
+    book: 'B',
+    subject: 'geography',
+    question_en: 'Question text here',
+    options: { A: 'one', B: 'two', C: 'three', D: 'four' },
+    correct_answer: 'A',
+    exams: 'ppsc, ppsc ,fpsc',
+  })
+  assert.deepEqual(candidate?.exams, ['ppsc', 'fpsc'])
+})
+
+test('still rejects a row with no category and no subject', () => {
+  const { candidate, errors } = validateCandidate({
+    book: 'B',
+    question_en: 'Question text here',
+    options: { A: 'one', B: 'two', C: 'three', D: 'four' },
+    correct_answer: 'A',
+  })
+  assert.equal(candidate, null)
+  assert.match(errors.join(' '), /Category is missing/)
+})
+
+test('the shipped sample book parses into 20 valid rows', async () => {
+  const { readFile } = await import('node:fs/promises')
+  const file = new URL('../public/sample-book.json', import.meta.url)
+  const json = await readFile(file, 'utf8')
+  const result = parseJsonInput(json, {})
+  assert.equal(result.rows.length, 20)
+  assert.equal(result.rows.filter((row) => row.status === 'new').length, 20, 'every sample row is importable')
+  assert.equal(result.summary.inFileDuplicates, 0, 'no duplicate rows inside the sample')
+  const first = result.rows[0].candidate
+  assert.equal(first?.book, 'Everyday Science Starter (20 Questions)')
+  assert.equal(first?.subject, 'everyday-science')
+  assert.equal(first?.correct_text, 'Carbon dioxide')
+  assert.ok(first?.question_ur, 'the sample carries Urdu text')
+})
+
+test('the sample book is caught as a duplicate when imported twice', async () => {
+  const { readFile } = await import('node:fs/promises')
+  const file = new URL('../public/sample-book.json', import.meta.url)
+  const json = await readFile(file, 'utf8')
+  const twice = JSON.parse(json)
+  const result = parseJsonInput(JSON.stringify([...twice, ...twice]), {})
+  assert.equal(result.summary.total, 40)
+  assert.equal(result.summary.inFileDuplicates, 20, 'the second half is flagged before it reaches the database')
+  assert.equal(result.rows.filter((row) => row.status === 'new').length, 20)
+})

@@ -24,6 +24,8 @@ await build({
   tsconfig: path.join(root, 'tsconfig.json'),
   alias: {
     '@/lib/supabase': path.join(here, 'stub-supabase.ts'),
+    'next/navigation': path.join(here, 'stub-navigation.tsx'),
+    'next/link': path.join(here, 'stub-link.tsx'),
   },
   define: { 'process.env.NODE_ENV': '"development"' },
   logLevel: 'warning',

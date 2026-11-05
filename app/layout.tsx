@@ -2,14 +2,27 @@ import type { Metadata, Viewport } from 'next'
 import '@fontsource-variable/inter'
 import '@fontsource/noto-nastaliq-urdu/400.css'
 import './globals.css'
+import Header from '@/components/site/Header'
+import Footer from '@/components/site/Footer'
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'MCQ Practice — focused exam prep',
-  description:
-    'Short, focused MCQ practice for Pakistani exam prep. Practice and test mode, English and Urdu, progress saved on your device.',
-  applicationName: 'MCQ Practice',
-  appleWebApp: { capable: true, title: 'MCQ Practice', statusBarStyle: 'default' },
+  metadataBase: new URL(SITE_URL),
+  title: { default: `${SITE_NAME} — ${SITE_TAGLINE}`, template: `%s · ${SITE_NAME}` },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    locale: 'en_PK',
+  },
+  twitter: { card: 'summary', title: SITE_NAME, description: SITE_DESCRIPTION },
   robots: { index: true, follow: true },
+  appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: 'default' },
 }
 
 export const viewport: Viewport = {
@@ -22,10 +35,20 @@ export const viewport: Viewport = {
   ],
 }
 
+// Applied before first paint so a returning Urdu reader never sees a flash of English.
+const LANG_SCRIPT = `try{if(localStorage.getItem('dailytest.lang')==='ur'){document.documentElement.lang='ur';document.documentElement.dir='rtl'}}catch(e){}`
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" dir="ltr">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: LANG_SCRIPT }} />
+      </head>
+      <body>
+        <Header />
+        <main className="main">{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }
