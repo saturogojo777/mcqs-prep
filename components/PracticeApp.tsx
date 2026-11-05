@@ -13,6 +13,7 @@ type Mode = 'practice' | 'test'
 type AnswerRecord = { question: Mcq; chosen: string; correct: boolean }
 
 type Session = {
+  id: number
   mode: Mode
   category: Category
   questions: Mcq[]
@@ -227,6 +228,7 @@ export default function PracticeApp({ initialCatalog }: { initialCatalog?: Catal
         }
         setMode(nextMode)
         setSession({
+          id: Date.now(),
           mode: nextMode,
           category,
           questions,
@@ -295,7 +297,7 @@ export default function PracticeApp({ initialCatalog }: { initialCatalog?: Catal
     setSession({ ...s, locked: true, records })
     window.setTimeout(() => {
       setSession((prev) =>
-        prev && prev.mode === 'test'
+        prev && prev.mode === 'test' && prev.id === s.id
           ? { ...prev, index: prev.index + 1, selected: null, locked: false }
           : prev,
       )
