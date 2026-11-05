@@ -19,8 +19,15 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     locale: 'en_PK',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: `${SITE_NAME} — ${SITE_TAGLINE}` }],
   },
-  twitter: { card: 'summary', title: SITE_NAME, description: SITE_DESCRIPTION },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: ['/og.png'],
+  },
+  icons: { icon: [{ url: '/icon.svg', type: 'image/svg+xml' }], apple: [{ url: '/icon.svg' }] },
   robots: { index: true, follow: true },
   appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: 'default' },
 }

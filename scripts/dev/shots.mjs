@@ -362,6 +362,150 @@ await capture({
   dir: 'ltr',
 })
 
+// ------------------------------------------------------- phase 1 screens
+
+async function openMock(page) {
+  await goto(page, '/practice/exam/ppsc')
+  await page.waitForSelector('.btn-start')
+  await page.locator('.seg-btn', { hasText: 'Mock Test' }).first().click()
+  await page.waitForTimeout(150)
+}
+
+for (const width of [360, 1280]) {
+  const suffix = `en-light-${width}`
+
+  await capture({ width, lang: 'en', theme: 'light', action: openMock, name: `mock-start-${suffix}`, dir: 'ltr' })
+
+  await capture({
+    width,
+    lang: 'en',
+    theme: 'light',
+    action: async (page) => {
+      await openMock(page)
+      await page.locator('.btn-start').click()
+      await page.waitForSelector('.qtext')
+      await page.locator('.option').first().click()
+      await page.locator('.mock-mark').click()
+      await page.locator('.btn-next').click()
+      await page.locator('.option').nth(1).click()
+      await page.waitForTimeout(250)
+    },
+    name: `mock-quiz-${suffix}`,
+    dir: 'ltr',
+  })
+
+  await capture({
+    width,
+    lang: 'en',
+    theme: 'light',
+    action: async (page) => {
+      await openMock(page)
+      await page.locator('.btn-start').click()
+      await page.waitForSelector('.qtext')
+      await page.locator('.option').first().click()
+      await page.locator('.btn-submit').first().click()
+      await page.waitForSelector('.dialog')
+      await page.waitForTimeout(200)
+    },
+    name: `mock-confirm-${suffix}`,
+    dir: 'ltr',
+  })
+}
+
+await capture({
+  width: 1280,
+  lang: 'en',
+  theme: 'light',
+  action: async (page) => {
+    await goto(page, '/practice/book/b-general-knowledge')
+    await page.waitForSelector('.btn-start')
+    await page.locator('.seg-btn', { hasText: 'Mock Test' }).first().click()
+    await page.locator('.btn-start').click()
+    await page.waitForSelector('.qtext')
+    for (let i = 0; i < 6; i++) {
+      await page.locator('.option').first().click()
+      await page.locator('.btn-next').click()
+      await page.waitForTimeout(80)
+    }
+    await page.locator('.btn-submit').first().click()
+    await page.waitForSelector('.dialog')
+    await page.locator('.btn-submit-yes').click()
+    await page.waitForSelector('.result-percent')
+    await page.waitForTimeout(500)
+  },
+  name: 'mock-result-en-light-1280',
+  dir: 'ltr',
+})
+
+await capture({
+  width: 1280,
+  lang: 'en',
+  theme: 'light',
+  action: async (page) => {
+    await goto(page, '/progress')
+    await page.evaluate(() => {
+      localStorage.setItem(
+        'dailytest.progress.v1',
+        JSON.stringify({
+          tests: 6,
+          answered: 60,
+          right: 44,
+          streak: 3,
+          lastDay: '2026-11-05',
+          subjects: {
+            'pakistan-studies': { total: 20, right: 14 },
+            'general-knowledge': { total: 25, right: 21 },
+            mathematics: { total: 15, right: 9 },
+          },
+          chapters: {},
+          updatedAt: 1,
+        }),
+      )
+    })
+    await page.reload({ waitUntil: 'domcontentloaded' })
+    await page.waitForSelector('.stats-strip')
+  },
+  name: 'progress-en-light-1280',
+  dir: 'ltr',
+})
+
+await capture({
+  width: 1280,
+  lang: 'en',
+  theme: 'light',
+  action: async (page) => {
+    await goto(page, '/search?q=pak')
+    await page.waitForSelector('.item')
+  },
+  name: 'search-en-light-1280',
+  dir: 'ltr',
+})
+
+await capture({
+  width: 1280,
+  lang: 'en',
+  theme: 'light',
+  action: async (page) => {
+    await goto(page, '/missing-page')
+  },
+  name: 'notfound-en-light-1280',
+  dir: 'ltr',
+})
+
+await capture({
+  width: 360,
+  lang: 'ur',
+  theme: 'dark',
+  action: async (page) => {
+    await goto(page, '/practice/exam/ppsc')
+    await page.waitForSelector('.btn-start')
+    await page.locator('.seg-btn', { hasText: 'ماک ٹیسٹ' }).first().click()
+    await page.waitForTimeout(200)
+  },
+  name: 'mock-start-ur-dark-360',
+  dir: 'rtl',
+})
+
 await browser.close()
 
 console.log(`\n${checks.length} screens audited, ${failures} with problems.`)

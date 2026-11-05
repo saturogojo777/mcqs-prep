@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { getSupabase } from '@/lib/supabase'
+import AdminNav from '@/components/admin/AdminNav'
 
 type PreviewRow = {
   line: number
@@ -54,7 +55,10 @@ function Shell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       <main className="main">
-        <div className="container container--narrow">{children}</div>
+        <div className="container container--narrow">
+          <AdminNav />
+          {children}
+        </div>
       </main>
       <footer className="footer">
         <div className="container">DailyTest admin</div>

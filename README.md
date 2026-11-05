@@ -7,11 +7,22 @@ press Start. No sign-up, no login, no dashboards. Everything works in English an
 RTL with a bundled Nastaliq face), light and dark follow the device.
 
 - **Today's Test** — 10 questions seeded from the date, so every visitor gets the same set each day.
-- **Quiz** — one question at a time, four options shuffled on every display, checked by option
-  *text* (never by letter). Right answer: light green. Wrong: light red plus the correct answer.
-- **Result** — score ring, percentage, time, and every missed question with the right answer in
-  green. *Try again*, *Practise my mistakes*, *Home*.
-- **Mistakes + stats** live in `localStorage` only. Nothing about a student leaves the browser.
+- **Start screen** — 10 / 20 / 50 / 100 or a custom number, difficulty (easy / medium / hard / mixed),
+  level (basic / intermediate / advanced / mixed), an optional timer, and two modes.
+- **Practice** — one question at a time, four options shuffled on every display, checked by option
+  *text* (never by letter). Right answer: light green. Wrong: light red plus the correct answer and
+  its explanation.
+- **Mock Test** — like the exam hall: countdown, question palette (answered / unanswered / marked),
+  mark for review, submit with a confirmation, then marks with negative marking and a pass line.
+  The per-exam pattern is editable in `/admin/patterns`; the screen always says to verify it with the
+  official advertisement.
+- **Result** — score ring, percentage, time, marks (mock), accuracy bars by subject and chapter, the
+  weak topics, and every missed question with the right answer and explanation in green.
+  *Try again*, *Practise my mistakes*, *Home*.
+- **`/progress`** — tests taken, daily streak and accuracy per subject, from `localStorage` only.
+  Nothing about a student leaves the browser.
+- **Report a question** — every question carries a report link; reports land in `reports` (RLS on, no
+  public policies) and are triaged in `/admin/reports`.
 
 ## Stack
 
@@ -28,39 +39,61 @@ RTL with a bundled Nastaliq face), light and dark follow the device.
 books        (id, title unique, description)
 categories   (id, book_id, name, unique(book_id, name))
 mcqs         (id, book_id, category_id, question_en, question_ur, options jsonb {A,B,C,D},
-              correct_text, explanation, source_ref, content_hash unique)
+              correct_text, explanation, source_ref, content_hash unique,
+              level, difficulty, as_of, review_status)
 subjects     (id, slug unique, name, name_ur, sort)
 exams        (id, slug unique, name, name_ur, sort)
 mcq_subjects (mcq_id, subject_id)            -- many to many
 mcq_exams    (mcq_id, exam_id)               -- many to many
 messages     (id, name, email, message, created_at, handled)   -- contact form, server only
+reports      (id, mcq_id, reason, note, status, created_at)     -- wrong-question reports
+mock_patterns(exam_id, question_count, minutes, marks_per_question,
+              negative_marking, passing_percentage, updated_at)
 ```
+
+`level` is basic / intermediate / advanced, `difficulty` easy / medium / hard, `as_of` dates any
+time-sensitive fact, and `review_status` is `ai_verified` or `needs_review`. **`needs_review`
+questions are never served to a test** — every RPC filters them out and the catalog views count them
+separately, so the admin dashboard can show how many are waiting per book.
 
 - `correct_text` stores the **answer text**, never the letter, so options can be shuffled.
 - `content_hash` is a generated column: `md5(lower(trim(question)) + '|' + options sorted, lowercased)`.
   The unique index makes duplicates impossible, whichever client inserts.
 - RLS is on everywhere: `select` for `anon`, no write policies. Only the service role key — server
   side, never shipped to the browser — can write.
-- Three read-only views (`exam_catalog`, `subject_catalog`, `book_catalog`) give every list page its
-  name plus question count in one round trip.
+- Four read-only views (`exam_catalog`, `subject_catalog`, `book_catalog`, `chapter_catalog`) give
+  every list page its name plus question count in one round trip, and `site_stats()` feeds the
+  numbers on the home page.
 - Questions are handed to the browser by three `security definer` functions:
-  `random_questions(kind, key, limit)`, `daily_questions(seed, limit)`, `questions_by_ids(uuid[])`.
+  `random_questions(kind, key, limit, difficulty, level)`, `daily_questions(seed, limit, difficulty,
+  level)`, `questions_by_ids(uuid[])`. Each returns `chapter`, `subject_slug`, `level` and
+  `difficulty` so the result screen can break accuracy down by topic.
 - `import_book(book jsonb, rows jsonb)` writes a whole book in one Postgres call, so an import is
   never half-saved. It is executable by `service_role` only.
 
-Schema: `supabase/20261105_dailytest.sql` (already applied to the project).
+Schema: `supabase/20261105_dailytest.sql` (base) and `supabase/20261105_professional.sql`
+(metadata, reports, mock patterns, books, catalog views, `site_stats`, the extended RPCs and the new
+`import_book`). Both are applied to the project.
 
 ## Pages
 
 | Route | What it is |
 | --- | --- |
-| `/` | logo, EN/اردو toggle, About + Contact, headline, Exam / Subject / Book, Today's Test |
-| `/exams`, `/subjects`, `/books` | one plain card per item with its question count ("Coming soon" when empty) |
-| `/practice/[kind]/[key]` | start screen → quiz → result |
+| `/` | logo, search, EN/اردو toggle, Exam / Subject / Book, Today's Test, live stats, popular exams, subjects, books, how it works, why, FAQ, full footer |
+| `/exams`, `/subjects`, `/books` | one card per item with its question count and chapters ("Coming soon" when empty) |
+| `/practice/[kind]/[key]` | start screen (mode, count, difficulty, level, timer) → practice quiz or mock test → result |
 | `/today` | Today's Test, straight into the questions |
 | `/mistakes` | replays the questions answered wrongly last time |
+| `/progress` | tests taken, streak, accuracy per subject (localStorage) |
+| `/search` | full results for the header search |
 | `/about`, `/contact`, `/privacy`, `/terms`, `/disclaimer` | plain-English footer pages |
-| `/admin` | sign in, then add questions |
+| `/admin` | sign in, then import questions |
+| `/admin/dashboard` | MCQs per book and chapter, `needs_review` queue, open reports |
+| `/admin/reports` | reported questions, edit / delete, mark fixed or ignored |
+| `/admin/patterns` | mock-test pattern per exam |
+
+A custom `app/not-found.tsx` handles 404s, `app/icon.svg` is the favicon and `public/og.png` the
+social card (`node scripts/dev/make-og.mjs` rebuilds it).
 
 `sitemap.xml` and `robots.txt` are generated from `lib/site.ts`. Nothing hardcodes a domain:
 `NEXT_PUBLIC_SITE_URL` drives the canonical URL, the sitemap and the social tags.
