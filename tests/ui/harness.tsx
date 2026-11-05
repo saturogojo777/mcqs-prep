@@ -5,7 +5,7 @@ import assert from 'node:assert/strict'
 import { act } from 'react'
 import { createRoot } from 'react-dom/client'
 import PracticeApp from '@/components/PracticeApp'
-import { CATEGORIES, questionsFor } from '@/tests/ui/stub-supabase'
+import { CATALOG, CATEGORIES, questionsFor } from '@/tests/ui/stub-supabase'
 
 const PROGRESS_KEY = 'mcqprep.progress.v1'
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -63,7 +63,7 @@ async function main() {
   const root = createRoot(container)
 
   await act(async () => {
-    root.render(<PracticeApp />)
+    root.render(<PracticeApp initialCatalog={CATALOG} />)
   })
   await flush(60)
 
