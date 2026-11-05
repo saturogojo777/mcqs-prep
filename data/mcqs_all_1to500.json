@@ -1,0 +1,6002 @@
+[
+  {
+    "id": 1,
+    "question_en": "Who is the founder of Pakistan?",
+    "question_ur": "پاکستان کے بانی کون ہیں ؟",
+    "options": {
+      "A": "Allama Iqbal",
+      "B": "Liaquat Ali Khan",
+      "C": "Muhammad Ali Jinnah",
+      "D": "Ayub Khan"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 2,
+    "question_en": "When did Pakistan come into existence?",
+    "question_ur": "پاکستان کب وجود میں آیا؟",
+    "options": {
+      "A": "14 August 1947",
+      "B": "15 August 1947",
+      "C": "23 March 1940",
+      "D": "25 December 1947"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 3,
+    "question_en": "What is the capital of Pakistan?",
+    "question_ur": "پاکستان کا دارالحکومت کیا ہے ؟",
+    "options": {
+      "A": "Karachi",
+      "B": "Lahore",
+      "C": "Islamabad",
+      "D": "Peshawar"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 4,
+    "question_en": "What is the national language of Pakistan?",
+    "question_ur": "پاکستان کی قومی زبان کون سی ہے ؟",
+    "options": {
+      "A": "Punjabi",
+      "B": "Sindhi",
+      "C": "Urdu",
+      "D": "Pashto"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 5,
+    "question_en": "What is the national animal of Pakistan?",
+    "question_ur": "پاکستان کا قومی جانور کون سا ہے ؟",
+    "options": {
+      "A": "Markhor",
+      "B": "Lion",
+      "C": "Tiger",
+      "D": "Deer"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 6,
+    "question_en": "What is the national bird of Pakistan?",
+    "question_ur": "پاکستان کا قومی پرندہ کون سا ہے ؟",
+    "options": {
+      "A": "Eagle",
+      "B": "Chukar",
+      "C": "Dove",
+      "D": "Peacock"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 7,
+    "question_en": "What is the national flower of Pakistan?",
+    "question_ur": "پاکستان کا قومی پھول کون سا ہے ؟",
+    "options": {
+      "A": "Rose",
+      "B": "Jasmine",
+      "C": "Sunflower",
+      "D": "Lily"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 8,
+    "question_en": "What is the national tree of Pakistan?",
+    "question_ur": "پاکستان کا قومی درخت کون سا ہے ؟",
+    "options": {
+      "A": "Neem",
+      "B": "Deodar",
+      "C": "Banyan",
+      "D": "Mango"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 9,
+    "question_en": "Who wrote the national anthem of Pakistan?",
+    "question_ur": "پاکستان کا قومی ترانہ کس نے لکھا؟",
+    "options": {
+      "A": "Hafeez Jalandhari",
+      "B": "Iqbal",
+      "C": "Faiz Ahmed Faiz",
+      "D": "Josh Malihabadi"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 10,
+    "question_en": "In which city was the Pakistan Resolution passed?",
+    "question_ur": "قرارداد پاکستان کس شہر میں منظور ہوئی؟",
+    "options": {
+      "A": "Karachi",
+      "B": "Lahore",
+      "C": "Islamabad",
+      "D": "Quetta"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 11,
+    "question_en": "On which date was the Pakistan Resolution passed?",
+    "question_ur": "قرار داد پاکستان کب منظور ہوئی ؟",
+    "options": {
+      "A": "14 August 1947",
+      "B": "23 March 1940",
+      "C": "11 September 1948",
+      "D": "25 December 1876"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 12,
+    "question_en": "Who presented the Pakistan Resolution?",
+    "question_ur": "قرار داد پاکستان کس نے پیش کی ؟",
+    "options": {
+      "A": "Liaquat Ali Khan",
+      "B": "A.K. Fazlul Haq",
+      "C": "Jinnah",
+      "D": "Ayub Khan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 13,
+    "question_en": "What is the largest province of Pakistan by area?",
+    "question_ur": "رقبے کے لحاظ سے پاکستان کا سب سے بڑا صوبہ کون سا ہے؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Sindh",
+      "C": "Balochistan",
+      "D": "KPK"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 14,
+    "question_en": "Which is the most populated province of Pakistan?",
+    "question_ur": "آبادی کے لحاظ سے پاکستان کا سب سے بڑا صوبہ کون سا ہے ؟",
+    "options": {
+      "A": "Sindh",
+      "B": "Punjab",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 15,
+    "question_en": "Which river is the longest in Pakistan?",
+    "question_ur": "پاکستان کا سب سے طویل دریا کون سا ہے ؟",
+    "options": {
+      "A": "Jhelum",
+      "B": "Chenab",
+      "C": "Ravi",
+      "D": "Indus"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 16,
+    "question_en": "What is the national sport of Pakistan?",
+    "question_ur": "پاکستان کا قومی کھیل کون سا ہے ؟",
+    "options": {
+      "A": "Cricket",
+      "B": "Hockey",
+      "C": "Football",
+      "D": "Squash"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 17,
+    "question_en": "Who was the first Governor General of Pakistan?",
+    "question_ur": "پاکستان کے پہلے گورنر جنرل کون تھے ؟",
+    "options": {
+      "A": "Liaquat Ali Khan",
+      "B": "Muhammad Ali Jinnah",
+      "C": "Ayub Khan",
+      "D": "Iskander Mirza"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 18,
+    "question_en": "Who was the first Prime Minister of Pakistan?",
+    "question_ur": "پاکستان کے پہلے وزیر اعظم کون تھے ؟",
+    "options": {
+      "A": "Liaquat Ali Khan",
+      "B": "Jinnah",
+      "C": "Ayub Khan",
+      "D": "Bhutto"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 19,
+    "question_en": "What is the currency of Pakistan?",
+    "question_ur": "پاکستان کی کرنسی کیا ہے ؟",
+    "options": {
+      "A": "Dollar",
+      "B": "Rupee",
+      "C": "Riyal",
+      "D": "Dinar"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 20,
+    "question_en": "Which city was the first capital of Pakistan?",
+    "question_ur": "پاکستان کا پہلا دارالحکومت کون سا شہر تھا؟",
+    "options": {
+      "A": "Lahore",
+      "B": "Karachi",
+      "C": "Islamabad",
+      "D": "Quetta"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 21,
+    "question_en": "Which mountain is the highest in Pakistan?",
+    "question_ur": "پاکستان کا سب سے بلند پہاڑ کون سا ہے ؟",
+    "options": {
+      "A": "Nanga Parbat",
+      "B": "K2",
+      "C": "Rakaposhi",
+      "D": "Tirich Mir"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 22,
+    "question_en": "What is the height of K2?",
+    "question_ur": "کے ٹو کی بلندی کتنی ہے ؟",
+    "options": {
+      "A": "8611 m",
+      "B": "8848 m",
+      "C": "8126 m",
+      "D": "7788 m"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 23,
+    "question_en": "Which dam is the largest in Pakistan?",
+    "question_ur": "پاکستان کا سب سے بڑا ڈیم کون سا ہے ؟",
+    "options": {
+      "A": "Mangla",
+      "B": "Tarbela",
+      "C": "Warsak",
+      "D": "Hub"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 24,
+    "question_en": "Which sea lies south of Pakistan?",
+    "question_ur": "پاکستان کے جنوب میں کون سا سمند رہے ؟",
+    "options": {
+      "A": "Red Sea",
+      "B": "Arabian Sea",
+      "C": "Black Sea",
+      "D": "Caspian Sea"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 25,
+    "question_en": "How many provinces are there in Pakistan?",
+    "question_ur": "پاکستان میں کتنے صوبے ہیں ؟",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 26,
+    "question_en": "Which is the largest city of Pakistan?",
+    "question_ur": "پاکستان کا سب سے بڑا شہر کون سا ہے؟",
+    "options": {
+      "A": "Lahore",
+      "B": "Karachi",
+      "C": "Islamabad",
+      "D": "Faisalabad"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 27,
+    "question_en": "Which city is called the City of Lights?",
+    "question_ur": "روشنیوں کا شہر کس شہر کو کہا جاتا ہے؟",
+    "options": {
+      "A": "Lahore",
+      "B": "Karachi",
+      "C": "Quetta",
+      "D": "Multan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 28,
+    "question_en": "Which city is called the City of Saints?",
+    "question_ur": "اولیاء کا شہر کس شہر کو کہا جاتا ہے؟",
+    "options": {
+      "A": "Multan",
+      "B": "Lahore",
+      "C": "Peshawar",
+      "D": "Sukkur"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 29,
+    "question_en": "Which city is called the Heart of Pakistan?",
+    "question_ur": "پاکستان کا دل کس شہر کو کہا جاتا ہے ؟",
+    "options": {
+      "A": "Karachi",
+      "B": "Lahore",
+      "C": "Quetta",
+      "D": "Hyderabad"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 30,
+    "question_en": "Which province produces most wheat?",
+    "question_ur": "سب سے زیادہ گندم کون سا صوبہ پیدا کرتا ہے؟",
+    "options": {
+      "A": "Sindh",
+      "B": "Punjab",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 31,
+    "question_en": "Which province produces most rice?",
+    "question_ur": "سب سے زیادہ چاول کون سا صوبہ پیدا کرتا ہے ؟",
+    "options": {
+      "A": "Sindh",
+      "B": "Punjab",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 32,
+    "question_en": "What is the national drink of Pakistan?",
+    "question_ur": "پاکستان کا قومی مشروب کیا ہے ؟",
+    "options": {
+      "A": "Tea",
+      "B": "Sugarcane Juice",
+      "C": "Milk",
+      "D": "Lassi"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 33,
+    "question_en": "What is the national mosque of Pakistan?",
+    "question_ur": "پاکستان کی قومی مسجد کون سی ہے ؟",
+    "options": {
+      "A": "Badshahi Mosque",
+      "B": "Faisal Mosque",
+      "C": "Wazir Khan Mosque",
+      "D": "Mohabbat Khan Mosque"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 34,
+    "question_en": "In which city is Faisal Mosque located?",
+    "question_ur": "فیصل مسجد کس شہر میں واقع ہے ؟",
+    "options": {
+      "A": "Lahore",
+      "B": "Islamabad",
+      "C": "Karachi",
+      "D": "Peshawar"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 35,
+    "question_en": "What is the national poet of Pakistan?",
+    "question_ur": "پاکستان کے قومی شاعر کون ہیں؟",
+    "options": {
+      "A": "Faiz",
+      "B": "Allama Iqbal",
+      "C": "Hafeez Jalandhari",
+      "D": "Josh"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 36,
+    "question_en": "When was Allama Iqbal born?",
+    "question_ur": "علامہ اقبال کب پیدا ہوئے؟",
+    "options": {
+      "A": "1877",
+      "B": "1876",
+      "C": "1878",
+      "D": "1880"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 37,
+    "question_en": "When was Quaid-e-Azam born?",
+    "question_ur": "قائد اعظم کب پیدا ہوئے؟",
+    "options": {
+      "A": "25 December 1876",
+      "B": "23 March 1877",
+      "C": "14 August 1876",
+      "D": "11 September 1878"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 38,
+    "question_en": "When did Quaid-e-Azam die?",
+    "question_ur": "قائد اعظم کا انتقال کب ہوا؟",
+    "options": {
+      "A": "11 September 1948",
+      "B": "14 August 1948",
+      "C": "25 December 1948",
+      "D": "23 March 1949"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 39,
+    "question_en": "Which province is famous for dates?",
+    "question_ur": "کھجوروں کے لیے کون سا صوبہ مشہور ہے ؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Balochistan",
+      "C": "Sindh",
+      "D": "KPK"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 40,
+    "question_en": "Which province is famous for mangoes?",
+    "question_ur": "آموں کے لیے کون سا صوبہ مشہور ہے ؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Sindh",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 41,
+    "question_en": "Which pass connects Pakistan and Afghanistan?",
+    "question_ur": "پاکستان اور افغانستان کو کون سادرہ ملاتا ہے ؟",
+    "options": {
+      "A": "Bolan Pass",
+      "B": "Khyber Pass",
+      "C": "Lowari Pass",
+      "D": "Shandur Pass"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 42,
+    "question_en": "Which is the oldest city of Pakistan?",
+    "question_ur": "پاکستان کا قدیم ترین شہر کون سا ہے؟",
+    "options": {
+      "A": "Multan",
+      "B": "Lahore",
+      "C": "Karachi",
+      "D": "Islamabad"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 43,
+    "question_en": "Which desert is the largest in Pakistan?",
+    "question_ur": "پاکستان کا سب سے بڑا صحرا کون سا ہے ؟",
+    "options": {
+      "A": "Cholistan",
+      "B": "Thar",
+      "C": "Thal",
+      "D": "Kharan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 44,
+    "question_en": "Which is the national fish of Pakistan?",
+    "question_ur": "پاکستان کی قومی مچھلی کون سی ہے ؟",
+    "options": {
+      "A": "Rohu",
+      "B": "Tuna",
+      "C": "Trout",
+      "D": "Shark"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 45,
+    "question_en": "Which is the national fruit of Pakistan?",
+    "question_ur": "پاکستان کا قومی پھل کون سا ہے ؟",
+    "options": {
+      "A": "Apple",
+      "B": "Mango",
+      "C": "Orange",
+      "D": "Banana"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 46,
+    "question_en": "Which is the largest airport of Pakistan?",
+    "question_ur": "پاکستان کا سب سے بڑا ہوائی اڈہ کون سا ہے ؟",
+    "options": {
+      "A": "Lahore Airport",
+      "B": "Jinnah International Airport",
+      "C": "Islamabad Airport",
+      "D": "Peshawar Airport"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 47,
+    "question_en": "Which city is known as Bab-ul-Islam?",
+    "question_ur": "باب الاسلام کس شہر کو کہا جاتا ہے ؟",
+    "options": {
+      "A": "Hyderabad",
+      "B": "Sukkur",
+      "C": "Thatta",
+      "D": "Karachi"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 48,
+    "question_en": "Which province has Gwadar Port?",
+    "question_ur": "گوادر پورٹ کس صوبے میں واقع ہے ؟",
+    "options": {
+      "A": "Sindh",
+      "B": "Punjab",
+      "C": "Balochistan",
+      "D": "KPK"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 49,
+    "question_en": "Which is the largest lake of Pakistan?",
+    "question_ur": "پاکستان کی سب سے بڑی جھیل کون سی ہے ؟",
+    "options": {
+      "A": "Keenjhar Lake",
+      "B": "Hanna Lake",
+      "C": "Saif-ul-Malook",
+      "D": "Manchar Lake"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 50,
+    "question_en": "Which day is celebrated as Pakistan Day?",
+    "question_ur": "یوم پاکستان کب منایا جاتا ہے ؟",
+    "options": {
+      "A": "14 August",
+      "B": "23 March",
+      "C": "25 December",
+      "D": "11 September"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 51,
+    "question_en": "When was the Constitution of Pakistan enforced?",
+    "question_ur": "پاکستان کا آئین کب نافذ ہوا؟",
+    "options": {
+      "A": "14 August 1973",
+      "B": "23 March 1956",
+      "C": "8 June 1962",
+      "D": "25 December 1972"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 52,
+    "question_en": "Which Constitution is currently enforced in Pakistan?",
+    "question_ur": "پاکستان میں اس وقت کون سا آئین نافذ ہے ؟",
+    "options": {
+      "A": "1956 Constitution",
+      "B": "1962 Constitution",
+      "C": "1973 Constitution",
+      "D": "Interim Constitution"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 53,
+    "question_en": "How many constitutions has Pakistan had?",
+    "question_ur": "پاکستان میں اب تک کتنے آئین نافذ ہو چکے ہیں ؟",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 54,
+    "question_en": "What was Pakistan's first Constitution?",
+    "question_ur": "پاکستان کا پہلا آئین کون سا تھا؟",
+    "options": {
+      "A": "1956 Constitution",
+      "B": "1962 Constitution",
+      "C": "1973 Constitution",
+      "D": "Interim Constitution"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 55,
+    "question_en": "When was the first Constitution promulgated?",
+    "question_ur": "پہلا آئین کب نافذ کیا گیا ؟",
+    "options": {
+      "A": "23 March 1956",
+      "B": "14 August 1947",
+      "C": "8 June 1962",
+      "D": "14 August 1973"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 56,
+    "question_en": "Who abrogated the 1956 Constitution?",
+    "question_ur": "1956 کا آئین کس نے منسوخ کیا؟",
+    "options": {
+      "A": "Ayub Khan",
+      "B": "Yahya Khan",
+      "C": "Z.A. Bhutto",
+      "D": "Iskander Mirza"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 57,
+    "question_en": "When was the 1962 Constitution enforced?",
+    "question_ur": "1962 کا آئین کب نافذ ہوا؟",
+    "options": {
+      "A": "8 June 1962",
+      "B": "23 March 1956",
+      "C": "14 August 1973",
+      "D": "25 March 1969"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 58,
+    "question_en": "Who introduced the 1962 Constitution?",
+    "question_ur": "1962 کا آئین کس نے متعارف کرایا ؟",
+    "options": {
+      "A": "Yahya Khan",
+      "B": "Ayub Khan",
+      "C": "Bhutto",
+      "D": "Liaquat Ali Khan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 59,
+    "question_en": "Pakistan is a _____ Republic.",
+    "question_ur": "پاکستان ایک _____ جمہوریہ ہے۔",
+    "options": {
+      "A": "Socialist",
+      "B": "Islamic",
+      "C": "Federal Only",
+      "D": "Presidential Only"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 60,
+    "question_en": "What is the official name of Pakistan according to the Constitution?",
+    "question_ur": "آئین کے مطابق پاکستان کا سرکاری نام کیا ہے ؟",
+    "options": {
+      "A": "Republic of Pakistan",
+      "B": "Islamic Republic of Pakistan",
+      "C": "Federal Pakistan",
+      "D": "United Pakistan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 61,
+    "question_en": "Who is the head of the state in Pakistan?",
+    "question_ur": "پاکستان میں سربراہ مملکت کون ہوتا ہے ؟",
+    "options": {
+      "A": "Prime Minister",
+      "B": "President",
+      "C": "Governor",
+      "D": "Chief Justice"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 62,
+    "question_en": "Who is the head of the government in Pakistan?",
+    "question_ur": "پاکستان میں سربراہ حکومت کون ہوتا ہے ؟",
+    "options": {
+      "A": "President",
+      "B": "Prime Minister",
+      "C": "Governor",
+      "D": "Speaker"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 63,
+    "question_en": "What is the minimum age for becoming President?",
+    "question_ur": "صدر بننے کے لیے کم از کم عمر کتنی ہونی چاہیے ؟",
+    "options": {
+      "A": "35 Years",
+      "B": "40 Years",
+      "C": "45 Years",
+      "D": "50 Years"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 64,
+    "question_en": "What is the minimum age for becoming Prime Minister?",
+    "question_ur": "وزیر اعظم بننے کے لیے کم از کم عمر کتنی ہونی چاہیے ؟",
+    "options": {
+      "A": "25 Years",
+      "B": "30 Years",
+      "C": "35 Years",
+      "D": "40 Years"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 65,
+    "question_en": "What is the term of the President?",
+    "question_ur": "صدر کی مدت ملازمت کتنی ہوتی ہے ؟",
+    "options": {
+      "A": "4 Years",
+      "B": "5 Years",
+      "C": "6 Years",
+      "D": "7 Years"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 66,
+    "question_en": "What is the term of the National Assembly?",
+    "question_ur": "قومی اسمبلی کی مدت کتنی ہوتی ہے ؟",
+    "options": {
+      "A": "4 Years",
+      "B": "5 Years",
+      "C": "6 Years",
+      "D": "7 Years"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 67,
+    "question_en": "How many houses are there in Parliament?",
+    "question_ur": "پارلیمنٹ کے کتنے ایوان ہیں ؟",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 68,
+    "question_en": "Which house is called the Upper House?",
+    "question_ur": "کون سا ایوان بالا کہلاتا ہے ؟",
+    "options": {
+      "A": "National Assembly",
+      "B": "Senate",
+      "C": "Provincial Assembly",
+      "D": "Cabinet"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 69,
+    "question_en": "Which house is called the Lower House?",
+    "question_ur": "کون سا ایوان زیریں کہلاتا ہے ؟",
+    "options": {
+      "A": "Senate",
+      "B": "National Assembly",
+      "C": "Cabinet",
+      "D": "Supreme Court"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 70,
+    "question_en": "Who presides over the Senate?",
+    "question_ur": "سینیٹ کی صدارت کون کرتا ہے؟",
+    "options": {
+      "A": "Prime Minister",
+      "B": "Chairman Senate",
+      "C": "President",
+      "D": "Speaker"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 71,
+    "question_en": "Who presides over the National Assembly?",
+    "question_ur": "قومی اسمبلی کی صدارت کون کرتا ہے ؟",
+    "options": {
+      "A": "Chairman Senate",
+      "B": "Speaker National Assembly",
+      "C": "President",
+      "D": "Prime Minister"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 72,
+    "question_en": "Which article declares Islam as the state religion?",
+    "question_ur": "اسلام کو ریاستی مذہب قرار دینے والا آرٹیکل کون سا ہے ؟",
+    "options": {
+      "A": "Article 1",
+      "B": "Article 2",
+      "C": "Article 8",
+      "D": "Article 25"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 73,
+    "question_en": "What is the state religion of Pakistan?",
+    "question_ur": "پاکستان کا ریاستی مذہب کیا ہے ؟",
+    "options": {
+      "A": "Christianity",
+      "B": "Islam",
+      "C": "Hinduism",
+      "D": "Buddhism"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 74,
+    "question_en": "Which language is the national language of Pakistan?",
+    "question_ur": "پاکستان کی قومی زبان کون سی ہے ؟",
+    "options": {
+      "A": "Punjabi",
+      "B": "Urdu",
+      "C": "Sindhi",
+      "D": "English"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 75,
+    "question_en": "Which article deals with Fundamental Rights?",
+    "question_ur": "بنیادی حقوق سے متعلق آرٹیکلز کون سے ہیں؟",
+    "options": {
+      "A": "8-28",
+      "B": "1-7",
+      "C": "30-40",
+      "D": "50-60"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 76,
+    "question_en": "Are Fundamental Rights guaranteed in the Constitution?",
+    "question_ur": "آئین میں بنیادی حقوق کی ضمانت دی گئی ہے ؟",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Partially",
+      "D": "None"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 77,
+    "question_en": "Which court is the highest court in Pakistan?",
+    "question_ur": "پاکستان کی سب سے اعلیٰ عدالت کون سی ہے ؟",
+    "options": {
+      "A": "High Court",
+      "B": "Federal Court",
+      "C": "Supreme Court",
+      "D": "District Court"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 78,
+    "question_en": "Who appoints the Governors?",
+    "question_ur": "گورنروں کی تقرری کون کرتا ہے؟",
+    "options": {
+      "A": "Prime Minister",
+      "B": "President",
+      "C": "Chief Minister",
+      "D": "Senate"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 79,
+    "question_en": "Pakistan has a _____ system of government.",
+    "question_ur": "پاکستان میں _____ نظام حکومت ہے۔",
+    "options": {
+      "A": "Parliamentary",
+      "B": "Monarchy",
+      "C": "Dictatorship",
+      "D": "Communist"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 80,
+    "question_en": "Which amendment restored the parliamentary system?",
+    "question_ur": "کس ترمیم نے پارلیمانی نظام کو مضبوط کیا؟",
+    "options": {
+      "A": "8th Amendment",
+      "B": "18th Amendment",
+      "C": "13th Amendment",
+      "D": "5th Amendment"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 81,
+    "question_en": "How many provinces are recognized in the Constitution?",
+    "question_ur": "آئین میں کتنے صوبے تسلیم کیے گئے ہیں ؟",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 82,
+    "question_en": "Which institution interprets the Constitution?",
+    "question_ur": "آئین کی تشریح کون کرتا ہے؟",
+    "options": {
+      "A": "Parliament",
+      "B": "Supreme Court",
+      "C": "Cabinet",
+      "D": "Election Commission"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 83,
+    "question_en": "Who can dissolve the National Assembly on advice?",
+    "question_ur": "مشورے پر قومی اسمبلی کون تحلیل کر سکتا ہے ؟",
+    "options": {
+      "A": "President",
+      "B": "Chairman Senate",
+      "C": "Governor",
+      "D": "Chief Justice"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 84,
+    "question_en": "Which article relates to equality of citizens?",
+    "question_ur": "شہریوں کی برابری سے متعلق آرٹیکل کون سا ہے ؟",
+    "options": {
+      "A": "Article 25",
+      "B": "Article 15",
+      "C": "Article 40",
+      "D": "Article 50"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 85,
+    "question_en": "Which article ensures freedom of speech?",
+    "question_ur": "اظہار رائے کی آزادی کس آرٹیکل میں دی گئی ہے ؟",
+    "options": {
+      "A": "Article 19",
+      "B": "Article 5",
+      "C": "Article 40",
+      "D": "Article 55"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 86,
+    "question_en": "Which article provides right to education?",
+    "question_ur": "تعلیم کا حق کس آرٹیکل میں دیا گیا ہے ؟",
+    "options": {
+      "A": "Article 25-A",
+      "B": "Article 19",
+      "C": "Article 62",
+      "D": "Article 48"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 87,
+    "question_en": "Which amendment renamed NWFP as KPK?",
+    "question_ur": "کس ترمیم نے NWFP کا نام خیبر پختو نخوار کھا ؟",
+    "options": {
+      "A": "8th",
+      "B": "17th",
+      "C": "18th",
+      "D": "21st"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 88,
+    "question_en": "Which amendment gave provinces more autonomy?",
+    "question_ur": "صوبوں کو زیادہ خود مختاری کس ترمیم نے دی ؟",
+    "options": {
+      "A": "13th",
+      "B": "18th",
+      "C": "8th",
+      "D": "5th"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 89,
+    "question_en": "Who elects the President?",
+    "question_ur": "صدر کا انتخاب کون کرتا ہے؟",
+    "options": {
+      "A": "Parliament and Provincial Assemblies",
+      "B": "Senate Only",
+      "C": "National Assembly Only",
+      "D": "Public Vote"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 90,
+    "question_en": "What is the minimum voting age in Pakistan?",
+    "question_ur": "پاکستان میں ووٹ دینے کی کم از کم عمر کیا ہے ؟",
+    "options": {
+      "A": "16",
+      "B": "18",
+      "C": "21",
+      "D": "25"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 91,
+    "question_en": "Which institution conducts elections?",
+    "question_ur": "انتخابات کون کرواتا ہے ؟",
+    "options": {
+      "A": "Supreme Court",
+      "B": "Election Commission of Pakistan",
+      "C": "Senate",
+      "D": "Cabinet"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 92,
+    "question_en": "What is the name of Pakistan's Parliament?",
+    "question_ur": "پاکستان کی پارلیمنٹ کو کیا کہا جاتا ہے ؟",
+    "options": {
+      "A": "Majlis-e-Shoora",
+      "B": "Congress",
+      "C": "Assembly House",
+      "D": "Federal House"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 93,
+    "question_en": "Which article relates to loyalty to the state?",
+    "question_ur": "ریاست سے وفاداری کس آرٹیکل میں بیان کی گئی ہے ؟",
+    "options": {
+      "A": "Article 5",
+      "B": "Article 10",
+      "C": "Article 25",
+      "D": "Article 40"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 94,
+    "question_en": "Which article prohibits slavery?",
+    "question_ur": "غلامی کی ممانعت کس آرٹیکل میں ہے؟",
+    "options": {
+      "A": "Article 11",
+      "B": "Article 12",
+      "C": "Article 15",
+      "D": "Article 22"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 95,
+    "question_en": "Which article protects freedom of religion?",
+    "question_ur": "مذہبی آزادی کس آرٹیکل میں دی گئی ہے ؟",
+    "options": {
+      "A": "Article 20",
+      "B": "Article 5",
+      "C": "Article 30",
+      "D": "Article 50"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 96,
+    "question_en": "Which article guarantees freedom of movement?",
+    "question_ur": "نقل و حرکت کی آزادی کس آرٹیکل میں دی گئی ہے ؟",
+    "options": {
+      "A": "Article 15",
+      "B": "Article 10",
+      "C": "Article 19",
+      "D": "Article 25"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 97,
+    "question_en": "Which article provides freedom of association?",
+    "question_ur": "تنظیم سازی کی آزادی کسی آرٹیکل میں دی گئی ہے ؟",
+    "options": {
+      "A": "Article 17",
+      "B": "Article 12",
+      "C": "Article 22",
+      "D": "Article 31"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 98,
+    "question_en": "Which amendment is considered most significant for provincial autonomy?",
+    "question_ur": "صوبائی خود مختاری کے لیے سب سے اہم ترمیم کون سی ہے؟",
+    "options": {
+      "A": "8th",
+      "B": "18th",
+      "C": "13th",
+      "D": "17th"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 99,
+    "question_en": "Who is the constitutional head of a province?",
+    "question_ur": "صوبے کا آئینی سربراہ کون ہوتا ہے ؟",
+    "options": {
+      "A": "Chief Minister",
+      "B": "Governor",
+      "C": "Chief Secretary",
+      "D": "Speaker"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 100,
+    "question_en": "The Constitution of 1973 was adopted during the government of?",
+    "question_ur": "1973 کا آئین کس حکومت کے دور میں منظور ہوا؟",
+    "options": {
+      "A": "Ayub Khan",
+      "B": "Yahya Khan",
+      "C": "Zulfikar Ali Bhutto",
+      "D": "Nawaz Sharif"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 101,
+    "question_en": "What is the total area of Pakistan?",
+    "question_ur": "پاکستان کا کل رقبہ کتنا ہے ؟",
+    "options": {
+      "A": "796,096 sq km",
+      "B": "881,913 sq km",
+      "C": "652,225 sq km",
+      "D": "925,000 sq km"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 102,
+    "question_en": "How many provinces does Pakistan have?",
+    "question_ur": "پاکستان کے کتنے صوبے ہیں ؟",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 103,
+    "question_en": "Which is the largest province by area?",
+    "question_ur": "رقبے کے لحاظ سے سب سے بڑا صوبہ کون سا ہے ؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Sindh",
+      "C": "Balochistan",
+      "D": "KPK"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 104,
+    "question_en": "Which is the smallest province by area?",
+    "question_ur": "رقبے کے لحاظ سے سب سے چھوٹا صوبہ کون سا ہے؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Sindh",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 105,
+    "question_en": "Which province has the largest population?",
+    "question_ur": "آبادی کے لحاظ سے سب سے بڑا صوبہ کون سا ہے ؟",
+    "options": {
+      "A": "Sindh",
+      "B": "Punjab",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 106,
+    "question_en": "What is the capital of Punjab?",
+    "question_ur": "پنجاب کا دارالحکومت کیا ہے ؟",
+    "options": {
+      "A": "Multan",
+      "B": "Lahore",
+      "C": "Faisalabad",
+      "D": "Rawalpindi"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 107,
+    "question_en": "What is the capital of Sindh?",
+    "question_ur": "سندھ کا دارالحکومت کیا ہے ؟",
+    "options": {
+      "A": "Hyderabad",
+      "B": "Sukkur",
+      "C": "Karachi",
+      "D": "Larkana"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 108,
+    "question_en": "What is the capital of Khyber Pakhtunkhwa?",
+    "question_ur": "خیبر پختونخوا کا دارالحکومت کیا ہے ؟",
+    "options": {
+      "A": "Mardan",
+      "B": "Abbottabad",
+      "C": "Peshawar",
+      "D": "Swat"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 109,
+    "question_en": "What is the capital of Balochistan?",
+    "question_ur": "بلوچستان کا دارالحکومت کیا ہے؟",
+    "options": {
+      "A": "Gwadar",
+      "B": "Quetta",
+      "C": "Khuzdar",
+      "D": "Turbat"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 110,
+    "question_en": "Which is the longest river of Pakistan?",
+    "question_ur": "پاکستان کا سب سے طویل دریا کون سا ہے ؟",
+    "options": {
+      "A": "Ravi",
+      "B": "Chenab",
+      "C": "Jhelum",
+      "D": "Indus"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 111,
+    "question_en": "What is the total length of the Indus River?",
+    "question_ur": "دریائے سندھ کی کل لمبائی کتنی ہے ؟",
+    "options": {
+      "A": "3180 km",
+      "B": "2500 km",
+      "C": "2100 km",
+      "D": "4000 km"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 112,
+    "question_en": "Which river is known as the River Sindh?",
+    "question_ur": "دریائے سندھ کس دریا کو کہا جاتا ہے؟",
+    "options": {
+      "A": "Indus",
+      "B": "Ravi",
+      "C": "Chenab",
+      "D": "Sutlej"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 113,
+    "question_en": "Which river joins the Indus near Mithankot?",
+    "question_ur": "مٹھن کوٹ کے قریب دریائے سندھ میں کون سادر یا شامل ہوتا ہے ؟",
+    "options": {
+      "A": "Ravi",
+      "B": "Jhelum",
+      "C": "Chenab",
+      "D": "Kabul"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 114,
+    "question_en": "Which is the largest dam of Pakistan?",
+    "question_ur": "پاکستان کا سب سے بڑا ڈیم کون سا ہے ؟",
+    "options": {
+      "A": "Mangla",
+      "B": "Tarbela",
+      "C": "Hub",
+      "D": "Warsak"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 115,
+    "question_en": "On which river is Tarbela Dam built?",
+    "question_ur": "تربیلا ڈیم کس دریا پر بنایا گیا ہے ؟",
+    "options": {
+      "A": "Jhelum",
+      "B": "Ravi",
+      "C": "Indus",
+      "D": "Chenab"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 116,
+    "question_en": "On which river is Mangla Dam built?",
+    "question_ur": "منگلا ڈیم کس دریا پر بنایا گیا ہے ؟",
+    "options": {
+      "A": "Jhelum",
+      "B": "Indus",
+      "C": "Ravi",
+      "D": "Sutlej"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 117,
+    "question_en": "Which mountain is the highest in Pakistan?",
+    "question_ur": "پاکستان کا سب سے بلند پہاڑ کون سا ہے ؟",
+    "options": {
+      "A": "Nanga Parbat",
+      "B": "Rakaposhi",
+      "C": "K2",
+      "D": "Tirich Mir"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 118,
+    "question_en": "What is the height of K2?",
+    "question_ur": "کے ٹو کی بلندی کتنی ہے ؟",
+    "options": {
+      "A": "8611 meters",
+      "B": "8848 meters",
+      "C": "8126 meters",
+      "D": "7788 meters"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 119,
+    "question_en": "Which mountain range contains K2?",
+    "question_ur": "کے ٹوکس پہاڑی سلسلے میں واقع ہے ؟",
+    "options": {
+      "A": "Himalayas",
+      "B": "Karakoram",
+      "C": "Hindu Kush",
+      "D": "Sulaiman"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 120,
+    "question_en": "Which is the second highest peak in Pakistan?",
+    "question_ur": "پاکستان کی دوسری بلند ترین چوٹی کون سی ہے ؟",
+    "options": {
+      "A": "Broad Peak",
+      "B": "Rakaposhi",
+      "C": "Tirich Mir",
+      "D": "Nanga Parbat"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 121,
+    "question_en": "Which desert is the largest in Pakistan?",
+    "question_ur": "پاکستان کا سب سے بڑا صحرا کون سا ہے ؟",
+    "options": {
+      "A": "Cholistan",
+      "B": "Thal",
+      "C": "Thar",
+      "D": "Kharan"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 122,
+    "question_en": "In which province is Thar Desert located?",
+    "question_ur": "صحرائے تھر کس صوبے میں واقع ہے ؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Sindh",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 123,
+    "question_en": "Which is the largest lake of Pakistan?",
+    "question_ur": "پاکستان کی سب سے بڑی جھیل کون سی ہے ؟",
+    "options": {
+      "A": "Keenjhar",
+      "B": "Hanna",
+      "C": "Manchar",
+      "D": "Saif-ul-Malook"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 124,
+    "question_en": "In which province is Manchar Lake located?",
+    "question_ur": "منچھر جھیل کس صوبے میں واقع ہے ؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Sindh",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 125,
+    "question_en": "Which is the largest freshwater lake of Pakistan?",
+    "question_ur": "پاکستان کی سب سے بڑی میٹھے پانی کی جھیل کون سی ہے ؟",
+    "options": {
+      "A": "Manchar",
+      "B": "Keenjhar",
+      "C": "Hanna",
+      "D": "Rawal"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 126,
+    "question_en": "Which sea lies to the south of Pakistan?",
+    "question_ur": "پاکستان کے جنوب میں کون سا سمندر واقع ہے ؟",
+    "options": {
+      "A": "Red Sea",
+      "B": "Arabian Sea",
+      "C": "Black Sea",
+      "D": "Mediterranean Sea"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 127,
+    "question_en": "What is the coastline length of Pakistan?",
+    "question_ur": "پاکستان کی ساحلی پٹی کی لمبائی کتنی ہے ؟",
+    "options": {
+      "A": "1046 km",
+      "B": "850 km",
+      "C": "1200 km",
+      "D": "650 km"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 128,
+    "question_en": "Which is the largest port of Pakistan?",
+    "question_ur": "پاکستان کی سب سے بڑی بندر گاہ کون سی ہے ؟",
+    "options": {
+      "A": "Gwadar Port",
+      "B": "Port Qasim",
+      "C": "Karachi Port",
+      "D": "Pasni Port"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 129,
+    "question_en": "In which province is Gwadar Port located?",
+    "question_ur": "گوادر پورٹ کس صوبے میں واقع ہے؟",
+    "options": {
+      "A": "Sindh",
+      "B": "Punjab",
+      "C": "Balochistan",
+      "D": "KPK"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 130,
+    "question_en": "Which pass connects Pakistan with Afghanistan?",
+    "question_ur": "پاکستان کو افغانستان سے کون سادرہ ملاتا ہے ؟",
+    "options": {
+      "A": "Bolan Pass",
+      "B": "Khyber Pass",
+      "C": "Lowari Pass",
+      "D": "Tochi Pass"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 131,
+    "question_en": "In which province is Khyber Pass located?",
+    "question_ur": "خیبر درہ کس صوبے میں واقع ہے ؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Sindh",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 132,
+    "question_en": "Which pass connects Quetta with Sibi?",
+    "question_ur": "کوئٹہ کو سبی سے کون سادرہ ملاتا ہے؟",
+    "options": {
+      "A": "Khyber Pass",
+      "B": "Bolan Pass",
+      "C": "Lowari Pass",
+      "D": "Shandur Pass"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 133,
+    "question_en": "Which plateau is located in Balochistan?",
+    "question_ur": "بلوچستان میں کون سا سطح مرتفع واقع ہے ؟",
+    "options": {
+      "A": "Potohar Plateau",
+      "B": "Balochistan Plateau",
+      "C": "Deosai Plateau",
+      "D": "Chagai Hills"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 134,
+    "question_en": "Which plateau is located in Punjab?",
+    "question_ur": "پنجاب میں کون سا سطح مرتفع واقع ہے ؟",
+    "options": {
+      "A": "Potohar Plateau",
+      "B": "Deosai Plateau",
+      "C": "Balochistan Plateau",
+      "D": "Chagai Plateau"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 135,
+    "question_en": "What is the highest plateau of Pakistan?",
+    "question_ur": "پاکستان کا بلند ترین سطح مرتفع کون سا ہے ؟",
+    "options": {
+      "A": "Potohar",
+      "B": "Chagai",
+      "C": "Deosai",
+      "D": "Balochistan"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 136,
+    "question_en": "Which is known as the Roof of the World in Pakistan?",
+    "question_ur": "پاکستان میں دنیا کی چھت کس مقام کو کہا جاتا ہے ؟",
+    "options": {
+      "A": "Skardu",
+      "B": "Deosai",
+      "C": "Murree",
+      "D": "Hunza"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 137,
+    "question_en": "Which is the coldest place in Pakistan?",
+    "question_ur": "پاکستان کا سرد ترین مقام کون سا ہے ؟",
+    "options": {
+      "A": "Murree",
+      "B": "Skardu",
+      "C": "Lahore",
+      "D": "Karachi"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 138,
+    "question_en": "Which city receives the highest rainfall in Pakistan?",
+    "question_ur": "پاکستان میں سب سے زیادہ بارش کس شہر میں ہوتی ہے ؟",
+    "options": {
+      "A": "Lahore",
+      "B": "Murree",
+      "C": "Karachi",
+      "D": "Quetta"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 139,
+    "question_en": "Which city is known as the City of Gardens?",
+    "question_ur": "باغوں کا شہر کس شہر کو کہا جاتا ہے؟",
+    "options": {
+      "A": "Karachi",
+      "B": "Lahore",
+      "C": "Quetta",
+      "D": "Peshawar"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 140,
+    "question_en": "Which city is known as the City of Flowers?",
+    "question_ur": "پھولوں کا شہر کس شہر کو کہا جاتا ہے؟",
+    "options": {
+      "A": "Peshawar",
+      "B": "Lahore",
+      "C": "Karachi",
+      "D": "Quetta"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 141,
+    "question_en": "Which river originates from Tibet?",
+    "question_ur": "کون سادر یا تبت سے نکلتا ہے ؟",
+    "options": {
+      "A": "Ravi",
+      "B": "Indus",
+      "C": "Chenab",
+      "D": "Jhelum"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 142,
+    "question_en": "Which river originates from Verinag?",
+    "question_ur": "کون سا دریا ویریناگ سے نکلتا ہے؟",
+    "options": {
+      "A": "Jhelum",
+      "B": "Ravi",
+      "C": "Sutlej",
+      "D": "Chenab"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 143,
+    "question_en": "Which river is called the River of Kashmir?",
+    "question_ur": "کشمیر کا دریا کس کو کہا جاتا ہے ؟",
+    "options": {
+      "A": "Ravi",
+      "B": "Jhelum",
+      "C": "Chenab",
+      "D": "Kabul"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 144,
+    "question_en": "Which is the largest glacier in Pakistan?",
+    "question_ur": "پاکستان کا سب سے بڑا گلیشیئر کون سا ہے؟",
+    "options": {
+      "A": "Baltoro",
+      "B": "Batura",
+      "C": "Hispar",
+      "D": "Siachen"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 145,
+    "question_en": "Which glacier is known as the world's longest outside polar regions?",
+    "question_ur": "قطبی علاقوں کے باہر دنیا کا طویل ترین گلیشیئر کون سا ہے ؟",
+    "options": {
+      "A": "Baltoro",
+      "B": "Siachen",
+      "C": "Hispar",
+      "D": "Batura"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 146,
+    "question_en": "Which district is famous for salt mines?",
+    "question_ur": "نمک کی کانوں کے لیے کون سا ضلع مشہور ہے ؟",
+    "options": {
+      "A": "Chakwal",
+      "B": "Jhelum",
+      "C": "Attock",
+      "D": "Sargodha"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 147,
+    "question_en": "Where are Khewra Salt Mines located?",
+    "question_ur": "کھیوڑہ نمک کی کانیں کہاں واقع ہیں؟",
+    "options": {
+      "A": "Jhelum",
+      "B": "Lahore",
+      "C": "Quetta",
+      "D": "Sukkur"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 148,
+    "question_en": "Which is the largest coal field in Pakistan?",
+    "question_ur": "پاکستان کا سب سے بڑا کو ملے کا ذخیرہ کون سا ہے ؟",
+    "options": {
+      "A": "Makerwal",
+      "B": "Thar Coalfield",
+      "C": "Sor Range",
+      "D": "Duki"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 149,
+    "question_en": "In which province is Thar Coalfield located?",
+    "question_ur": "تھر کول فیلڈ کس صوبے میں واقع ہے ؟",
+    "options": {
+      "A": "Punjab",
+      "B": "Sindh",
+      "C": "KPK",
+      "D": "Balochistan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 150,
+    "question_en": "Which city is called the Gateway of Pakistan?",
+    "question_ur": "پاکستان کا دروازہ کس شہر کو کہا جاتا ہے ؟",
+    "options": {
+      "A": "Lahore",
+      "B": "Karachi",
+      "C": "Islamabad",
+      "D": "Quetta"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 151,
+    "question_en": "What is the national flag of Pakistan called?",
+    "question_ur": "پاکستان کے قومی پرچم کو کیا کہا جاتا ہے؟",
+    "options": {
+      "A": "Green Flag",
+      "B": "Star Flag",
+      "C": "National Flag",
+      "D": "Crescent Flag"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 152,
+    "question_en": "When was the national flag adopted?",
+    "question_ur": "قومی پرچم کب اپنایا گیا ؟",
+    "options": {
+      "A": "14 August 1947",
+      "B": "23 March 1940",
+      "C": "11 September 1948",
+      "D": "25 December 1947"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 153,
+    "question_en": "Who designed the national flag of Pakistan?",
+    "question_ur": "پاکستان کے قومی پرچم کا ڈیزائن کس نے بنایا ؟",
+    "options": {
+      "A": "Liaquat Ali Khan",
+      "B": "Syed Amir-ud-Din Kedwaii",
+      "C": "Allama Iqbal",
+      "D": "Ayub Khan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 154,
+    "question_en": "What does the white color in the flag represent?",
+    "question_ur": "پرچم میں سفید رنگ کس کی نمائندگی کرتا ہے؟",
+    "options": {
+      "A": "Peace",
+      "B": "Minorities",
+      "C": "Agriculture",
+      "D": "Strength"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 155,
+    "question_en": "What does the green color in the flag represent?",
+    "question_ur": "پرچم میں سبز رنگ کس کی نمائندگی کرتا ہے ؟",
+    "options": {
+      "A": "Muslims",
+      "B": "Rivers",
+      "C": "Mountains",
+      "D": "Provinces"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 156,
+    "question_en": "What does the crescent in the flag symbolize?",
+    "question_ur": "پرچم میں ہلال کس چیز کی علامت ہے؟",
+    "options": {
+      "A": "Wealth",
+      "B": "Progress",
+      "C": "War",
+      "D": "Trade"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 157,
+    "question_en": "What does the star in the flag symbolize?",
+    "question_ur": "پرچم میں ستارہ کس چیز کی علامت ہے ؟",
+    "options": {
+      "A": "Knowledge and Light",
+      "B": "Army",
+      "C": "Unity",
+      "D": "Trade"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 158,
+    "question_en": "What is the national language of Pakistan?",
+    "question_ur": "پاکستان کی قومی زبان کون سی ہے ؟",
+    "options": {
+      "A": "Punjabi",
+      "B": "Urdu",
+      "C": "Sindhi",
+      "D": "English"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 159,
+    "question_en": "What is the national anthem of Pakistan called?",
+    "question_ur": "پاکستان کے قومی ترانے کو کیا کہا جاتا ہے ؟",
+    "options": {
+      "A": "Qaumi Geet",
+      "B": "Qaumi Tarana",
+      "C": "Milli Naghma",
+      "D": "Pakistan Song"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 160,
+    "question_en": "Who wrote the lyrics of the national anthem?",
+    "question_ur": "قومی ترانے کے بول کس نے لکھے ؟",
+    "options": {
+      "A": "Allama Iqbal",
+      "B": "Hafeez Jalandhari",
+      "C": "Faiz Ahmed Faiz",
+      "D": "Ahmad Nadeem Qasmi"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 161,
+    "question_en": "Who composed the music of the national anthem?",
+    "question_ur": "قومی ترانے کی دھن کس نے ترتیب دی ؟",
+    "options": {
+      "A": "Ahmed G. Chagla",
+      "B": "Noor Jehan",
+      "C": "Roshan Ara",
+      "D": "Khurshid Anwar"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 162,
+    "question_en": "When was the national anthem officially adopted?",
+    "question_ur": "قومی ترانه سرکاری طور پر کب منظور کیا گیا؟",
+    "options": {
+      "A": "1954",
+      "B": "1947",
+      "C": "1950",
+      "D": "1962"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 163,
+    "question_en": "Who is the national poet of Pakistan?",
+    "question_ur": "پاکستان کے قومی شاعر کون ہیں ؟",
+    "options": {
+      "A": "Faiz Ahmed Faiz",
+      "B": "Allama Iqbal",
+      "C": "Hafeez Jalandhari",
+      "D": "Josh Malihabadi"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 164,
+    "question_en": "What is the national animal of Pakistan?",
+    "question_ur": "پاکستان کا قومی جانور کون سا ہے ؟",
+    "options": {
+      "A": "Lion",
+      "B": "Markhor",
+      "C": "Tiger",
+      "D": "Deer"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 165,
+    "question_en": "What is the national bird of Pakistan?",
+    "question_ur": "پاکستان کا قومی پرندہ کون سا ہے ؟",
+    "options": {
+      "A": "Eagle",
+      "B": "Chukar",
+      "C": "Peacock",
+      "D": "Dove"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 166,
+    "question_en": "What is the national flower of Pakistan?",
+    "question_ur": "پاکستان کا قومی پھول کون سا ہے ؟",
+    "options": {
+      "A": "Rose",
+      "B": "Jasmine",
+      "C": "Lily",
+      "D": "Sunflower"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 167,
+    "question_en": "What is the national tree of Pakistan?",
+    "question_ur": "پاکستان کا قومی درخت کون سا ہے ؟",
+    "options": {
+      "A": "Neem",
+      "B": "Deodar",
+      "C": "Banyan",
+      "D": "Pine"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 168,
+    "question_en": "What is the national fruit of Pakistan?",
+    "question_ur": "پاکستان کا قومی پھل کون سا ہے ؟",
+    "options": {
+      "A": "Apple",
+      "B": "Mango",
+      "C": "Orange",
+      "D": "Banana"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 169,
+    "question_en": "What is the national sport of Pakistan?",
+    "question_ur": "پاکستان کا قومی کھیل کون سا ہے ؟",
+    "options": {
+      "A": "Cricket",
+      "B": "Hockey",
+      "C": "Football",
+      "D": "Squash"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 170,
+    "question_en": "What is the national dress of Pakistan?",
+    "question_ur": "پاکستان کا قومی لباس کیا ہے ؟",
+    "options": {
+      "A": "Sherwani",
+      "B": "Shalwar Kameez",
+      "C": "Kurta",
+      "D": "Achkan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 171,
+    "question_en": "What is the national mosque of Pakistan?",
+    "question_ur": "پاکستان کی قومی مسجد کون سی ہے؟",
+    "options": {
+      "A": "Badshahi Mosque",
+      "B": "Faisal Mosque",
+      "C": "Wazir Khan Mosque",
+      "D": "Mohabbat Khan Mosque"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 172,
+    "question_en": "In which city is Faisal Mosque located?",
+    "question_ur": "فیصل مسجد کس شہر میں واقع ہے؟",
+    "options": {
+      "A": "Lahore",
+      "B": "Islamabad",
+      "C": "Karachi",
+      "D": "Peshawar"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 173,
+    "question_en": "What is the national fish of Pakistan?",
+    "question_ur": "پاکستان کی قومی مچھلی کون سی ہے؟",
+    "options": {
+      "A": "Rohu",
+      "B": "Tuna",
+      "C": "Trout",
+      "D": "Shark"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 174,
+    "question_en": "What is the national drink of Pakistan?",
+    "question_ur": "پاکستان کا قومی مشروب کیا ہے ؟",
+    "options": {
+      "A": "Tea",
+      "B": "Sugarcane Juice",
+      "C": "Milk",
+      "D": "Lassi"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 175,
+    "question_en": "What is the national emblem called?",
+    "question_ur": "پاکستان کے قومی نشان کو کیا کہا جاتا ہے ؟",
+    "options": {
+      "A": "State Emblem",
+      "B": "Royal Emblem",
+      "C": "Green Emblem",
+      "D": "National Badge"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 176,
+    "question_en": "What is shown at the top of the national emblem?",
+    "question_ur": "قومی نشان کے اوپر کیا دکھایا گیا ہے ؟",
+    "options": {
+      "A": "Crescent and Star",
+      "B": "Eagle",
+      "C": "Flag",
+      "D": "Mosque"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 177,
+    "question_en": "Which crops are shown in the national emblem?",
+    "question_ur": "قومی نشان میں کون سی فصلیں دکھائی گئی ہیں؟",
+    "options": {
+      "A": "Cotton, Wheat, Tea and Rice",
+      "B": "Sugarcane, Tea, Rice and Maize",
+      "C": "Wheat, Corn, Rice and Tobacco",
+      "D": "Cotton, Tobacco, Rice and Fruits"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 178,
+    "question_en": "What is the national motto of Pakistan?",
+    "question_ur": "پاکستان کا قومی نعرہ کیا ہے؟",
+    "options": {
+      "A": "Faith, Unity, Discipline",
+      "B": "Unity and Strength",
+      "C": "Pakistan First",
+      "D": "Long Live Pakistan"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 179,
+    "question_en": "Who gave the motto \"Faith, Unity, Discipline\"?",
+    "question_ur": "ایمان، اتحاد، تنظیم کا نعرہ کس نے دیا؟",
+    "options": {
+      "A": "Allama Iqbal",
+      "B": "Muhammad Ali Jinnah",
+      "C": "Liaquat Ali Khan",
+      "D": "Ayub Khan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 180,
+    "question_en": "What is the national reptile of Pakistan?",
+    "question_ur": "پاکستان کا قومی رینگنے والا جانور کون سا ہے ؟",
+    "options": {
+      "A": "Cobra",
+      "B": "Indus Crocodile",
+      "C": "Python",
+      "D": "Monitor Lizard"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 181,
+    "question_en": "What is the national mammal of Pakistan?",
+    "question_ur": "پاکستان کا قومی ممالیہ جانور کون سا ہے ؟",
+    "options": {
+      "A": "Markhor",
+      "B": "Deer",
+      "C": "Tiger",
+      "D": "Leopard"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 182,
+    "question_en": "What is the national mountain of Pakistan?",
+    "question_ur": "پاکستان کا قومی پہاڑ کون سا ہے ؟",
+    "options": {
+      "A": "Nanga Parbat",
+      "B": "K2",
+      "C": "Rakaposhi",
+      "D": "Tirich Mir"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 183,
+    "question_en": "What is the national river of Pakistan?",
+    "question_ur": "پاکستان کا قومی در یا کون سا ہے ؟",
+    "options": {
+      "A": "Ravi",
+      "B": "Indus",
+      "C": "Chenab",
+      "D": "Jhelum"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 184,
+    "question_en": "What is the national color of Pakistan?",
+    "question_ur": "پاکستان کا قومی رنگ کون سا ہے ؟",
+    "options": {
+      "A": "White and Green",
+      "B": "Green",
+      "C": "White",
+      "D": "Blue"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 185,
+    "question_en": "What is the national heritage animal of Pakistan?",
+    "question_ur": "پاکستان کا قومی ورثہ جانور کون سا ہے ؟",
+    "options": {
+      "A": "Snow Leopard",
+      "B": "Lion",
+      "C": "Tiger",
+      "D": "Deer"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 186,
+    "question_en": "What is the national heritage bird of Pakistan?",
+    "question_ur": "پاکستان کا قومی ورثہ پرندہ کون سا ہے ؟",
+    "options": {
+      "A": "Chukar",
+      "B": "Shaheen Falcon",
+      "C": "Eagle",
+      "D": "Peacock"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 187,
+    "question_en": "What is the national horse breed of Pakistan?",
+    "question_ur": "پاکستان کی قومی گھوڑے کی نسل کون سی ہے ؟",
+    "options": {
+      "A": "Arabian",
+      "B": "Kathiawari",
+      "C": "Nukra",
+      "D": "Marwari"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 188,
+    "question_en": "What is the national flower color?",
+    "question_ur": "قومی پھول کا رنگ کیا ہے ؟",
+    "options": {
+      "A": "Red",
+      "B": "White",
+      "C": "Yellow",
+      "D": "Pink"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 189,
+    "question_en": "Which symbol represents minorities in the flag?",
+    "question_ur": "پرچم میں اقلیتوں کی نمائندگی کون سا حصہ کرتا ہے؟",
+    "options": {
+      "A": "Green Color",
+      "B": "White Strip",
+      "C": "Star",
+      "D": "Crescent"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 190,
+    "question_en": "Which symbol represents progress in the flag?",
+    "question_ur": "پرچم میں ترقی کی علامت کون سی ہے؟",
+    "options": {
+      "A": "Star",
+      "B": "Crescent",
+      "C": "White Color",
+      "D": "Green Color"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 191,
+    "question_en": "Which symbol represents light and knowledge?",
+    "question_ur": "روشنی اور علم کی علامت کون سی ہے ؟",
+    "options": {
+      "A": "Crescent",
+      "B": "Star",
+      "C": "White Color",
+      "D": "Green Color"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 192,
+    "question_en": "What is the national airline of Pakistan?",
+    "question_ur": "پاکستان کی قومی ایئر لائن کون سی ہے ؟",
+    "options": {
+      "A": "Airblue",
+      "B": "PIA",
+      "C": "Serene Air",
+      "D": "Fly Jinnah"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 193,
+    "question_en": "What is the national broadcasting organization?",
+    "question_ur": "پاکستان کا قومی نشریاتی ادارہ کون سا ہے ؟",
+    "options": {
+      "A": "PTV",
+      "B": "Geo TV",
+      "C": "ARY",
+      "D": "Hum TV"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 194,
+    "question_en": "What is the national game trophy associated with hockey?",
+    "question_ur": "ہاکی سے متعلق قومی اعزاز کون سا ہے ؟",
+    "options": {
+      "A": "World Cup",
+      "B": "Hockey Asia Cup",
+      "C": "National Hockey Trophy",
+      "D": "Champions Trophy"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 195,
+    "question_en": "What is the national identity document called?",
+    "question_ur": "پاکستان کی قومی شناختی دستاویز کیا کہلاتی ہے؟",
+    "options": {
+      "A": "Passport",
+      "B": "CNIC",
+      "C": "Domicile",
+      "D": "Visa"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 196,
+    "question_en": "Which symbol appears on Pakistan's currency notes?",
+    "question_ur": "پاکستانی کرنسی نوٹوں پر کس شخصیت کی تصویر ہوتی ہے ؟",
+    "options": {
+      "A": "Allama Iqbal",
+      "B": "Muhammad Ali Jinnah",
+      "C": "Liaquat Ali Khan",
+      "D": "Sir Syed Ahmed Khan"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 197,
+    "question_en": "What is the national day of Pakistan?",
+    "question_ur": "پاکستان کا قومی دن کون سا ہے ؟",
+    "options": {
+      "A": "14 August",
+      "B": "23 March",
+      "C": "25 December",
+      "D": "11 September"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 198,
+    "question_en": "What is celebrated on 14 August?",
+    "question_ur": "14 اگست کو کیا منا یا جاتا ہے ؟",
+    "options": {
+      "A": "Defence Day",
+      "B": "Pakistan Independence Day",
+      "C": "Pakistan Day",
+      "D": "Kashmir Day"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 199,
+    "question_en": "What is celebrated on 23 March?",
+    "question_ur": "23 مارچ کو کیا منا یا جاتا ہے ؟",
+    "options": {
+      "A": "Independence Day",
+      "B": "Pakistan Day",
+      "C": "Labour Day",
+      "D": "Defence Day"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 200,
+    "question_en": "Which phrase best represents Pakistan's national ideology?",
+    "question_ur": "پاکستان کے قومی نظریے کی بہترین نمائندگی کون سا جملہ کرتا ہے؟",
+    "options": {
+      "A": "Democracy Only",
+      "B": "Islamic Ideology",
+      "C": "Socialism",
+      "D": "Capitalism"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 201,
+    "question_en": "Which organization is the largest international body?",
+    "question_ur": "سب سے بڑی بین الا قوامی تنظیم کون سی ہے ؟",
+    "options": {
+      "A": "NATO",
+      "B": "United Nations",
+      "C": "OIC",
+      "D": "SAARC"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 202,
+    "question_en": "Pakistan is a member of which organization?",
+    "question_ur": "پاکستان کس تنظیم کارکن ہے ؟",
+    "options": {
+      "A": "ASEAN",
+      "B": "SAARC",
+      "C": "EU",
+      "D": "Arab League"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 203,
+    "question_en": "SAARC was founded in which year?",
+    "question_ur": "کب قائم ہوا؟ SAARC",
+    "options": {
+      "A": "1985",
+      "B": "1975",
+      "C": "1995",
+      "D": "2000"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 204,
+    "question_en": "SAARC headquarters is located in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ SAARC",
+    "options": {
+      "A": "New Delhi",
+      "B": "Kathmandu",
+      "C": "Dhaka",
+      "D": "Colombo"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 205,
+    "question_en": "UN headquarters is located in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ UN",
+    "options": {
+      "A": "Geneva",
+      "B": "Paris",
+      "C": "New York",
+      "D": "London"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 206,
+    "question_en": "Who is the Secretary-General of the United Nations (latest known)?",
+    "question_ur": "اقوام متحدہ کا سیکرٹری جنرل کون ہے ؟",
+    "options": {
+      "A": "António Guterres",
+      "B": "Ban Ki-moon",
+      "C": "Kofi Annan",
+      "D": "Boutros Ghali"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 207,
+    "question_en": "Which country is Pakistan's largest trading partner?",
+    "question_ur": "پاکستان کا سب سے بڑا تجارتی پارٹنر کون سا ملک ہے ؟",
+    "options": {
+      "A": "USA",
+      "B": "China",
+      "C": "UK",
+      "D": "Russia"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 208,
+    "question_en": "CPEC stands for?",
+    "question_ur": "کا مطلب کیا ہے ؟ CPEC",
+    "options": {
+      "A": "China Pakistan Economic Corridor",
+      "B": "Central Pakistan Energy Corridor",
+      "C": "China Power Energy Company",
+      "D": "Pakistan China Export Channel"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 209,
+    "question_en": "CPEC is part of which initiative?",
+    "question_ur": "کس منصوبے کا حصہ ہے؟ CPEC",
+    "options": {
+      "A": "Belt and Road Initiative",
+      "B": "NATO Project",
+      "C": "SAARC Plan",
+      "D": "IMF Program"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 210,
+    "question_en": "IMF is a:",
+    "question_ur": "کیا ہے؟ IMF",
+    "options": {
+      "A": "Bank",
+      "B": "Financial Institution",
+      "C": "Army Organization",
+      "D": "Trade Union"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 211,
+    "question_en": "IMF stands for?",
+    "question_ur": "کا مکمل نام کیا ہے؟ IMF",
+    "options": {
+      "A": "International Monetary Fund",
+      "B": "International Money Finance",
+      "C": "Internal Market Fund",
+      "D": "Investment Monetary Fund"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 212,
+    "question_en": "World Bank is headquartered in?",
+    "question_ur": "ورلڈ بینک کا ہیڈ کوارٹر کہاں ہے ؟",
+    "options": {
+      "A": "London",
+      "B": "Washington DC",
+      "C": "New York",
+      "D": "Geneva"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 213,
+    "question_en": "WHO stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ WHO",
+    "options": {
+      "A": "World Health Organization",
+      "B": "World Human Order",
+      "C": "World Housing Organization",
+      "D": "Health World Office"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 214,
+    "question_en": "WHO headquarters is located in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ WHO",
+    "options": {
+      "A": "Geneva",
+      "B": "New York",
+      "C": "Paris",
+      "D": "Rome"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 215,
+    "question_en": "Pakistan joined the United Nations in?",
+    "question_ur": "پاکستان اقوام متحدہ میں کب شامل ہوا؟",
+    "options": {
+      "A": "1947",
+      "B": "1948",
+      "C": "1950",
+      "D": "1955"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 216,
+    "question_en": "NATO is mainly a:",
+    "question_ur": "بنیادی طور پر کیا ہے ؟ NATO",
+    "options": {
+      "A": "Trade Organization",
+      "B": "Military Alliance",
+      "C": "Economic Bank",
+      "D": "Cultural Group"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 217,
+    "question_en": "NATO headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ NATO",
+    "options": {
+      "A": "Paris",
+      "B": "Brussels",
+      "C": "London",
+      "D": "Washington"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 218,
+    "question_en": "SAARC full form?",
+    "question_ur": "کا مکمل نام کیا ہے ؟ SAARC",
+    "options": {
+      "A": "South Asian Association for Regional Cooperation",
+      "B": "South Asia Alliance for Regional Countries",
+      "C": "Social Asian Association for Relations",
+      "D": "South African Association for Regional Cooperation"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 219,
+    "question_en": "OIC stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ OIC",
+    "options": {
+      "A": "Organization of Islamic Cooperation",
+      "B": "Organization of International Commerce",
+      "C": "Office of Islamic Countries",
+      "D": "Organization of Indian Cooperation"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 220,
+    "question_en": "OIC headquarters is located in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ OIC",
+    "options": {
+      "A": "Jeddah / Riyadh",
+      "B": "Doha",
+      "C": "Cairo",
+      "D": "Istanbul"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 221,
+    "question_en": "Pakistan's currency is issued by?",
+    "question_ur": "پاکستان کی کرنسی کون جاری کرتا ہے ؟",
+    "options": {
+      "A": "Ministry of Finance",
+      "B": "State Bank of Pakistan",
+      "C": "National Bank",
+      "D": "IMF"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 222,
+    "question_en": "Current Prime Minister of Pakistan (2026)?",
+    "question_ur": "پاکستان کا موجودہ وزیر اعظم کون ہے ؟",
+    "options": {
+      "A": "Shehbaz Sharif",
+      "B": "Imran Khan",
+      "C": "Asif Zardari",
+      "D": "Pervez Elahi"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 223,
+    "question_en": "Current President of Pakistan (2026)?",
+    "question_ur": "پاکستان کا موجودہ صدر کون ہے ؟",
+    "options": {
+      "A": "Arif Alvi",
+      "B": "Asif Ali Zardari",
+      "C": "Mamnoon Hussain",
+      "D": "Farooq Leghari"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 224,
+    "question_en": "Pakistan's national airline is?",
+    "question_ur": "پاکستان کی قومی ایئر لائن کون سی ہے؟",
+    "options": {
+      "A": "Airblue",
+      "B": "PIA",
+      "C": "Serene Air",
+      "D": "Fly Jinnah"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 225,
+    "question_en": "Pakistan Day is celebrated on?",
+    "question_ur": "پاکستان ڈے کب منایا جاتا ہے ؟",
+    "options": {
+      "A": "14 August",
+      "B": "23 March",
+      "C": "25 December",
+      "D": "1 May"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 226,
+    "question_en": "Independence Day of Pakistan is?",
+    "question_ur": "پاکستان کا یوم آزادی کب ہے؟",
+    "options": {
+      "A": "14 August",
+      "B": "23 March",
+      "C": "1 January",
+      "D": "6 September"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 227,
+    "question_en": "Defence Day of Pakistan is?",
+    "question_ur": "پاکستان کا یوم دفاع کب ہے؟",
+    "options": {
+      "A": "6 September",
+      "B": "14 August",
+      "C": "23 March",
+      "D": "25 December"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 228,
+    "question_en": "Kashmir Solidarity Day is?",
+    "question_ur": "یوم یکجہتی کشمیر کب منایا جاتا ہے ؟",
+    "options": {
+      "A": "5 February",
+      "B": "14 February",
+      "C": "23 March",
+      "D": "1 March"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 229,
+    "question_en": "Human Rights Day is?",
+    "question_ur": "انسانی حقوق کا دن کب ہے؟",
+    "options": {
+      "A": "10 December",
+      "B": "8 March",
+      "C": "1 May",
+      "D": "14 August"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 230,
+    "question_en": "Labour Day is celebrated on?",
+    "question_ur": "یوم مزدور کب منایا جاتا ہے ؟",
+    "options": {
+      "A": "1 May",
+      "B": "14 August",
+      "C": "25 December",
+      "D": "23 March"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 231,
+    "question_en": "World Environment Day is?",
+    "question_ur": "عالمی یوم ماحولیات کب ہے؟",
+    "options": {
+      "A": "5 June",
+      "B": "5 July",
+      "C": "10 June",
+      "D": "1 June"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 232,
+    "question_en": "Earth Day is celebrated on?",
+    "question_ur": "ارتھ ڈے کب منایا جاتا ہے ؟",
+    "options": {
+      "A": "22 April",
+      "B": "5 June",
+      "C": "1 May",
+      "D": "10 March"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 233,
+    "question_en": "Nobel Prize is given in how many fields?",
+    "question_ur": "نوبل انعام کتنے شعبوں میں دیا جاتا ہے ؟",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 234,
+    "question_en": "Nobel Prize started in?",
+    "question_ur": "نوبل انعام کب شروع ہوا؟",
+    "options": {
+      "A": "1895",
+      "B": "1901",
+      "C": "1910",
+      "D": "1920"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 235,
+    "question_en": "United Nations was formed in?",
+    "question_ur": "اقوام متحدہ کب قائم ہوئی؟",
+    "options": {
+      "A": "1945",
+      "B": "1947",
+      "C": "1950",
+      "D": "1939"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 236,
+    "question_en": "NATO was formed in?",
+    "question_ur": "کب قائم ہوا؟ NATO",
+    "options": {
+      "A": "1949",
+      "B": "1955",
+      "C": "1960",
+      "D": "1939"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 237,
+    "question_en": "IMF was established in?",
+    "question_ur": "کب قائم ہوا؟ IMF",
+    "options": {
+      "A": "1944",
+      "B": "1950",
+      "C": "1945",
+      "D": "1930"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 238,
+    "question_en": "World Bank was established in?",
+    "question_ur": "ورلڈ بینک کب قائم ہوا؟",
+    "options": {
+      "A": "1944",
+      "B": "1955",
+      "C": "1947",
+      "D": "1939"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 239,
+    "question_en": "Pakistan became member of IMF in?",
+    "question_ur": "پاکستان IMF کار کن کب بنا؟",
+    "options": {
+      "A": "1950",
+      "B": "1947",
+      "C": "1960",
+      "D": "1970"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 240,
+    "question_en": "Pakistan became member of World Bank in?",
+    "question_ur": "پاکستان ورلڈ بینک کارکن کب بنا؟",
+    "options": {
+      "A": "1950",
+      "B": "1947",
+      "C": "1965",
+      "D": "1975"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 241,
+    "question_en": "OIC was established in?",
+    "question_ur": "کب قائم ہوا؟ OIC",
+    "options": {
+      "A": "1969",
+      "B": "1975",
+      "C": "1980",
+      "D": "1990"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 242,
+    "question_en": "CPEC agreement signed in?",
+    "question_ur": "معاہدہ کب ہوا؟ CPEC",
+    "options": {
+      "A": "2013",
+      "B": "2015",
+      "C": "2017",
+      "D": "2010"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 243,
+    "question_en": "Pakistan's largest export country is?",
+    "question_ur": "پاکستان کی سب سے بڑی بر آمدی مارکیٹ کون سی ہے ؟",
+    "options": {
+      "A": "USA",
+      "B": "UK",
+      "C": "UAE",
+      "D": "Germany"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 244,
+    "question_en": "Pakistan's largest import partner is?",
+    "question_ur": "پاکستان کا سب سے بڑا درآمدی ملک کون سا ہے ؟",
+    "options": {
+      "A": "China",
+      "B": "USA",
+      "C": "UK",
+      "D": "Iran"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 245,
+    "question_en": "Pakistan's national security organization is?",
+    "question_ur": "پاکستان کا قومی سکیورٹی ادارہ کون سا ہے ؟",
+    "options": {
+      "A": "FIA",
+      "B": "ISI",
+      "C": "NAB",
+      "D": "Police"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 246,
+    "question_en": "Pakistan's top intelligence agency is?",
+    "question_ur": "پاکستان کی سب سے بڑی انٹیلیجنس ایجنسی کون سی ہے؟",
+    "options": {
+      "A": "IB",
+      "B": "ISI",
+      "C": "MI",
+      "D": "FIA"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 247,
+    "question_en": "Pakistan joined Commonwealth in?",
+    "question_ur": "پاکستان دولت مشترکہ میں کب شامل ہوا؟",
+    "options": {
+      "A": "1947",
+      "B": "1950",
+      "C": "1960",
+      "D": "1972"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 248,
+    "question_en": "Commonwealth headquarters is in?",
+    "question_ur": "کامن ویلتھ کا ہیڈ کوارٹر کہاں ہے؟",
+    "options": {
+      "A": "London",
+      "B": "Paris",
+      "C": "New York",
+      "D": "Geneva"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 249,
+    "question_en": "BRICS is an association of?",
+    "question_ur": "کس کا اتحاد ہے؟ BRICS",
+    "options": {
+      "A": "Developed countries",
+      "B": "Emerging economies",
+      "C": "Military countries",
+      "D": "Arab countries"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 250,
+    "question_en": "BRICS includes which country?",
+    "question_ur": "میں کون سا ملک شامل ہے؟ BRICS",
+    "options": {
+      "A": "Pakistan",
+      "B": "China",
+      "C": "UK",
+      "D": "France"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 251,
+    "question_en": "What does UN stand for?",
+    "question_ur": "کا مطلب کیا ہے؟ UN",
+    "options": {
+      "A": "United Nations",
+      "B": "United Network",
+      "C": "United Nations Organization",
+      "D": "Union Nations"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 252,
+    "question_en": "When was the United Nations founded?",
+    "question_ur": "اقوام متحدہ کب قائم ہوئی؟",
+    "options": {
+      "A": "1945",
+      "B": "1944",
+      "C": "1950",
+      "D": "1939"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 253,
+    "question_en": "UN headquarters is located in?",
+    "question_ur": "اقوام متحدہ کا ہیڈ کوارٹر کہاں ہے ؟",
+    "options": {
+      "A": "Geneva",
+      "B": "Paris",
+      "C": "New York",
+      "D": "London"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 254,
+    "question_en": "How many main organs does the UN have?",
+    "question_ur": "اقوام متحدہ کے کتنے اہم ادارے ہیں ؟",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 255,
+    "question_en": "Which is NOT a UN organ?",
+    "question_ur": "مندرجہ ذیل میں سے کون سا اقوام متحدہ کا ادارہ نہیں ہے؟",
+    "options": {
+      "A": "General Assembly",
+      "B": "Security Council",
+      "C": "NATO",
+      "D": "ICJ"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 256,
+    "question_en": "How many permanent members are in UN Security Council?",
+    "question_ur": "سلامتی کونسل کے مستقل اراکین کتنے ہیں؟ UN",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 257,
+    "question_en": "Which country is NOT a permanent member of UNSC?",
+    "question_ur": "کون سا ملک مستقل رکن نہیں ہے ؟",
+    "options": {
+      "A": "USA",
+      "B": "China",
+      "C": "Germany",
+      "D": "Russia"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 258,
+    "question_en": "WHO stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ WHO",
+    "options": {
+      "A": "World Health Organization",
+      "B": "World Human Order",
+      "C": "World Health Office",
+      "D": "World Hospital Organization"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 259,
+    "question_en": "WHO headquarters is located in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ WHO",
+    "options": {
+      "A": "Geneva",
+      "B": "New York",
+      "C": "Paris",
+      "D": "Rome"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 260,
+    "question_en": "IMF stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ IMF",
+    "options": {
+      "A": "International Monetary Fund",
+      "B": "International Market Fund",
+      "C": "Internal Money Fund",
+      "D": "International Management Fund"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 261,
+    "question_en": "IMF headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ IMF",
+    "options": {
+      "A": "Washington D.C.",
+      "B": "London",
+      "C": "Geneva",
+      "D": "Paris"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 262,
+    "question_en": "World Bank headquarters is in?",
+    "question_ur": "ورلڈ بینک کا ہیڈ کوارٹر کہاں ہے ؟",
+    "options": {
+      "A": "Washington D.C.",
+      "B": "New York",
+      "C": "London",
+      "D": "Geneva"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 263,
+    "question_en": "WTO stands for?",
+    "question_ur": "کا مطلب کیا ہے ؟ WTO",
+    "options": {
+      "A": "World Trade Organization",
+      "B": "World Transport Organization",
+      "C": "World Tourism Organization",
+      "D": "Western Trade Office"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 264,
+    "question_en": "WTO headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ WTO",
+    "options": {
+      "A": "Geneva",
+      "B": "Paris",
+      "C": "London",
+      "D": "New York"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 265,
+    "question_en": "NATO stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ NATO",
+    "options": {
+      "A": "North Atlantic Treaty Organization",
+      "B": "North Asia Treaty Organization",
+      "C": "National Alliance Treaty Organization",
+      "D": "New Atlantic Trade Organization"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 266,
+    "question_en": "NATO headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ NATO",
+    "options": {
+      "A": "Brussels",
+      "B": "Paris",
+      "C": "Washington",
+      "D": "Berlin"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 267,
+    "question_en": "SAARC stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ SAARC",
+    "options": {
+      "A": "South Asian Association for Regional Cooperation",
+      "B": "South Africa Association for Regional Countries",
+      "C": "South Asian Alliance for Regional Commerce",
+      "D": "South Asia Association for Republics"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 268,
+    "question_en": "SAARC headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ SAARC",
+    "options": {
+      "A": "Kathmandu",
+      "B": "Dhaka",
+      "C": "Delhi",
+      "D": "Islamabad"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 269,
+    "question_en": "OIC stands for?",
+    "question_ur": "کا مطلب کیا ہے ؟ OIC",
+    "options": {
+      "A": "Organization of Islamic Cooperation",
+      "B": "Organization of International Cooperation",
+      "C": "Office of Islamic Countries",
+      "D": "Organization of Islamic Commerce"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 270,
+    "question_en": "OIC headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے ؟ OIC",
+    "options": {
+      "A": "Jeddah",
+      "B": "Riyadh",
+      "C": "Cairo",
+      "D": "Istanbul"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 271,
+    "question_en": "ASEAN stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ ASEAN",
+    "options": {
+      "A": "Association of Southeast Asian Nations",
+      "B": "Asian Economic Nations",
+      "C": "African Southeast Alliance",
+      "D": "Asian States Association"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 272,
+    "question_en": "ASEAN headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ ASEAN",
+    "options": {
+      "A": "Jakarta",
+      "B": "Bangkok",
+      "C": "Manila",
+      "D": "Kuala Lumpur"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 273,
+    "question_en": "ECO stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ ECO",
+    "options": {
+      "A": "Economic Cooperation Organization",
+      "B": "European Cooperation Organization",
+      "C": "Eastern Commerce Organization",
+      "D": "Economic Council Organization"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 274,
+    "question_en": "ECO headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ ECO",
+    "options": {
+      "A": "Tehran",
+      "B": "Islamabad",
+      "C": "Ankara",
+      "D": "Baku"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 275,
+    "question_en": "OPEC stands for?",
+    "question_ur": "کا مطلب کیا ہے ؟ OPEC",
+    "options": {
+      "A": "Organization of Petroleum Exporting Countries",
+      "B": "Organization of Petroleum Economic Countries",
+      "C": "Oil Production and Export Council",
+      "D": "Oil Petroleum Energy Cooperation"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 276,
+    "question_en": "OPEC headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ OPEC",
+    "options": {
+      "A": "Vienna",
+      "B": "Riyadh",
+      "C": "Doha",
+      "D": "Abu Dhabi"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 277,
+    "question_en": "Red Cross is an example of?",
+    "question_ur": "ریڈ کر اس کس کی مثال ہے ؟",
+    "options": {
+      "A": "Government Organization",
+      "B": "Humanitarian Organization",
+      "C": "Military Organization",
+      "D": "Trade Organization"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 278,
+    "question_en": "Red Cross headquarters is in?",
+    "question_ur": "ریڈ کر اس کا ہیڈ کوارٹر کہاں ہے؟",
+    "options": {
+      "A": "Geneva",
+      "B": "Paris",
+      "C": "London",
+      "D": "New York"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 279,
+    "question_en": "UNESCO stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ UNESCO",
+    "options": {
+      "A": "United Nations Educational, Scientific and Cultural Organization",
+      "B": "United Nations Economic Service Cooperation Organization",
+      "C": "Universal Education Science Cultural Office",
+      "D": "United Nations Educational System Council Organization"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 280,
+    "question_en": "UNESCO headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ UNESCO",
+    "options": {
+      "A": "Paris",
+      "B": "London",
+      "C": "Geneva",
+      "D": "New York"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 281,
+    "question_en": "UNICEF stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ UNICEF",
+    "options": {
+      "A": "United Nations International Children's Emergency Fund",
+      "B": "United Nations Child Education Fund",
+      "C": "Universal Children Education Fund",
+      "D": "United Nations International Care Fund"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 282,
+    "question_en": "UNICEF headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ UNICEF",
+    "options": {
+      "A": "New York",
+      "B": "Geneva",
+      "C": "Paris",
+      "D": "London"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 283,
+    "question_en": "UNDP stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ UNDP",
+    "options": {
+      "A": "United Nations Development Programme",
+      "B": "United Nations Development Project",
+      "C": "Universal Nations Development Plan",
+      "D": "United Nations Department Program"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 284,
+    "question_en": "UNDP headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ UNDP",
+    "options": {
+      "A": "New York",
+      "B": "Geneva",
+      "C": "Paris",
+      "D": "London"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 285,
+    "question_en": "ILO stands for?",
+    "question_ur": "کا مطلب کیا ہے ؟ ILO",
+    "options": {
+      "A": "International Labour Organization",
+      "B": "International Legal Organization",
+      "C": "International Logistics Office",
+      "D": "Internal Labour Office"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 286,
+    "question_en": "ILO headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ ILO",
+    "options": {
+      "A": "Geneva",
+      "B": "New York",
+      "C": "Paris",
+      "D": "London"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 287,
+    "question_en": "IAEA stands for?",
+    "question_ur": "کا مطلب کیا ہے؟ IAEA",
+    "options": {
+      "A": "International Atomic Energy Agency",
+      "B": "International Atomic Energy Alliance",
+      "C": "Internal Atomic Energy Agency",
+      "D": "International Agriculture Energy Agency"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 288,
+    "question_en": "IAEA headquarters is in?",
+    "question_ur": "کا ہیڈ کوارٹر کہاں ہے؟ IAEA",
+    "options": {
+      "A": "Vienna",
+      "B": "Geneva",
+      "C": "Paris",
+      "D": "London"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 289,
+    "question_en": "G7 is a group of?",
+    "question_ur": "کس کا گروپ ہے؟ G7",
+    "options": {
+      "A": "Developing countries",
+      "B": "Industrialized countries",
+      "C": "African countries",
+      "D": "Asian countries"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 290,
+    "question_en": "G20 is a group of?",
+    "question_ur": "کس کا گروپ ہے؟ G20",
+    "options": {
+      "A": "20 poor countries",
+      "B": "Major economies",
+      "C": "European countries only",
+      "D": "Asian countries only"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 291,
+    "question_en": "Asian Development Bank (ADB) headquarters is in?",
+    "question_ur": "ADB کا ہیڈ کوارٹر کہاں ہے؟",
+    "options": {
+      "A": "Manila",
+      "B": "Tokyo",
+      "C": "Beijing",
+      "D": "Seoul"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 292,
+    "question_en": "International Court of Justice is located in?",
+    "question_ur": "ICJ کہاں واقع ہے؟",
+    "options": {
+      "A": "Geneva",
+      "B": "New York",
+      "C": "The Hague",
+      "D": "Paris"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 293,
+    "question_en": "ICJ stands for?",
+    "question_ur": "ICJ کا مطلب کیا ہے؟",
+    "options": {
+      "A": "International Court of Justice",
+      "B": "International Criminal Justice",
+      "C": "Internal Court of Justice",
+      "D": "International Council of Justice"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 294,
+    "question_en": "Interpol headquarters is in?",
+    "question_ur": "انٹرپول کا ہیڈ کوارٹر کہاں ہے؟",
+    "options": {
+      "A": "Lyon",
+      "B": "Paris",
+      "C": "London",
+      "D": "Geneva"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 295,
+    "question_en": "Interpol stands for?",
+    "question_ur": "Interpol کا مطلب کیا ہے؟",
+    "options": {
+      "A": "International Criminal Police Organization",
+      "B": "International Police Organization",
+      "C": "Internal Police Organization",
+      "D": "International Policy Organization"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 296,
+    "question_en": "ASEAN member countries are located in?",
+    "question_ur": "ASEAN ممالک کہاں واقع ہیں؟",
+    "options": {
+      "A": "Europe",
+      "B": "Southeast Asia",
+      "C": "Africa",
+      "D": "South America"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 297,
+    "question_en": "ECO member countries are mostly in?",
+    "question_ur": "ECO ممالک زیادہ تر کہاں ہیں؟",
+    "options": {
+      "A": "Asia",
+      "B": "Europe",
+      "C": "Africa",
+      "D": "America"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 298,
+    "question_en": "OPEC mainly deals with?",
+    "question_ur": "OPEC بنیادی طور پر کس سے متعلق ہے؟",
+    "options": {
+      "A": "Agriculture",
+      "B": "Oil Production",
+      "C": "Education",
+      "D": "Tourism"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 299,
+    "question_en": "WTO mainly deals with?",
+    "question_ur": "WTO بنیادی طور پر کس سے متعلق ہے؟",
+    "options": {
+      "A": "War",
+      "B": "Trade",
+      "C": "Health",
+      "D": "Education"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 300,
+    "question_en": "UN was created after which war?",
+    "question_ur": "UN کس جنگ کے بعد بنایا گیا؟",
+    "options": {
+      "A": "World War I",
+      "B": "World War II",
+      "C": "Cold War",
+      "D": "Gulf War"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 301,
+    "question_en": "Which is the main gas present in the Sun?",
+    "question_ur": "سورج میں بنیادی طور پر کون سی گیس موجود ہے؟",
+    "options": {
+      "A": "Oxygen",
+      "B": "Hydrogen",
+      "C": "Nitrogen",
+      "D": "Helium"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 302,
+    "question_en": "Which planet is known as the Red Planet?",
+    "question_ur": "کس سیارے کو سرخ سیارہ کہا جاتا ہے؟",
+    "options": {
+      "A": "Venus",
+      "B": "Mars",
+      "C": "Jupiter",
+      "D": "Saturn"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 303,
+    "question_en": "What is the hardest substance in the human body?",
+    "question_ur": "انسانی جسم کا سب سے سخت ترین مادّہ کون سا ہے؟",
+    "options": {
+      "A": "Femur bone",
+      "B": "Skull bone",
+      "C": "Tooth enamel",
+      "D": "Spinal cord"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 304,
+    "question_en": "Which organ purifies blood in the human body?",
+    "question_ur": "انسانی جسم میں خون کو کون سا عضو صاف کرتا ہے؟",
+    "options": {
+      "A": "Heart",
+      "B": "Liver",
+      "C": "Kidneys",
+      "D": "Lungs"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 305,
+    "question_en": "Which gas do plants absorb during photosynthesis?",
+    "question_ur": "پودے ضیائی تالیف کے دوران کون سی گیس جذب کرتے ہیں؟",
+    "options": {
+      "A": "Oxygen",
+      "B": "Carbon dioxide",
+      "C": "Nitrogen",
+      "D": "Hydrogen"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 306,
+    "question_en": "Which gas is released by plants during photosynthesis?",
+    "question_ur": "پودے ضیائی تالیف کے دوران کون سی گیس خارج کرتے ہیں؟",
+    "options": {
+      "A": "Carbon dioxide",
+      "B": "Oxygen",
+      "C": "Nitrogen",
+      "D": "Helium"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 307,
+    "question_en": "What is the boiling point of water in Celsius?",
+    "question_ur": "پانی کا نقطہ کھولاؤ سیلسیس میں کیا ہے؟",
+    "options": {
+      "A": "50°C",
+      "B": "80°C",
+      "C": "100°C",
+      "D": "120°C"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 308,
+    "question_en": "What is the freezing point of water in Celsius?",
+    "question_ur": "پانی کا نقطہ انجماد سیلسیس میں کیا ہے؟",
+    "options": {
+      "A": "0°C",
+      "B": "-10°C",
+      "C": "4°C",
+      "D": "10°C"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 309,
+    "question_en": "Which vitamin is obtained directly from sunlight?",
+    "question_ur": "سورج کی روشنی سے کون سا وٹامن حاصل ہوتا ہے؟",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin B",
+      "C": "Vitamin C",
+      "D": "Vitamin D"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "id": 310,
+    "question_en": "Which vitamin is necessary for blood clotting?",
+    "question_ur": "خون کے جمنے کے لیے کون سا وٹامن ضروری ہے؟",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin K",
+      "C": "Vitamin C",
+      "D": "Vitamin E"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 311,
+    "question_en": "Which deficiency causes Night Blindness?",
+    "question_ur": "شب کوری کس وٹامن کی کمی کی وجہ سے ہوتی ہے؟",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin B",
+      "C": "Vitamin C",
+      "D": "Vitamin D"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 312,
+    "question_en": "Which deficiency causes Scurvy?",
+    "question_ur": "اسکروی کی بیماری کس وٹامن کی کمی سے ہوتی ہے؟",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin B",
+      "C": "Vitamin C",
+      "D": "Vitamin D"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 313,
+    "question_en": "Which gas is most abundant in Earth's atmosphere?",
+    "question_ur": "زمین کی فضا میں سب سے زیادہ کون سی گیس ہے؟",
+    "options": {
+      "A": "Oxygen",
+      "B": "Nitrogen",
+      "C": "Carbon dioxide",
+      "D": "Argon"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 314,
+    "question_en": "What percentage of nitrogen is present in the atmosphere?",
+    "question_ur": "ہوا میں نائٹروجن کی فیصد مقدار کتنی ہے؟",
+    "options": {
+      "A": "21%",
+      "B": "50%",
+      "C": "78%",
+      "D": "90%"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 315,
+    "question_en": "What percentage of oxygen is present in the atmosphere?",
+    "question_ur": "ہوا میں آکسیجن کی فیصد مقدار کتنی ہے؟",
+    "options": {
+      "A": "78%",
+      "B": "21%",
+      "C": "12%",
+      "D": "0.03%"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 316,
+    "question_en": "Which instrument is used to measure atmospheric pressure?",
+    "question_ur": "ہوائی دباؤ ناپنے کے لیے کون سا آلہ استعمال ہوتا ہے؟",
+    "options": {
+      "A": "Thermometer",
+      "B": "Barometer",
+      "C": "Hygrometer",
+      "D": "Anemometer"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 317,
+    "question_en": "Which instrument is used to measure body temperature?",
+    "question_ur": "جسم کا درجہ حرارت ناپنے کے لیے کون سا آلہ استعمال ہوتا ہے؟",
+    "options": {
+      "A": "Barometer",
+      "B": "Thermometer",
+      "C": "Speedometer",
+      "D": "Voltmeter"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 318,
+    "question_en": "Which instrument is used to measure earthquake intensity?",
+    "question_ur": "زلزلے کی شدت ناپنے کے لیے کون سا آلہ استعمال ہوتا ہے؟",
+    "options": {
+      "A": "Seismograph",
+      "B": "Lactometer",
+      "C": "Altimeter",
+      "D": "Chronometer"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 319,
+    "question_en": "What is the speed of light in vacuum?",
+    "question_ur": "خلا میں روشنی کی رفتار کتنی ہے؟",
+    "options": {
+      "A": "150,000 km/s",
+      "B": "300,000 km/s",
+      "C": "500,000 km/s",
+      "D": "1,000,000 km/s"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 320,
+    "question_en": "Which planet is closest to the Sun?",
+    "question_ur": "سورج کے سب سے قریب کون سا سیارہ ہے؟",
+    "options": {
+      "A": "Venus",
+      "B": "Mercury",
+      "C": "Earth",
+      "D": "Mars"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 321,
+    "question_en": "Which planet is the largest in the Solar System?",
+    "question_ur": "نظام شمسی کا سب سے بڑا سیارہ کون سا ہے؟",
+    "options": {
+      "A": "Saturn",
+      "B": "Jupiter",
+      "C": "Neptune",
+      "D": "Uranus"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 322,
+    "question_en": "Which planet is the hottest in the Solar System?",
+    "question_ur": "نظام شمسی کا گرم ترین سیارہ کون سا ہے؟",
+    "options": {
+      "A": "Mercury",
+      "B": "Venus",
+      "C": "Mars",
+      "D": "Jupiter"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 323,
+    "question_en": "Which planet is known as Earth's twin?",
+    "question_ur": "زمین کا جڑواں سیارہ کس کو کہا جاتا ہے؟",
+    "options": {
+      "A": "Mars",
+      "B": "Venus",
+      "C": "Mercury",
+      "D": "Neptune"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 324,
+    "question_en": "What is the chemical formula for water?",
+    "question_ur": "پانی کا کیمیائی فارمولا کیا ہے؟",
+    "options": {
+      "A": "CO2",
+      "B": "H2O",
+      "C": "NaCl",
+      "D": "O2"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 325,
+    "question_en": "What is the chemical formula for common salt?",
+    "question_ur": "عام نمک کا کیمیائی فارمولا کیا ہے؟",
+    "options": {
+      "A": "HCl",
+      "B": "NaCl",
+      "C": "NaOH",
+      "D": "KCl"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 326,
+    "question_en": "What is the chemical formula for Carbon Dioxide?",
+    "question_ur": "کاربن ڈائی آکسائیڈ کا کیمیائی فارمولا کیا ہے؟",
+    "options": {
+      "A": "CO",
+      "B": "CO2",
+      "C": "C2O",
+      "D": "CH4"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 327,
+    "question_en": "Which blood cells carry oxygen in the body?",
+    "question_ur": "جسم میں آکسیجن کون سے خلیے منتقل کرتے ہیں؟",
+    "options": {
+      "A": "White Blood Cells",
+      "B": "Red Blood Cells",
+      "C": "Platelets",
+      "D": "Plasma"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 328,
+    "question_en": "Which blood cells fight against infections?",
+    "question_ur": "بیماریوں کے خلاف کون سے خلیے لڑتے ہیں؟",
+    "options": {
+      "A": "Red Blood Cells",
+      "B": "White Blood Cells",
+      "C": "Platelets",
+      "D": "Hemoglobin"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 329,
+    "question_en": "What is normal human body temperature in Celsius?",
+    "question_ur": "انسانی جسم کا معمول کا درجہ حرارت سیلسیس میں کیا ہے؟",
+    "options": {
+      "A": "35°C",
+      "B": "37°C",
+      "C": "39°C",
+      "D": "40°C"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 330,
+    "question_en": "What is normal human body temperature in Fahrenheit?",
+    "question_ur": "انسانی جسم کا معمول کا درجہ حرارت فاہرن ہائیٹ میں کیا ہے؟",
+    "options": {
+      "A": "96.4°F",
+      "B": "98.6°F",
+      "C": "100°F",
+      "D": "102°F"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 331,
+    "question_en": "Which is the largest gland in the human body?",
+    "question_ur": "انسانی جسم کا سب سے بڑا غدود (Gland) کون سا ہے؟",
+    "options": {
+      "A": "Thyroid",
+      "B": "Pancreas",
+      "C": "Liver",
+      "D": "Pituitary"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 332,
+    "question_en": "Which is the largest organ of the human body?",
+    "question_ur": "انسانی جسم کا سب سے بڑا عضو کون سا ہے؟",
+    "options": {
+      "A": "Heart",
+      "B": "Liver",
+      "C": "Skin",
+      "D": "Lungs"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 333,
+    "question_en": "How many bones are in an adult human body?",
+    "question_ur": "بالغ انسانی جسم میں کتنی ہڈیاں ہوتی ہیں؟",
+    "options": {
+      "A": "206",
+      "B": "208",
+      "C": "300",
+      "D": "190"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 334,
+    "question_en": "How many bones are present in a newborn baby?",
+    "question_ur": "نوزائیدہ بچے کے جسم میں کتنی ہڈیاں ہوتی ہیں؟",
+    "options": {
+      "A": "206",
+      "B": "250",
+      "C": "300",
+      "D": "350"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 335,
+    "question_en": "Which is the smallest bone in the human body?",
+    "question_ur": "انسانی جسم کی سب سے چھوٹی ہڈی کون سی ہے؟",
+    "options": {
+      "A": "Malleus",
+      "B": "Incus",
+      "C": "Stapes",
+      "D": "Radius"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 336,
+    "question_en": "Which is the longest and strongest bone in the human body?",
+    "question_ur": "انسانی جسم کی سب سے لمبی اور مضبوط ہڈی کون سی ہے؟",
+    "options": {
+      "A": "Tibia",
+      "B": "Femur",
+      "C": "Fibula",
+      "D": "Humerus"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 337,
+    "question_en": "Which organ pumps blood throughout the body?",
+    "question_ur": "پورے جسم میں خون کون سا عضو پمپ کرتا ہے؟",
+    "options": {
+      "A": "Brain",
+      "B": "Lungs",
+      "C": "Heart",
+      "D": "Liver"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 338,
+    "question_en": "How many chambers are in the human heart?",
+    "question_ur": "انسانی دل کے کتنے خانے (Chambers) ہوتے ہیں؟",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "6"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 339,
+    "question_en": "What is the study of plants called?",
+    "question_ur": "پودوں کا مطالعہ کیا کہلاتا ہے؟",
+    "options": {
+      "A": "Zoology",
+      "B": "Botany",
+      "C": "Geology",
+      "D": "Ecology"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 340,
+    "question_en": "What is the study of animals called?",
+    "question_ur": "جانوروں کا مطالعہ کیا کہلاتا ہے؟",
+    "options": {
+      "A": "Botany",
+      "B": "Zoology",
+      "C": "Microbiology",
+      "D": "Anatomy"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 341,
+    "question_en": "What is the study of living organisms called?",
+    "question_ur": "جانداروں کا مطالعہ کیا کہلاتا ہے؟",
+    "options": {
+      "A": "Physics",
+      "B": "Chemistry",
+      "C": "Biology",
+      "D": "Astronomy"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 342,
+    "question_en": "What unit is used to measure electric current?",
+    "question_ur": "برقی رو (Electric Current) کس اکائی میں ناپی جاتی ہے؟",
+    "options": {
+      "A": "Volt",
+      "B": "Ampere",
+      "C": "Watt",
+      "D": "Ohm"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 343,
+    "question_en": "What unit is used to measure electrical resistance?",
+    "question_ur": "برقی مزاحمت (Resistance) کی اکائی کیا ہے؟",
+    "options": {
+      "A": "Ohm",
+      "B": "Volt",
+      "C": "Ampere",
+      "D": "Joule"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 344,
+    "question_en": "What unit is used to measure power?",
+    "question_ur": "پاور (Power) ناپنے کی اکائی کیا ہے؟",
+    "options": {
+      "A": "Joule",
+      "B": "Watt",
+      "C": "Newton",
+      "D": "Pascal"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 345,
+    "question_en": "What unit is used to measure energy or work?",
+    "question_ur": "توانائی یا کام ناپنے کی اکائی کیا ہے؟",
+    "options": {
+      "A": "Watt",
+      "B": "Joule",
+      "C": "Volt",
+      "D": "Ampere"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 346,
+    "question_en": "Which metal is liquid at room temperature?",
+    "question_ur": "کمرے کے درجہ حرارت پر کون سی دھات مائع حالت میں ہوتی ہے؟",
+    "options": {
+      "A": "Iron",
+      "B": "Gold",
+      "C": "Mercury",
+      "D": "Silver"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 347,
+    "question_en": "Which gas is used in fire extinguishers?",
+    "question_ur": "آگ بجھانے والے آلات میں کون سی گیس استعمال ہوتی ہے؟",
+    "options": {
+      "A": "Oxygen",
+      "B": "Nitrogen",
+      "C": "Carbon dioxide",
+      "D": "Methane"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 348,
+    "question_en": "Which layer of atmosphere protects Earth from ultraviolet (UV) rays?",
+    "question_ur": "فضا کی کون سی تہہ زمین کو بالائے بنفشی شعاعوں سے بچاتی ہے؟",
+    "options": {
+      "A": "Troposphere",
+      "B": "Ozone Layer",
+      "C": "Ionosphere",
+      "D": "Exosphere"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 349,
+    "question_en": "What causes tides in the oceans?",
+    "question_ur": "سمندروں میں مد و جزر کی کیا وجہ ہے؟",
+    "options": {
+      "A": "Earth rotation",
+      "B": "Gravitational pull of the Moon",
+      "C": "Wind pressure",
+      "D": "Solar flares"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 350,
+    "question_en": "What is the primary source of energy for Earth?",
+    "question_ur": "زمین کے لیے توانائی کا بنیادی ذریعہ کیا ہے؟",
+    "options": {
+      "A": "Moon",
+      "B": "Sun",
+      "C": "Volcanoes",
+      "D": "Ocean currents"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 351,
+    "question_en": "What does CPU stand for?",
+    "question_ur": "CPU کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Central Processing Unit",
+      "B": "Computer Personal Unit",
+      "C": "Central Program Utility",
+      "D": "Control Processing Unit"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 352,
+    "question_en": "Which of the following is called the brain of the computer?",
+    "question_ur": "کمپیوٹر کا دماغ کس کو کہا جاتا ہے؟",
+    "options": {
+      "A": "RAM",
+      "B": "Hard Disk",
+      "C": "CPU",
+      "D": "Monitor"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 353,
+    "question_en": "What does RAM stand for?",
+    "question_ur": "RAM کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Random Access Memory",
+      "B": "Read Access Memory",
+      "C": "Rapid Access Module",
+      "D": "Run Access Memory"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 354,
+    "question_en": "What does ROM stand for?",
+    "question_ur": "ROM کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Read Only Memory",
+      "B": "Random Output Memory",
+      "C": "Run Only Module",
+      "D": "Real Operating Memory"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 355,
+    "question_en": "RAM is what type of memory?",
+    "question_ur": "RAM کس قسم کی میموری ہے؟",
+    "options": {
+      "A": "Volatile Memory",
+      "B": "Non-Volatile Memory",
+      "C": "Permanent Storage",
+      "D": "Optical Storage"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 356,
+    "question_en": "ROM is what type of memory?",
+    "question_ur": "ROM کس قسم کی میموری ہے؟",
+    "options": {
+      "A": "Volatile Memory",
+      "B": "Non-Volatile Memory",
+      "C": "Temporary Memory",
+      "D": "Virtual Memory"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 357,
+    "question_en": "Which of the following is an input device?",
+    "question_ur": "مندرجہ ذیل میں سے کون سا ان پٹ ڈیوائس ہے؟",
+    "options": {
+      "A": "Printer",
+      "B": "Monitor",
+      "C": "Keyboard",
+      "D": "Speaker"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 358,
+    "question_en": "Which of the following is an output device?",
+    "question_ur": "مندرجہ ذیل میں سے کون سا آؤٹ پٹ ڈیوائس ہے؟",
+    "options": {
+      "A": "Mouse",
+      "B": "Keyboard",
+      "C": "Monitor",
+      "D": "Scanner"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 359,
+    "question_en": "One Byte consists of how many Bits?",
+    "question_ur": "ایک بائٹ میں کتنی بٹس ہوتی ہیں؟",
+    "options": {
+      "A": "4 Bits",
+      "B": "8 Bits",
+      "C": "16 Bits",
+      "D": "32 Bits"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 360,
+    "question_en": "One Kilobyte (KB) is equal to how many Bytes?",
+    "question_ur": "ایک کلو بائٹ کتنے بائٹس کے برابر ہوتا ہے؟",
+    "options": {
+      "A": "1000 Bytes",
+      "B": "1024 Bytes",
+      "C": "10000 Bytes",
+      "D": "512 Bytes"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 361,
+    "question_en": "One Megabyte (MB) is equal to how many Kilobytes?",
+    "question_ur": "ایک میگا بائٹ کتنے کلو بائٹس کے برابر ہوتا ہے؟",
+    "options": {
+      "A": "1000 KB",
+      "B": "1024 KB",
+      "C": "512 KB",
+      "D": "2048 KB"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 362,
+    "question_en": "One Gigabyte (GB) is equal to how many Megabytes?",
+    "question_ur": "ایک گیگا بائٹ کتنے میگا بائٹس کے برابر ہوتا ہے؟",
+    "options": {
+      "A": "1000 MB",
+      "B": "1024 MB",
+      "C": "512 MB",
+      "D": "2048 MB"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 363,
+    "question_en": "One Terabyte (TB) is equal to how many Gigabytes?",
+    "question_ur": "ایک ٹیرا بائٹ کتنے گیگا بائٹس کے برابر ہوتا ہے؟",
+    "options": {
+      "A": "1000 GB",
+      "B": "1024 GB",
+      "C": "512 GB",
+      "D": "2048 GB"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 364,
+    "question_en": "What does URL stand for?",
+    "question_ur": "URL کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Uniform Resource Locator",
+      "B": "Universal Reference Link",
+      "C": "Unified Resource Line",
+      "D": "Universal Record Locator"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 365,
+    "question_en": "What does HTTP stand for?",
+    "question_ur": "HTTP کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Hypertext Transfer Protocol",
+      "B": "High Transfer Text Protocol",
+      "C": "Hyper Transfer Protocol",
+      "D": "Hypertext Text Path"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 366,
+    "question_en": "What does HTML stand for?",
+    "question_ur": "HTML کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Hypertext Markup Language",
+      "B": "High Text Machine Language",
+      "C": "Hyperlink Text Mode Language",
+      "D": "Home Tool Markup Language"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 367,
+    "question_en": "Which shortcut key is used to copy selected text in Windows?",
+    "question_ur": "ونڈوز میں منتخب متن کو کاپی کرنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "Ctrl + X",
+      "B": "Ctrl + C",
+      "C": "Ctrl + V",
+      "D": "Ctrl + Z"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 368,
+    "question_en": "Which shortcut key is used to paste copied text in Windows?",
+    "question_ur": "ونڈوز میں کاپی شدہ متن کو پیسٹ کرنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "Ctrl + P",
+      "B": "Ctrl + V",
+      "C": "Ctrl + C",
+      "D": "Ctrl + Shift"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 369,
+    "question_en": "Which shortcut key is used to cut selected text in Windows?",
+    "question_ur": "ونڈوز میں منتخب متن کو کٹ کرنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "Ctrl + X",
+      "B": "Ctrl + C",
+      "C": "Ctrl + K",
+      "D": "Ctrl + D"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 370,
+    "question_en": "Which shortcut key is used to undo an action in Windows?",
+    "question_ur": "ونڈوز میں آخری عمل کو واپس (Undo) کرنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "Ctrl + Y",
+      "B": "Ctrl + Z",
+      "C": "Ctrl + U",
+      "D": "Ctrl + R"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 371,
+    "question_en": "Which shortcut key is used to select all text in a document?",
+    "question_ur": "دستاویز میں تمام متن منتخب کرنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Ctrl + A",
+      "C": "Ctrl + Alt",
+      "D": "Shift + A"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 372,
+    "question_en": "Which shortcut key is used to save a file in Windows?",
+    "question_ur": "ونڈوز میں فائل محفوظ کرنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "Ctrl + S",
+      "B": "Ctrl + F",
+      "C": "Ctrl + Shift",
+      "D": "Alt + S"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 373,
+    "question_en": "Which shortcut key is used to print a document?",
+    "question_ur": "دستاویز کا پرنٹ نکالنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "Ctrl + P",
+      "B": "Ctrl + Shift + P",
+      "C": "Alt + P",
+      "D": "F12"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 374,
+    "question_en": "Which program is used for creating presentations?",
+    "question_ur": "پریزنٹیشنز بنانے کے لیے کون سا پروگرام استعمال ہوتا ہے؟",
+    "options": {
+      "A": "MS Word",
+      "B": "MS Excel",
+      "C": "MS PowerPoint",
+      "D": "MS Access"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 375,
+    "question_en": "Which program is used for spreadsheets and calculations?",
+    "question_ur": "سپریڈ شیٹ اور حساب کتاب کے لیے کون سا پروگرام استعمال ہوتا ہے؟",
+    "options": {
+      "A": "MS Word",
+      "B": "MS Excel",
+      "C": "MS PowerPoint",
+      "D": "MS Publisher"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 376,
+    "question_en": "Which program is used for word processing and documentation?",
+    "question_ur": "ورلڈ پروسیسنگ اور دستاویزات کے لیے کون سا پروگرام استعمال ہوتا ہے؟",
+    "options": {
+      "A": "MS Word",
+      "B": "MS Excel",
+      "C": "MS Outlook",
+      "D": "MS Paint"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 377,
+    "question_en": "What file extension is used for MS Word files?",
+    "question_ur": "MS Word فائل کی ایکسٹینشن کیا ہوتی ہے؟",
+    "options": {
+      "A": ".xlsx",
+      "B": ".docx",
+      "C": ".pptx",
+      "D": ".txt"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 378,
+    "question_en": "What file extension is used for MS Excel files?",
+    "question_ur": "MS Excel فائل کی ایکسٹینشن کیا ہوتی ہے؟",
+    "options": {
+      "A": ".xlsx",
+      "B": ".docx",
+      "C": ".pptx",
+      "D": ".pdf"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 379,
+    "question_en": "What file extension is used for MS PowerPoint files?",
+    "question_ur": "MS PowerPoint فائل کی ایکسٹینشن کیا ہوتی ہے؟",
+    "options": {
+      "A": ".docx",
+      "B": ".xlsx",
+      "C": ".pptx",
+      "D": ".bmp"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 380,
+    "question_en": "What does LAN stand for?",
+    "question_ur": "LAN کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Local Area Network",
+      "B": "Large Area Network",
+      "C": "Long Area Network",
+      "D": "Logical Area Network"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 381,
+    "question_en": "What does WAN stand for?",
+    "question_ur": "WAN کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Wide Area Network",
+      "B": "Wireless Area Network",
+      "C": "Web Area Network",
+      "D": "World Area Network"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 382,
+    "question_en": "What does MAN stand for?",
+    "question_ur": "MAN کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Metropolitan Area Network",
+      "B": "Main Area Network",
+      "C": "Micro Area Network",
+      "D": "Modern Area Network"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 383,
+    "question_en": "What does WWW stand for?",
+    "question_ur": "WWW کا مطلب کیا ہے؟",
+    "options": {
+      "A": "World Wide Web",
+      "B": "World Wide Window",
+      "C": "Web Wide World",
+      "D": "World Web Wireless"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 384,
+    "question_en": "Who is known as the Father of Computers?",
+    "question_ur": "کمپیوٹر کا بابا (والد) کسے کہا جاتا ہے؟",
+    "options": {
+      "A": "Alan Turing",
+      "B": "Charles Babbage",
+      "C": "Bill Gates",
+      "D": "Steve Jobs"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 385,
+    "question_en": "Who invented the World Wide Web (WWW)?",
+    "question_ur": "ورلڈ وائیڈ ویب کا موجد کون ہے؟",
+    "options": {
+      "A": "Tim Berners-Lee",
+      "B": "Bill Gates",
+      "C": "Mark Zuckerberg",
+      "D": "Larry Page"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 386,
+    "question_en": "Which operating system is developed by Microsoft?",
+    "question_ur": "مائیکروسافٹ نے کون سا آپریٹنگ سسٹم بنایا؟",
+    "options": {
+      "A": "macOS",
+      "B": "Windows",
+      "C": "Linux",
+      "D": "Android"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 387,
+    "question_en": "Which of the following is an open-source operating system?",
+    "question_ur": "مندرجہ ذیل میں سے کون سا اوپن سورس آپریٹنگ سسٹم ہے؟",
+    "options": {
+      "A": "Windows 11",
+      "B": "macOS",
+      "C": "Linux",
+      "D": "MS-DOS"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 388,
+    "question_en": "What is the main circuit board of a computer called?",
+    "question_ur": "کمپیوٹر کا بنیادی سرکٹ بورڈ کیا کہلاتا ہے؟",
+    "options": {
+      "A": "Motherboard",
+      "B": "Expansion Card",
+      "C": "Hard Drive",
+      "D": "Power Supply Unit"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 389,
+    "question_en": "What type of device is a printer?",
+    "question_ur": "پرنٹر کس قسم کا ڈیوائس ہے؟",
+    "options": {
+      "A": "Input Device",
+      "B": "Output Device",
+      "C": "Storage Device",
+      "D": "Processing Device"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 390,
+    "question_en": "What type of device is a scanner?",
+    "question_ur": "سکینر کس قسم کا ڈیوائس ہے؟",
+    "options": {
+      "A": "Input Device",
+      "B": "Output Device",
+      "C": "Storage Device",
+      "D": "Display Device"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 391,
+    "question_en": "What does PDF stand for?",
+    "question_ur": "PDF کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Portable Document Format",
+      "B": "Personal Document File",
+      "C": "Print Document Format",
+      "D": "Program Data File"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 392,
+    "question_en": "What is the shortcut key for permanent deletion in Windows?",
+    "question_ur": "ونڈوز میں فائل کو مستقل ڈیلیٹ کرنے کی شارٹ کٹ کی کیا ہے؟",
+    "options": {
+      "A": "Delete",
+      "B": "Shift + Delete",
+      "C": "Ctrl + Delete",
+      "D": "Alt + Delete"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 393,
+    "question_en": "What does USB stand for?",
+    "question_ur": "USB کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Universal Serial Bus",
+      "B": "Unified System Bus",
+      "C": "Universal Storage Board",
+      "D": "Ultra Serial Bus"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 394,
+    "question_en": "Which key refreshes the active window or browser page?",
+    "question_ur": "ونڈو یا ویب پیج کو ریفریش کرنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "F1",
+      "B": "F2",
+      "C": "F5",
+      "D": "F11"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 395,
+    "question_en": "What does Wi-Fi stand for?",
+    "question_ur": "Wi-Fi کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Wireless Fidelity",
+      "B": "Wireless Field",
+      "C": "Wired Fiber",
+      "D": "Wireless Frequency"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 396,
+    "question_en": "What does IP stand for in IP Address?",
+    "question_ur": "IP Address میں IP کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Internet Protocol",
+      "B": "Internal Program",
+      "C": "Information Path",
+      "D": "International Port"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 397,
+    "question_en": "What is the full form of SIM in mobile SIM cards?",
+    "question_ur": "موبائل سم کارڈ میں SIM کا مکمل نام کیا ہے؟",
+    "options": {
+      "A": "Subscriber Identity Module",
+      "B": "System Information Module",
+      "C": "Serial Internal Memory",
+      "D": "Single Identity Mode"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 398,
+    "question_en": "Which key opens the Help window in most applications?",
+    "question_ur": "اکثر ایپلی کیشنز میں ہیلپ ونڈو کھولنے کے لیے کون سی کی استعمال ہوتی ہے؟",
+    "options": {
+      "A": "F1",
+      "B": "F3",
+      "C": "F7",
+      "D": "F10"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 399,
+    "question_en": "Which of the following is a web browser?",
+    "question_ur": "مندرجہ ذیل میں سے کون سا ویب براؤزر ہے؟",
+    "options": {
+      "A": "Google Chrome",
+      "B": "Windows 10",
+      "C": "MS Word",
+      "D": "Oracle"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 400,
+    "question_en": "Which of the following is a search engine?",
+    "question_ur": "مندرجہ ذیل میں سے کون سا سرچ انجن ہے؟",
+    "options": {
+      "A": "Google",
+      "B": "WhatsApp",
+      "C": "Photoshop",
+      "D": "VLC Player"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 401,
+    "question_en": "What is 15% of 200?",
+    "question_ur": "200 کا 15 فیصد کتنا ہوتا ہے؟",
+    "options": {
+      "A": "20",
+      "B": "25",
+      "C": "30",
+      "D": "35"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 402,
+    "question_en": "What is the average of 10, 20, 30, and 40?",
+    "question_ur": "10، 20، 30 اور 40 کا اوسط (Average) کیا ہے؟",
+    "options": {
+      "A": "20",
+      "B": "25",
+      "C": "30",
+      "D": "35"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 403,
+    "question_en": "If a rectangle has length 8 cm and width 5 cm, what is its area?",
+    "question_ur": "اگر ایک مستطیل کی لمبائی 8 سینٹی میٹر اور چوڑائی 5 سینٹی میٹر ہو تو اس کا رقبہ کیا ہوگا؟",
+    "options": {
+      "A": "26 sq cm",
+      "B": "40 sq cm",
+      "C": "13 sq cm",
+      "D": "48 sq cm"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 404,
+    "question_en": "What is the square root of 144?",
+    "question_ur": "144 کا جزر (Square root) کیا ہے؟",
+    "options": {
+      "A": "10",
+      "B": "11",
+      "C": "12",
+      "D": "14"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 405,
+    "question_en": "What is the sum of angles in a triangle?",
+    "question_ur": "مثلث کے تینوں زاویوں کا مجموعہ کتنا ہوتا ہے؟",
+    "options": {
+      "A": "90 degrees",
+      "B": "180 degrees",
+      "C": "270 degrees",
+      "D": "360 degrees"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 406,
+    "question_en": "What is the sum of angles in a quadrilateral?",
+    "question_ur": "چوکور (Quadrilateral) کے زاویوں کا مجموعہ کتنا ہوتا ہے؟",
+    "options": {
+      "A": "180 degrees",
+      "B": "270 degrees",
+      "C": "360 degrees",
+      "D": "540 degrees"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 407,
+    "question_en": "Solve for x: 2x + 6 = 14",
+    "question_ur": "حل کریں: 2x + 6 = 14",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 408,
+    "question_en": "What is 3/4 expressed as a percentage?",
+    "question_ur": "3/4 کو فیصد کی صورت میں کیسے لکھا جائے گا؟",
+    "options": {
+      "A": "50%",
+      "B": "60%",
+      "C": "75%",
+      "D": "80%"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 409,
+    "question_en": "What is the smallest prime number?",
+    "question_ur": "سب سے چھوٹا مفرد عدد (Prime Number) کون سا ہے؟",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 410,
+    "question_en": "Which of the following is an even prime number?",
+    "question_ur": "مندرجہ ذیل میں سے کون سا جفت مفرد عدد ہے؟",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "6",
+      "D": "8"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 411,
+    "question_en": "What is 25% of 80?",
+    "question_ur": "80 کا 25 فیصد کتنا ہوتا ہے؟",
+    "options": {
+      "A": "15",
+      "B": "20",
+      "C": "25",
+      "D": "30"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 412,
+    "question_en": "If 5 pen cost 50 rupees, what is the cost of 12 pens?",
+    "question_ur": "اگر 5 قلم 50 روپے کے ہیں، تو 12 قلم کتنے کے ہوں گے؟",
+    "options": {
+      "A": "100 rupees",
+      "B": "120 rupees",
+      "C": "150 rupees",
+      "D": "110 rupees"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 413,
+    "question_en": "What is the perimeter of a square with side 6 cm?",
+    "question_ur": "6 سینٹی میٹر ضلع والے مربع کا احاطہ (Perimeter) کیا ہوگا؟",
+    "options": {
+      "A": "12 cm",
+      "B": "24 cm",
+      "C": "36 cm",
+      "D": "18 cm"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 414,
+    "question_en": "What is the area of a square with side 7 cm?",
+    "question_ur": "7 سینٹی میٹر ضلع والے مربع کا رقبہ کیا ہوگا؟",
+    "options": {
+      "A": "28 sq cm",
+      "B": "49 sq cm",
+      "C": "14 sq cm",
+      "D": "56 sq cm"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 415,
+    "question_en": "Simplify: 12 + 8 ÷ 2",
+    "question_ur": "مختصر کریں: 12 + 8 ÷ 2",
+    "options": {
+      "A": "10",
+      "B": "16",
+      "C": "14",
+      "D": "20"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 416,
+    "question_en": "Simplify: (10 - 4) × 3",
+    "question_ur": "مختصر کریں: (10 - 4) × 3",
+    "options": {
+      "A": "18",
+      "B": "12",
+      "C": "22",
+      "D": "14"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 417,
+    "question_en": "What is the value of 5 to the power 3 (5^3)?",
+    "question_ur": "5 کی پاور 3 (5^3) کی قیمت کیا ہے؟",
+    "options": {
+      "A": "15",
+      "B": "25",
+      "C": "125",
+      "D": "625"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 418,
+    "question_en": "What is the LCM of 4 and 6?",
+    "question_ur": "4 اور 6 کا ذواضعاف عقل (LCM) کیا ہے؟",
+    "options": {
+      "A": "12",
+      "B": "24",
+      "C": "2",
+      "D": "16"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 419,
+    "question_en": "What is the HCF of 12 and 18?",
+    "question_ur": "12 اور 18 کا عادِ اعظم (HCF) کیا ہے؟",
+    "options": {
+      "A": "3",
+      "B": "6",
+      "C": "9",
+      "D": "36"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 420,
+    "question_en": "Convert 0.5 into a fraction.",
+    "question_ur": "0.5 کو کسر (Fraction) میں تبدیل کریں؟",
+    "options": {
+      "A": "1/4",
+      "B": "1/2",
+      "C": "3/4",
+      "D": "1/5"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 421,
+    "question_en": "What is 10% of 500?",
+    "question_ur": "500 کا 10 فیصد کتنا ہوتا ہے؟",
+    "options": {
+      "A": "25",
+      "B": "50",
+      "C": "100",
+      "D": "5"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 422,
+    "question_en": "If a speed is 60 km/h, how much distance is covered in 3 hours?",
+    "question_ur": "اگر رفتار 60 کلومیٹر فی گھنٹہ ہو، تو 3 گھنٹے میں کتنا فاصلہ طے ہوگا؟",
+    "options": {
+      "A": "120 km",
+      "B": "180 km",
+      "C": "200 km",
+      "D": "150 km"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 423,
+    "question_en": "What is the ratio of 20 to 50 in simplest form?",
+    "question_ur": "20 اور 50 کی سادہ ترین نسبت (Ratio) کیا ہے؟",
+    "options": {
+      "A": "2:5",
+      "B": "1:2.5",
+      "C": "4:10",
+      "D": "2:3"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 424,
+    "question_en": "What is 50% of 250?",
+    "question_ur": "250 کا 50 فیصد کتنا ہوتا ہے؟",
+    "options": {
+      "A": "100",
+      "B": "125",
+      "C": "150",
+      "D": "175"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 425,
+    "question_en": "Solve for y: 3y - 5 = 10",
+    "question_ur": "حل کریں: 3y - 5 = 10",
+    "options": {
+      "A": "3",
+      "B": "5",
+      "C": "15",
+      "D": "4"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 426,
+    "question_en": "What is the square of 15?",
+    "question_ur": "15 کا مربع (Square) کیا ہے؟",
+    "options": {
+      "A": "200",
+      "B": "225",
+      "C": "250",
+      "D": "150"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 427,
+    "question_en": "What is the cube root of 27?",
+    "question_ur": "27 کا جزر الکعب (Cube root) کیا ہے؟",
+    "options": {
+      "A": "3",
+      "B": "9",
+      "C": "6",
+      "D": "4"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 428,
+    "question_en": "If a circle has a radius of 7 cm, what is its circumference? (π = 22/7)",
+    "question_ur": "اگر دائرے کا رداس 7 سینٹی میٹر ہو، تو اس کا محیط (Circumference) کیا ہوگا؟",
+    "options": {
+      "A": "22 cm",
+      "B": "44 cm",
+      "C": "154 cm",
+      "D": "88 cm"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 429,
+    "question_en": "What is the area of a circle with radius 7 cm? (π = 22/7)",
+    "question_ur": "7 سینٹی میٹر رداس والے دائرے کا رقبہ کیا ہوگا؟",
+    "options": {
+      "A": "44 sq cm",
+      "B": "154 sq cm",
+      "C": "88 sq cm",
+      "D": "308 sq cm"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 430,
+    "question_en": "How many seconds are in 2 hours?",
+    "question_ur": "2 گھنٹوں میں کتنے سیکنڈز ہوتے ہیں؟",
+    "options": {
+      "A": "3600",
+      "B": "7200",
+      "C": "120",
+      "D": "6000"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 431,
+    "question_en": "What is 1/5 expressed as a percentage?",
+    "question_ur": "1/5 کو فیصد کی صورت میں کیسے لکھا جائے گا؟",
+    "options": {
+      "A": "10%",
+      "B": "20%",
+      "C": "25%",
+      "D": "50%"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 432,
+    "question_en": "If an item is bought for 100 rupees and sold for 120 rupees, what is the profit percentage?",
+    "question_ur": "اگر کوئی چیز 100 روپے میں خرید کر 120 روپے میں بیچی جائے، تو منافع کا فیصد کیا ہوگا؟",
+    "options": {
+      "A": "10%",
+      "B": "20%",
+      "C": "15%",
+      "D": "25%"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 433,
+    "question_en": "If an item is bought for 200 rupees and sold for 150 rupees, what is the loss percentage?",
+    "question_ur": "اگر کوئی چیز 200 روپے میں خرید کر 150 روپے میں بیچی جائے، تو نقصان کا فیصد کیا ہوگا؟",
+    "options": {
+      "A": "20%",
+      "B": "25%",
+      "C": "30%",
+      "D": "50%"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 434,
+    "question_en": "What is the median of numbers 3, 5, 7, 9, 11?",
+    "question_ur": "اعداد 3، 5، 7، 9، 11 کا وسطانیہ (Median) کیا ہے؟",
+    "options": {
+      "A": "5",
+      "B": "7",
+      "C": "9",
+      "D": "6"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 435,
+    "question_en": "What is the mode of numbers 2, 4, 4, 5, 6, 4, 7?",
+    "question_ur": "اعداد 2، 4، 4، 5، 6، 4، 7 کا اعادہ (Mode) کیا ہے؟",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "2",
+      "D": "6"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 436,
+    "question_en": "Simplify: 15 - 3 × 4",
+    "question_ur": "مختصر کریں: 15 - 3 × 4",
+    "options": {
+      "A": "48",
+      "B": "3",
+      "C": "12",
+      "D": "9"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 437,
+    "question_en": "What is 2/3 + 1/3?",
+    "question_ur": "2/3 + 1/3 کا جواب کیا ہے؟",
+    "options": {
+      "A": "3/6",
+      "B": "1",
+      "C": "2/3",
+      "D": "3/3"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 438,
+    "question_en": "What is 0.75 as a fraction?",
+    "question_ur": "0.75 کی کسر شکل کیا ہے؟",
+    "options": {
+      "A": "1/2",
+      "B": "3/4",
+      "C": "2/5",
+      "D": "4/5"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 439,
+    "question_en": "How many millimeters are in 1 meter?",
+    "question_ur": "1 میٹر میں کتنے ملی میٹر ہوتے ہیں؟",
+    "options": {
+      "A": "100 mm",
+      "B": "1000 mm",
+      "C": "10000 mm",
+      "D": "10 mm"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 440,
+    "question_en": "How many grams are in 2.5 kilograms?",
+    "question_ur": "2.5 کلوگرام میں کتنے گرام ہوتے ہیں؟",
+    "options": {
+      "A": "250 g",
+      "B": "2500 g",
+      "C": "25000 g",
+      "D": "25 g"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 441,
+    "question_en": "What is 0 divided by any non-zero number?",
+    "question_ur": "0 کو کسی بھی غیر صفر عدد سے تقسیم کرنے پر کیا جواب آتا ہے؟",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "Undefined",
+      "D": "Infinity"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 442,
+    "question_en": "What is any non-zero number divided by 0?",
+    "question_ur": "کسی بھی عدد کو 0 سے تقسیم کرنے پر کیا حاصل ہوتا ہے؟",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "Undefined / Infinity",
+      "D": "Same number"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 443,
+    "question_en": "What is any number raised to the power 0?",
+    "question_ur": "کسی بھی عدد کی پاور 0 ہو تو اس کی قیمت کیا ہوتی ہے؟",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "Same number",
+      "D": "Infinity"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 444,
+    "question_en": "Find the value of x if x/5 = 8.",
+    "question_ur": "اگر x/5 = 8 ہو تو x کی قیمت معلوم کریں؟",
+    "options": {
+      "A": "13",
+      "B": "40",
+      "C": "1.6",
+      "D": "35"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 445,
+    "question_en": "What is the supplementary angle of 110 degrees?",
+    "question_ur": "110 ڈگری کا سپلیمنٹری زاویہ (Supplementary angle) کیا ہوگا؟",
+    "options": {
+      "A": "70 degrees",
+      "B": "80 degrees",
+      "C": "90 degrees",
+      "D": "250 degrees"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 446,
+    "question_en": "What is the complementary angle of 40 degrees?",
+    "question_ur": "40 ڈگری کا کامپلیمنٹری زاویہ (Complementary angle) کیا ہوگا؟",
+    "options": {
+      "A": "50 degrees",
+      "B": "140 degrees",
+      "C": "60 degrees",
+      "D": "90 degrees"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 447,
+    "question_en": "If a triangle has sides 3 cm, 4 cm, and 5 cm, what type of triangle is it?",
+    "question_ur": "اگر مثلث کے اضلاع 3، 4 اور 5 سینٹی میٹر ہوں تو یہ کون سی مثلث ہے؟",
+    "options": {
+      "A": "Equilateral",
+      "B": "Right-angled triangle",
+      "C": "Obtuse triangle",
+      "D": "Isosceles"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 448,
+    "question_en": "What is the mean of 2, 4, 6, 8, 10?",
+    "question_ur": "2، 4، 6، 8، 10 کا حساب اوسط (Mean) کیا ہے؟",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 449,
+    "question_en": "Express 45% as a fraction in lowest terms.",
+    "question_ur": "45 فیصد کو سادہ ترین کسر میں تبدیل کریں؟",
+    "options": {
+      "A": "9/20",
+      "B": "45/100",
+      "C": "9/10",
+      "D": "4/5"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 450,
+    "question_en": "What is 1000 - 456?",
+    "question_ur": "1000 - 456 کا جواب کیا ہے؟",
+    "options": {
+      "A": "544",
+      "B": "554",
+      "C": "644",
+      "D": "546"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 451,
+    "question_en": "Choose the synonym of 'Abundant':",
+    "question_ur": "'Abundant' (کثیر / وافر) کا ہم معنی (Synonym) منتخب کریں:",
+    "options": {
+      "A": "Scarce",
+      "B": "Plentiful",
+      "C": "Rare",
+      "D": "Tiny"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 452,
+    "question_en": "Choose the antonym of 'Ancient':",
+    "question_ur": "'Ancient' (قدیم) کا متضاد (Antonym) منتخب کریں:",
+    "options": {
+      "A": "Old",
+      "B": "Modern",
+      "C": "Historic",
+      "D": "Traditional"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 453,
+    "question_en": "Complete the sentence: She is good ____ Mathematics.",
+    "question_ur": "جملہ مکمل کریں: She is good ____ Mathematics.",
+    "options": {
+      "A": "in",
+      "B": "at",
+      "C": "with",
+      "D": "on"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 454,
+    "question_en": "Complete the sentence: He died ____ cancer.",
+    "question_ur": "جملہ مکمل کریں: He died ____ cancer.",
+    "options": {
+      "A": "from",
+      "B": "of",
+      "C": "with",
+      "D": "by"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 455,
+    "question_en": "Choose the correct spelling:",
+    "question_ur": "درست املا (Spelling) منتخب کریں:",
+    "options": {
+      "A": "Receive",
+      "B": "Recieve",
+      "C": "Receve",
+      "D": "Recive"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 456,
+    "question_en": "Choose the correct spelling:",
+    "question_ur": "درست املا (Spelling) منتخب کریں:",
+    "options": {
+      "A": "Separate",
+      "B": "Seperate",
+      "C": "Saperate",
+      "D": "Seprate"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 457,
+    "question_en": "Identify the noun in the sentence: 'Honesty is the best policy.'",
+    "question_ur": "جملے میں اسم (Noun) کی نشان دہی کریں: 'Honesty is the best policy.'",
+    "options": {
+      "A": "Honesty",
+      "B": "Best",
+      "C": "Is",
+      "D": "The"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 458,
+    "question_en": "What is the plural of 'Child'?",
+    "question_ur": "'Child' کی جمع (Plural) کیا ہے؟",
+    "options": {
+      "A": "Childs",
+      "B": "Children",
+      "C": "Childrens",
+      "D": "Childes"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 459,
+    "question_en": "What is the plural of 'Ox'?",
+    "question_ur": "'Ox' کی جمع (Plural) کیا ہے؟",
+    "options": {
+      "A": "Oxes",
+      "B": "Oxen",
+      "C": "Oxs",
+      "D": "Oxen's"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 460,
+    "question_en": "Choose the correct article: He is ____ European.",
+    "question_ur": "درست Article کا انتخاب کریں: He is ____ European.",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 461,
+    "question_en": "Choose the correct article: She is ____ honest girl.",
+    "question_ur": "درست Article کا انتخاب کریں: She is ____ honest girl.",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 462,
+    "question_en": "Choose the synonym of 'Brave':",
+    "question_ur": "'Brave' (بہادر) کا ہم معنی (Synonym) منتخب کریں:",
+    "options": {
+      "A": "Coward",
+      "B": "Courageous",
+      "C": "Fearful",
+      "D": "Timid"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 463,
+    "question_en": "Choose the antonym of 'Expand':",
+    "question_ur": "'Expand' (پھیلنا) کا متضاد (Antonym) منتخب کریں:",
+    "options": {
+      "A": "Contract",
+      "B": "Enlarge",
+      "C": "Extend",
+      "D": "Grow"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 464,
+    "question_en": "Choose the correct preposition: Look ____ the blackboard.",
+    "question_ur": "درست Preposition منتخب کریں: Look ____ the blackboard.",
+    "options": {
+      "A": "on",
+      "B": "at",
+      "C": "to",
+      "D": "in"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 465,
+    "question_en": "Choose the correct preposition: The sun rises ____ the east.",
+    "question_ur": "درست Preposition منتخب کریں: The sun rises ____ the east.",
+    "options": {
+      "A": "on",
+      "B": "at",
+      "C": "in",
+      "D": "from"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 466,
+    "question_en": "What is the past tense of 'Go'?",
+    "question_ur": "'Go' کی دوسری فارم (Past tense) کیا ہے؟",
+    "options": {
+      "A": "Gone",
+      "B": "Went",
+      "C": "Going",
+      "D": "Goes"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 467,
+    "question_en": "What is the past participle of 'Write'?",
+    "question_ur": "'Write' کی تیسری فارم (Past participle) کیا ہے؟",
+    "options": {
+      "A": "Wrote",
+      "B": "Written",
+      "C": "Writing",
+      "D": "Writes"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 468,
+    "question_en": "Choose the synonym of 'Huge':",
+    "question_ur": "'Huge' (بہت بڑا) کا ہم معنی (Synonym) منتخب کریں:",
+    "options": {
+      "A": "Tiny",
+      "B": "Gigantic",
+      "C": "Small",
+      "D": "Narrow"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 469,
+    "question_en": "Choose the antonym of 'Victory':",
+    "question_ur": "'Victory' (فتح) کا متضاد (Antonym) منتخب کریں:",
+    "options": {
+      "A": "Win",
+      "B": "Defeat",
+      "C": "Success",
+      "D": "Triumph"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 470,
+    "question_en": "Complete the sentence: Either he or his friends ____ present.",
+    "question_ur": "جملہ مکمل کریں: Either he or his friends ____ present.",
+    "options": {
+      "A": "is",
+      "B": "are",
+      "C": "was",
+      "D": "has"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 471,
+    "question_en": "Complete the sentence: Neither of the boys ____ passed.",
+    "question_ur": "جملہ مکمل کریں: Neither of the boys ____ passed.",
+    "options": {
+      "A": "has",
+      "B": "have",
+      "C": "are",
+      "D": "were"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 472,
+    "question_en": "Choose the correct spelling:",
+    "question_ur": "درست املا (Spelling) منتخب کریں:",
+    "options": {
+      "A": "Necessary",
+      "B": "Necesary",
+      "C": "Neccesary",
+      "D": "Neccessary"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 473,
+    "question_en": "Choose the correct spelling:",
+    "question_ur": "درست املا (Spelling) منتخب کریں:",
+    "options": {
+      "A": "Environment",
+      "B": "Enviroment",
+      "C": "Enviornment",
+      "D": "Enveronment"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 474,
+    "question_en": "Meaning of the idiom 'Once in a blue moon':",
+    "question_ur": "محاورے 'Once in a blue moon' کا مطلب کیا ہے؟",
+    "options": {
+      "A": "Very frequently",
+      "B": "Very rarely",
+      "C": "Every month",
+      "D": "At night"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 475,
+    "question_en": "Meaning of the idiom 'Apple of one's eye':",
+    "question_ur": "محاورے 'Apple of one's eye' کا مطلب کیا ہے؟",
+    "options": {
+      "A": "An apple seller",
+      "B": "Very dear or beloved",
+      "C": "An eye disease",
+      "D": "A red colored object"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 476,
+    "question_en": "Choose the Passive Voice: 'He writes a letter.'",
+    "question_ur": "'He writes a letter' کا Passive Voice کیا ہوگا؟",
+    "options": {
+      "A": "A letter was written by him.",
+      "B": "A letter is written by him.",
+      "C": "A letter is writing by him.",
+      "D": "A letter has written by him."
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 477,
+    "question_en": "Choose the Passive Voice: 'They played cricket.'",
+    "question_ur": "'They played cricket' کا Passive Voice کیا ہوگا؟",
+    "options": {
+      "A": "Cricket is played by them.",
+      "B": "Cricket was played by them.",
+      "C": "Cricket had played by them.",
+      "D": "Cricket is playing by them."
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 478,
+    "question_en": "Choose the synonym of 'Conceal':",
+    "question_ur": "'Conceal' (چھپانا) کا ہم معنی (Synonym) منتخب کریں:",
+    "options": {
+      "A": "Show",
+      "B": "Hide",
+      "C": "Reveal",
+      "D": "Open"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 479,
+    "question_en": "Choose the antonym of 'Generous':",
+    "question_ur": "'Generous' (سخی) کا متضاد (Antonym) منتخب کریں:",
+    "options": {
+      "A": "Kind",
+      "B": "Stingy / Miserly",
+      "C": "Helpful",
+      "D": "Charitable"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 480,
+    "question_en": "Complete the sentence: He is senior ____ me.",
+    "question_ur": "جملہ مکمل کریں: He is senior ____ me.",
+    "options": {
+      "A": "than",
+      "B": "to",
+      "C": "from",
+      "D": "with"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 481,
+    "question_en": "Complete the sentence: Prefer milk ____ tea.",
+    "question_ur": "جملہ مکمل کریں: Prefer milk ____ tea.",
+    "options": {
+      "A": "than",
+      "B": "to",
+      "C": "over",
+      "D": "from"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 482,
+    "question_en": "Choose the correct spelling:",
+    "question_ur": "درست املا (Spelling) منتخب کریں:",
+    "options": {
+      "A": "Committee",
+      "B": "Comittee",
+      "C": "Commitee",
+      "D": "Comitee"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 483,
+    "question_en": "Choose the correct spelling:",
+    "question_ur": "درست املا (Spelling) منتخب کریں:",
+    "options": {
+      "A": "Lieutenant",
+      "B": "Leftenant",
+      "C": "Lietenant",
+      "D": "Lieutenent"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 484,
+    "question_en": "What is the feminine of 'Dog'?",
+    "question_ur": "'Dog' کی مؤنث (Feminine) کیا ہے؟",
+    "options": {
+      "A": "Bitch",
+      "B": "Vixen",
+      "C": "Mare",
+      "D": "Ewe"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 485,
+    "question_en": "What is the feminine of 'Bull'?",
+    "question_ur": "'Bull' کی مؤنث (Feminine) کیا ہے؟",
+    "options": {
+      "A": "Cow",
+      "B": "Hen",
+      "C": "Bitch",
+      "D": "Lioness"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 486,
+    "question_en": "Identify the adjective in: 'She wore a beautiful dress.'",
+    "question_ur": "جملے میں صفت (Adjective) کی نشان دہی کریں: 'She wore a beautiful dress.'",
+    "options": {
+      "A": "She",
+      "B": "Wore",
+      "C": "Beautiful",
+      "D": "Dress"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 487,
+    "question_en": "Identify the adverb in: 'He ran quickly.'",
+    "question_ur": "جملے میں متعلق فعل (Adverb) کی نشان دہی کریں: 'He ran quickly.'",
+    "options": {
+      "A": "He",
+      "B": "Ran",
+      "C": "Quickly",
+      "D": "Fast"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "id": 488,
+    "question_en": "Choose the synonym of 'Pardon':",
+    "question_ur": "'Pardon' (معاف کرنا) کا ہم معنی (Synonym) منتخب کریں:",
+    "options": {
+      "A": "Punish",
+      "B": "Forgive",
+      "C": "Blame",
+      "D": "Condemn"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 489,
+    "question_en": "Choose the antonym of 'Artificial':",
+    "question_ur": "'Artificial' (مصنوعی) کا متضاد (Antonym) منتخب کریں:",
+    "options": {
+      "A": "Fake",
+      "B": "Natural",
+      "C": "Synthetic",
+      "D": "Man-made"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 490,
+    "question_en": "Complete the sentence: Time and tide ____ for no man.",
+    "question_ur": "جملہ مکمل کریں: Time and tide ____ for no man.",
+    "options": {
+      "A": "wait",
+      "B": "waits",
+      "C": "waiting",
+      "D": "waited"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 491,
+    "question_en": "What is the comparative degree of 'Good'?",
+    "question_ur": "'Good' کی دوسری ڈگری (Comparative degree) کیا ہے؟",
+    "options": {
+      "A": "Gooder",
+      "B": "Better",
+      "C": "Best",
+      "D": "More good"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 492,
+    "question_en": "What is the superlative degree of 'Bad'?",
+    "question_ur": "'Bad' کی تیسری ڈگری (Superlative degree) کیا ہے؟",
+    "options": {
+      "A": "Worse",
+      "B": "Worst",
+      "C": "Badder",
+      "D": "Baddest"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 493,
+    "question_en": "Choose the correct sentence:",
+    "question_ur": "درست جملہ منتخب کریں:",
+    "options": {
+      "A": "He is one of the best boy.",
+      "B": "He is one of the best boys.",
+      "C": "He is one of a best boys.",
+      "D": "He is best boy."
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 494,
+    "question_en": "Choose the correct sentence:",
+    "question_ur": "درست جملہ منتخب کریں:",
+    "options": {
+      "A": "Sun rises in east.",
+      "B": "The sun rises in the east.",
+      "C": "A sun rises in east.",
+      "D": "Sun rise in the east."
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 495,
+    "question_en": "Meaning of the idiom 'To burn the candle at both ends':",
+    "question_ur": "محاورے 'To burn the candle at both ends' کا مطلب کیا ہے؟",
+    "options": {
+      "A": "To waste money",
+      "B": "To work extremely hard without enough rest",
+      "C": "To light up a room",
+      "D": "To be careless"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 496,
+    "question_en": "Choose the correct spelling:",
+    "question_ur": "درست املا (Spelling) منتخب کریں:",
+    "options": {
+      "A": "Knowledge",
+      "B": "Knowlege",
+      "C": "Nowledge",
+      "D": "Knovledge"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 497,
+    "question_en": "Choose the correct spelling:",
+    "question_ur": "درست املا (Spelling) منتخب کریں:",
+    "options": {
+      "A": "Grammar",
+      "B": "Grammer",
+      "C": "Gramer",
+      "D": "Grammarer"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "id": 498,
+    "question_en": "What is the sound made by a Lion?",
+    "question_ur": "شیر کی آواز کو انگریزی میں کیا کہتے ہیں؟",
+    "options": {
+      "A": "Bark",
+      "B": "Roar",
+      "C": "Mew",
+      "D": "Neigh"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 499,
+    "question_en": "What is the sound made by a Horse?",
+    "question_ur": "گھوڑے کی آواز کو انگریزی میں کیا کہتے ہیں؟",
+    "options": {
+      "A": "Roar",
+      "B": "Neigh",
+      "C": "Bleat",
+      "D": "Trumpet"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "id": 500,
+    "question_en": "Which of the following is a conjunction?",
+    "question_ur": "مندرجہ ذیل میں سے کون سا حرفِ عطف (Conjunction) ہے؟",
+    "options": {
+      "A": "And",
+      "B": "Run",
+      "C": "Beautiful",
+      "D": "Quickly"
+    },
+    "correct_answer": "A"
+  }
+]
