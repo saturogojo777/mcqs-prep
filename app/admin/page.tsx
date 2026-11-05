@@ -31,6 +31,8 @@ type ImportResult = {
 }
 
 const TEMPLATE_COLUMNS = 'book, category, question_en, question_ur, option_a, option_b, option_c, option_d, correct_answer, explanation'
+const TEMPLATE_URL =
+  'https://docs.google.com/spreadsheets/d/13d2QDw9kvtUgHj-YofgBuwZPJIQMHJu05Qd-XlNhLV8/edit'
 
 export default function AdminPage() {
   const [email, setEmail] = useState<string | null | undefined>(undefined)
@@ -272,6 +274,14 @@ export default function AdminPage() {
           Columns: <code>{TEMPLATE_COLUMNS}</code>. <code>book</code> and <code>category</code> fall
           back to the defaults above. Answers can be a letter (A–D) or the exact option text; they are
           always stored as the option text.
+        </p>
+        <p className="note" style={{ marginTop: 8 }}>
+          Starting a new book? Copy the{' '}
+          <a href={TEMPLATE_URL} target="_blank" rel="noreferrer">
+            Google Sheet template
+          </a>
+          . For the link import to work, share the sheet as “Anyone with the link → Viewer” (or paste
+          the rows instead).
         </p>
 
         <button className="primary" type="button" onClick={runPreview} disabled={previewing}>
