@@ -34,7 +34,11 @@ export async function POST(request: Request) {
   try {
     const build = buildFromText(source.text, defaults)
     const summary = await reviewImport(supabase, build)
-    return NextResponse.json(summary)
+    const payload = {
+      ...summary,
+      rows: summary.rows.map(({ candidate: _candidate, ...row }) => row),
+    }
+    return NextResponse.json(payload)
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Preview failed.'
     return NextResponse.json({ error: message }, { status: 500 })

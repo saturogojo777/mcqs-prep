@@ -8,7 +8,8 @@
     "vercel-build": "node scripts/seed.mjs && next build",
     "start": "next start",
     "seed": "node scripts/seed.mjs",
-    "test": "node --experimental-strip-types --test tests/*.test.ts"
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:ui": "node tests/ui/run.mjs"
   },
   "dependencies": {
     "@fontsource/noto-nastaliq-urdu": "^5.3.0",
@@ -21,6 +22,8 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "esbuild": "^0.25.12",
+    "jsdom": "^25.0.1",
     "typescript": "^5.9.0"
   }
 }
