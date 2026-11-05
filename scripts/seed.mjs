@@ -9,6 +9,24 @@ import { createClient } from '@supabase/supabase-js'
 const BOOK_TITLE = 'General Knowledge (500 Questions)'
 const BOOK_DESCRIPTION = '500 general knowledge MCQs for Pakistani exam preparation.'
 
+// Subject tags for the seeded book, mirroring supabase/20261105_dailytest.sql.
+const SUBJECT_BY_CATEGORY = {
+  'Pakistan GK & Constitution': 'pakistan-studies',
+  'Pakistan Geography & Symbols': 'geography',
+  'International Organizations & Days': 'current-affairs',
+}
+
+function subjectSlugsFor(item, category) {
+  if (category === 'Science & Computer') {
+    return [item.id <= 350 ? 'everyday-science' : 'computer-skills']
+  }
+  if (category === 'Math & English') {
+    return [item.id <= 450 ? 'mathematics' : 'english']
+  }
+  const slug = SUBJECT_BY_CATEGORY[category]
+  return slug ? [slug] : []
+}
+
 const CATEGORY_RANGES = [
   { from: 1, to: 100, name: 'Pakistan GK & Constitution' },
   { from: 101, to: 200, name: 'Pakistan Geography & Symbols' },
@@ -51,9 +69,11 @@ for (const item of raw) {
     continue
   }
   const range = CATEGORY_RANGES.find((r) => id >= r.from && id <= r.to)
+  const category = range ? range.name : 'Other'
   rows.push({
     id,
-    category: range ? range.name : 'Other',
+    category,
+    subjects: subjectSlugsFor(item, category),
     question_en: String(item.question_en).trim().replace(/\s+/g, ' '),
     question_ur: item.question_ur ? String(item.question_ur).trim() : null,
     options: {
@@ -121,6 +141,60 @@ async function ensureCategory(bookId, name) {
   throw new Error(`could not create category "${name}": ${inserted.error?.message ?? 'unknown error'}`)
 }
 
+async function tagBook(bookId) {
+  const [{ data: subjects }, { data: exams }] = await Promise.all([
+    supabase.from('subjects').select('id, slug'),
+    supabase.from('exams').select('id, slug'),
+  ])
+  if (!subjects?.length || !exams?.length) {
+    log('taxonomy missing, skipping tags')
+    return
+  }
+  const subjectIds = new Map(subjects.map((row) => [row.slug, row.id]))
+
+  const { data: existingQuestions, error } = await supabase
+    .from('mcqs')
+    .select('id, source_ref, category_id')
+    .eq('book_id', bookId)
+  if (error) throw new Error(`tagging failed: ${error.message}`)
+
+  const { data: categories } = await supabase
+    .from('categories')
+    .select('id, name')
+    .eq('book_id', bookId)
+  const categoryNames = new Map((categories ?? []).map((row) => [row.id, row.name]))
+
+  const tags = []
+  const examTags = []
+  for (const question of existingQuestions ?? []) {
+    const name = categoryNames.get(question.category_id)
+    const range = CATEGORY_RANGES.find((entry) => entry.name === name)
+    const sourceId = Number(question.source_ref)
+    if (!range || !Number.isFinite(sourceId)) continue
+    // general knowledge covers the whole book, then the specific subject
+    tags.push({ mcq_id: question.id, subject_id: subjectIds.get('general-knowledge') })
+    for (const slug of subjectSlugsFor({ id: sourceId }, name)) {
+      tags.push({ mcq_id: question.id, subject_id: subjectIds.get(slug) })
+    }
+    for (const exam of exams) examTags.push({ mcq_id: question.id, exam_id: exam.id })
+  }
+
+  const clean = tags.filter((row) => row.subject_id)
+  for (let i = 0; i < clean.length; i += 500) {
+    const { error: tagError } = await supabase
+      .from('mcq_subjects')
+      .upsert(clean.slice(i, i + 500), { onConflict: 'mcq_id,subject_id', ignoreDuplicates: true })
+    if (tagError) throw new Error(`tagging failed: ${tagError.message}`)
+  }
+  for (let i = 0; i < examTags.length; i += 500) {
+    const { error: tagError } = await supabase
+      .from('mcq_exams')
+      .upsert(examTags.slice(i, i + 500), { onConflict: 'mcq_id,exam_id', ignoreDuplicates: true })
+    if (tagError) throw new Error(`tagging failed: ${tagError.message}`)
+  }
+  log(`tags: ${clean.length} subject links, ${examTags.length} exam links`)
+}
+
 async function main() {
   log(`dataset rows: ${raw.length}, usable: ${rows.length}, unique: ${uniqueKeys.size}, skipped: ${skippedSource}`)
 
@@ -166,6 +240,8 @@ async function main() {
     .eq('book_id', bookId)
 
   log(`inserted ${inserted} new rows, "${BOOK_TITLE}" now holds ${finalCount.count ?? '?'} questions`)
+
+  await tagBook(bookId)
 }
 
 main().catch((error) => {

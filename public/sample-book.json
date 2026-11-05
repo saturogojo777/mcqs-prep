@@ -1,0 +1,382 @@
+[
+  {
+    "id": 1,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which gas do plants take in during photosynthesis?",
+    "question_ur": "پودے روشنی ترکیب کے دوران کون سی گیس لیتے ہیں؟",
+    "options": {
+      "A": "Carbon dioxide",
+      "B": "Oxygen",
+      "C": "Nitrogen",
+      "D": "Hydrogen"
+    },
+    "correct_answer": "Carbon dioxide",
+    "explanation": "Plants use carbon dioxide and water to make glucose, releasing oxygen."
+  },
+  {
+    "id": 2,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "What is the normal body temperature of a healthy adult in Celsius?",
+    "question_ur": "صحت مند بالغ انسان کا عام درجہ حرارت سیلسیس میں کتنا ہے؟",
+    "options": {
+      "A": "35 °C",
+      "B": "36.5 °C",
+      "C": "37 °C",
+      "D": "39 °C"
+    },
+    "correct_answer": "37 °C",
+    "explanation": "About 37 °C, though it varies slightly through the day."
+  },
+  {
+    "id": 3,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which vitamin is produced by the skin in sunlight?",
+    "question_ur": "دھوپ میں جلد کون سا وٹامن بناتی ہے؟",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin B12",
+      "C": "Vitamin C",
+      "D": "Vitamin D"
+    },
+    "correct_answer": "Vitamin D",
+    "explanation": "Ultraviolet light helps the skin make vitamin D."
+  },
+  {
+    "id": 4,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "The hardest natural substance is —",
+    "question_ur": "سب سے سخت قدرتی مادہ کون سا ہے؟",
+    "options": {
+      "A": "Iron",
+      "B": "Diamond",
+      "C": "Quartz",
+      "D": "Granite"
+    },
+    "correct_answer": "Diamond",
+    "explanation": "Diamond rates 10 on the Mohs hardness scale."
+  },
+  {
+    "id": 5,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which part of the human body produces insulin?",
+    "question_ur": "انسانی جسم کا کون سا حصہ انسولین بناتا ہے؟",
+    "options": {
+      "A": "Liver",
+      "B": "Kidney",
+      "C": "Pancreas",
+      "D": "Spleen"
+    },
+    "correct_answer": "Pancreas",
+    "explanation": "The beta cells of the pancreas release insulin."
+  },
+  {
+    "id": 6,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Water boils at 100 °C at which pressure?",
+    "question_ur": "پانی کس دباؤ پر 100 ڈگری سینٹی گریڈ پر ابلتا ہے؟",
+    "options": {
+      "A": "Sea level pressure",
+      "B": "Half of sea level pressure",
+      "C": "Double sea level pressure",
+      "D": "Any pressure"
+    },
+    "correct_answer": "Sea level pressure",
+    "explanation": "The boiling point falls as air pressure falls, for example on a mountain."
+  },
+  {
+    "id": 7,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which instrument measures atmospheric pressure?",
+    "question_ur": "فضائی دباؤ کس آلے سے ناپا جاتا ہے؟",
+    "options": {
+      "A": "Thermometer",
+      "B": "Barometer",
+      "C": "Hygrometer",
+      "D": "Anemometer"
+    },
+    "correct_answer": "Barometer",
+    "explanation": "A thermometer measures temperature and an anemometer wind speed."
+  },
+  {
+    "id": 8,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Red blood cells carry oxygen with the help of —",
+    "question_ur": "سرخ خلیے آکسیجن کس کی مدد سے لے جاتے ہیں؟",
+    "options": {
+      "A": "Haemoglobin",
+      "B": "Platelets",
+      "C": "Plasma",
+      "D": "Fibrin"
+    },
+    "correct_answer": "Haemoglobin",
+    "explanation": "Haemoglobin is the iron-containing protein inside red blood cells."
+  },
+  {
+    "id": 9,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Sound cannot travel through —",
+    "question_ur": "آواز کس چیز میں سفر نہیں کر سکتی؟",
+    "options": {
+      "A": "Water",
+      "B": "Steel",
+      "C": "Air",
+      "D": "Vacuum"
+    },
+    "correct_answer": "Vacuum",
+    "explanation": "Sound needs a medium; a vacuum has no particles to carry it."
+  },
+  {
+    "id": 10,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which gas is most abundant in the Earth's atmosphere?",
+    "question_ur": "زمین کی فضا میں کون سی گیس سب سے زیادہ ہے؟",
+    "options": {
+      "A": "Oxygen",
+      "B": "Nitrogen",
+      "C": "Carbon dioxide",
+      "D": "Argon"
+    },
+    "correct_answer": "Nitrogen",
+    "explanation": "Nitrogen makes up about 78 per cent of the air."
+  },
+  {
+    "id": 11,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "The unit of electric current is the —",
+    "question_ur": "برقی رو کی اکائی کیا ہے؟",
+    "options": {
+      "A": "Volt",
+      "B": "Watt",
+      "C": "Ampere",
+      "D": "Ohm"
+    },
+    "correct_answer": "Ampere",
+    "explanation": "Volt is potential difference, watt is power and ohm is resistance."
+  },
+  {
+    "id": 12,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which planet is known as the Red Planet?",
+    "question_ur": "کس سیارے کو سرخ سیارہ کہا جاتا ہے؟",
+    "options": {
+      "A": "Venus",
+      "B": "Mars",
+      "C": "Jupiter",
+      "D": "Mercury"
+    },
+    "correct_answer": "Mars",
+    "explanation": "Iron oxide dust on Mars gives it a reddish colour."
+  },
+  {
+    "id": 13,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Photosynthesis mainly takes place in the —",
+    "question_ur": "روشنی ترکیب بنیادی طور پر کس حصے میں ہوتی ہے؟",
+    "options": {
+      "A": "Roots",
+      "B": "Stem",
+      "C": "Leaves",
+      "D": "Flowers"
+    },
+    "correct_answer": "Leaves",
+    "explanation": "Chloroplasts in the leaves capture light energy."
+  },
+  {
+    "id": 14,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which one is a renewable source of energy?",
+    "question_ur": "ان میں سے قابلِ تجدید توانائی کا ذریعہ کون سا ہے؟",
+    "options": {
+      "A": "Coal",
+      "B": "Natural gas",
+      "C": "Solar energy",
+      "D": "Diesel"
+    },
+    "correct_answer": "Solar energy",
+    "explanation": "Coal, gas and diesel are fossil fuels and will run out."
+  },
+  {
+    "id": 15,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "A person suffering from scurvy lacks —",
+    "question_ur": "اسکروی کا مریض کس چیز کی کمی میں مبتلا ہوتا ہے؟",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin C",
+      "C": "Iron",
+      "D": "Calcium"
+    },
+    "correct_answer": "Vitamin C",
+    "explanation": "Scurvy is caused by a lack of vitamin C."
+  },
+  {
+    "id": 16,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "The speed of light in a vacuum is about —",
+    "question_ur": "خلا میں روشنی کی رفتار تقریباً کتنی ہے؟",
+    "options": {
+      "A": "300 km per second",
+      "B": "3,000 km per second",
+      "C": "300,000 km per second",
+      "D": "30,000 km per second"
+    },
+    "correct_answer": "300,000 km per second",
+    "explanation": "Roughly 299,792 kilometres per second."
+  },
+  {
+    "id": 17,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which organ filters waste from the blood?",
+    "question_ur": "خون سے فضلہ کون سا عضو چھانتا ہے؟",
+    "options": {
+      "A": "Heart",
+      "B": "Lungs",
+      "C": "Kidneys",
+      "D": "Stomach"
+    },
+    "correct_answer": "Kidneys",
+    "explanation": "The kidneys make urine and balance salts and water."
+  },
+  {
+    "id": 18,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Water is made of which two elements?",
+    "question_ur": "پانی کن دو عناصر سے بنتا ہے؟",
+    "options": {
+      "A": "Hydrogen and oxygen",
+      "B": "Hydrogen and carbon",
+      "C": "Oxygen and nitrogen",
+      "D": "Carbon and oxygen"
+    },
+    "correct_answer": "Hydrogen and oxygen",
+    "explanation": "One water molecule has two hydrogen atoms and one oxygen atom."
+  },
+  {
+    "id": 19,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "Which disease is caused by a virus?",
+    "question_ur": "کون سی بیماری وائرس سے ہوتی ہے؟",
+    "options": {
+      "A": "Malaria",
+      "B": "Typhoid",
+      "C": "Influenza",
+      "D": "Tuberculosis"
+    },
+    "correct_answer": "Influenza",
+    "explanation": "Flu is viral; malaria is caused by a parasite and TB by bacteria."
+  },
+  {
+    "id": 20,
+    "book": "Everyday Science Starter (20 Questions)",
+    "subject": "everyday-science",
+    "exams": [
+      "ppsc",
+      "nts-pts-ots"
+    ],
+    "question_en": "The main gas released by burning fossil fuels is —",
+    "question_ur": "جیواشم ایندھن جلانے سے خارج ہونے والی اہم گیس کون سی ہے؟",
+    "options": {
+      "A": "Oxygen",
+      "B": "Carbon dioxide",
+      "C": "Helium",
+      "D": "Ozone"
+    },
+    "correct_answer": "Carbon dioxide",
+    "explanation": "Carbon dioxide from burning fuels is the main greenhouse gas from energy use."
+  }
+]

@@ -8,6 +8,8 @@ export type Options = Record<OptionKey, string>
 export type Candidate = {
   book: string
   category: string
+  subject: string | null
+  exams: string[]
   question_en: string
   question_ur: string | null
   options: Options
@@ -24,6 +26,7 @@ export type PreviewRow = {
   question_en: string
   book: string
   category: string
+  subject: string | null
   answer: string
   messages: string[]
   candidate: Candidate | null
@@ -92,6 +95,8 @@ const ALIASES: Record<string, string[]> = {
   c: ['c', 'option_c', 'optionc', 'opt_c', 'opt_c_', 'option3', 'option_3', '3'],
   d: ['d', 'option_d', 'optiond', 'opt_d', 'opt_d_', 'option4', 'option_4', '4'],
   correct: ['correct_answer', 'correct', 'answer', 'correct_option', 'ans', 'correct_text'],
+  subject: ['subject', 'subject_name', 'topic_subject'],
+  exams: ['exams', 'exam', 'exam_name', 'test'],
   explanation: ['explanation', 'explain', 'note', 'notes', 'reason'],
   source_ref: ['id', 'source_ref', 'ref', 'number', 'no'],
 }
@@ -111,9 +116,24 @@ function mapHeader(header: string[]): Record<string, number> {
 
 const trim = (v: unknown) => (typeof v === 'string' ? v.trim() : v == null ? '' : String(v).trim())
 
+/** Exams may arrive as an array, a comma separated string or a single name. */
+export function normalizeExams(value: unknown): string[] {
+  const list = Array.isArray(value)
+    ? value
+    : typeof value === 'string'
+      ? value.split(',')
+      : []
+  const clean = list
+    .map((entry) => trim(entry).slice(0, 60))
+    .filter(Boolean)
+  return Array.from(new Set(clean)).slice(0, 20)
+}
+
 export function validateCandidate(input: {
   book?: unknown
   category?: unknown
+  subject?: unknown
+  exams?: unknown
   question_en?: unknown
   question_ur?: unknown
   options?: unknown
@@ -124,7 +144,11 @@ export function validateCandidate(input: {
   const errors: string[] = []
 
   const book = trim(input.book)
-  const category = trim(input.category)
+  const subject = trim(input.subject)
+  // A book import only needs to say which subject it belongs to; the category
+  // then follows the subject instead of blocking the row.
+  const category = trim(input.category) || subject
+  const exams = normalizeExams(input.exams)
   const questionEn = trim(input.question_en).replace(/\s+/g, ' ')
   const questionUr = trim(input.question_ur)
   const explanation = trim(input.explanation)
@@ -191,6 +215,8 @@ export function validateCandidate(input: {
     candidate: {
       book,
       category,
+      subject: subject ? subject.slice(0, 80) : null,
+      exams,
       question_en: questionEn,
       question_ur: questionUr || null,
       options: opts,
@@ -204,7 +230,7 @@ export function validateCandidate(input: {
 
 // ---------------------------------------------------------------- builders
 
-export type Defaults = { book?: string; category?: string }
+export type Defaults = { book?: string; category?: string; subject?: string; exams?: string[] }
 
 /** In-file duplicate fingerprint (question text + option set), independent of order. */
 export function fingerprint(c: Candidate): string {
@@ -227,6 +253,8 @@ function fromObject(obj: Record<string, unknown>, defaults: Defaults) {
   return validateCandidate({
     book: trim(firstFilled(obj.book, obj.book_title, defaults.book)),
     category: trim(firstFilled(obj.category, obj.topic, obj.chapter, defaults.category)),
+    subject: trim(firstFilled(obj.subject, obj.subject_name, defaults.subject)),
+    exams: firstFilled(obj.exams, obj.exam, defaults.exams),
     question_en: obj.question_en ?? obj.question ?? obj.question_english ?? obj.question_text,
     question_ur: obj.question_ur ?? obj.question_urdu ?? obj.urdu,
     options: obj.options ?? {
@@ -239,6 +267,11 @@ function fromObject(obj: Record<string, unknown>, defaults: Defaults) {
     explanation: obj.explanation ?? obj.note,
     source_ref: obj.source_ref ?? obj.id ?? obj.ref,
   })
+}
+
+function subjectOf(obj: Record<string, unknown>, defaults: Defaults): string | null {
+  const value = trim(firstFilled(obj.subject, obj.subject_name, defaults.subject))
+  return value || null
 }
 
 function buildFromObjects(objects: Record<string, unknown>[], defaults: Defaults): BuildResult {
@@ -256,6 +289,7 @@ function buildFromObjects(objects: Record<string, unknown>[], defaults: Defaults
         question_en: trim(obj.question_en ?? obj.question ?? ''),
         book: trim(obj.book ?? defaults.book),
         category: trim(obj.category ?? defaults.category),
+        subject: subjectOf(obj, defaults),
         answer: trim(obj.correct_answer ?? obj.correct ?? obj.answer ?? ''),
         messages: errors,
         candidate: null,
@@ -272,6 +306,7 @@ function buildFromObjects(objects: Record<string, unknown>[], defaults: Defaults
         question_en: candidate.question_en,
         book: candidate.book,
         category: candidate.category,
+        subject: candidate.subject,
         answer: candidate.correct_text,
         messages: [`Duplicate of row ${first} in this file`],
         candidate: null,
@@ -285,6 +320,7 @@ function buildFromObjects(objects: Record<string, unknown>[], defaults: Defaults
       question_en: candidate.question_en,
       book: candidate.book,
       category: candidate.category,
+      subject: candidate.subject,
       answer: candidate.correct_text,
       messages: [],
       candidate,
@@ -312,6 +348,7 @@ export function parseJsonInput(text: string, defaults: Defaults): BuildResult {
           question_en: '',
           book: '',
           category: '',
+          subject: null,
           answer: '',
           messages: ['File is not valid JSON'],
           candidate: null,
@@ -337,6 +374,7 @@ export function parseJsonInput(text: string, defaults: Defaults): BuildResult {
           question_en: '',
           book: '',
           category: '',
+          subject: null,
           answer: '',
           messages: ['JSON must be an array of questions'],
           candidate: null,
@@ -377,6 +415,7 @@ export function parseTableInput(text: string, defaults: Defaults): BuildResult {
           question_en: '',
           book: '',
           category: '',
+          subject: null,
           answer: '',
           messages: [`Missing column(s): ${missing.map((m) => friendly[m]).join(', ')}`],
           candidate: null,
@@ -391,6 +430,8 @@ export function parseTableInput(text: string, defaults: Defaults): BuildResult {
     return {
       book: get('book'),
       category: get('category'),
+      subject: get('subject'),
+      exams: get('exams'),
       question_en: get('question_en'),
       question_ur: get('question_ur'),
       options: { A: get('a'), B: get('b'), C: get('c'), D: get('d') },

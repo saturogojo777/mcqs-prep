@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Server is missing Supabase credentials.' }, { status: 503 })
   }
 
-  let body: { source?: unknown; book?: unknown; category?: unknown }
+  let body: { source?: unknown; book?: unknown; category?: unknown; subject?: unknown; exams?: unknown }
   try {
     body = await request.json()
   } catch {
@@ -29,6 +29,8 @@ export async function POST(request: Request) {
   const defaults = {
     book: typeof body.book === 'string' ? body.book.trim() : undefined,
     category: typeof body.category === 'string' ? body.category.trim() : undefined,
+    subject: typeof body.subject === 'string' ? body.subject.trim() : undefined,
+    exams: Array.isArray(body.exams) ? body.exams.filter((e): e is string => typeof e === 'string') : undefined,
   }
 
   try {

@@ -157,40 +157,21 @@ export type ImportResult = {
   categories: string[]
 }
 
-async function ensureBook(admin: SupabaseClient, title: string): Promise<string> {
-  const existing = await admin.from('books').select('id').eq('title', title).maybeSingle()
-  if (existing.data?.id) return existing.data.id as string
-  const inserted = await admin.from('books').insert({ title }).select('id').single()
-  if (inserted.data?.id) return inserted.data.id as string
-  const retry = await admin.from('books').select('id').eq('title', title).maybeSingle()
-  if (retry.data?.id) return retry.data.id as string
-  throw new Error(`Could not create book "${title}"`)
+type BookGroup = {
+  title: string
+  subject: string | null
+  category: string
+  exams: string[]
+  rows: Record<string, unknown>[]
 }
 
-async function ensureCategory(admin: SupabaseClient, bookId: string, name: string): Promise<string> {
-  const existing = await admin
-    .from('categories')
-    .select('id')
-    .eq('book_id', bookId)
-    .eq('name', name)
-    .maybeSingle()
-  if (existing.data?.id) return existing.data.id as string
-  const inserted = await admin
-    .from('categories')
-    .insert({ book_id: bookId, name })
-    .select('id')
-    .single()
-  if (inserted.data?.id) return inserted.data.id as string
-  const retry = await admin
-    .from('categories')
-    .select('id')
-    .eq('book_id', bookId)
-    .eq('name', name)
-    .maybeSingle()
-  if (retry.data?.id) return retry.data.id as string
-  throw new Error(`Could not create category "${name}"`)
-}
-
+/**
+ * Writes the reviewed rows to the database through `public.import_book`.
+ *
+ * The whole call runs inside one Postgres function, so a failure leaves the
+ * books table, the tag tables and the questions exactly as they were: the
+ * import is all-or-nothing per book, never half-saved.
+ */
 export async function runImport(admin: SupabaseClient, build: BuildResult): Promise<ImportResult> {
   const pending = build.rows
     .filter((r): r is PreviewRow & { candidate: Candidate } => r.candidate !== null)
@@ -201,64 +182,52 @@ export async function runImport(admin: SupabaseClient, build: BuildResult): Prom
     return { imported: 0, skippedDuplicates: 0, skippedInvalid, books: [], categories: [] }
   }
 
-  const hashes = await hashCandidates(admin, pending)
-  const existing = await existingHashes(admin, Array.from(new Set(hashes)))
-  const fresh: Candidate[] = []
-  let skippedDuplicates = 0
-  pending.forEach((candidate, i) => {
-    if (existing.has(hashes[i])) skippedDuplicates++
-    else fresh.push(candidate)
-  })
-  if (fresh.length === 0) {
-    return { imported: 0, skippedDuplicates, skippedInvalid, books: [], categories: [] }
-  }
-
-  const bookIds = new Map<string, string>()
-  const categoryIds = new Map<string, string>()
-  for (const candidate of fresh) {
-    if (!bookIds.has(candidate.book)) {
-      bookIds.set(candidate.book, await ensureBook(admin, candidate.book))
+  const groups = new Map<string, BookGroup>()
+  for (const candidate of pending) {
+    const subject = candidate.subject?.trim() || null
+    const category = candidate.category.trim() || subject || 'General'
+    const key = `${candidate.book}\u0000${subject ?? ''}\u0000${category}\u0000${candidate.exams.join(',')}`
+    let group = groups.get(key)
+    if (!group) {
+      group = { title: candidate.book, subject, category, exams: candidate.exams, rows: [] }
+      groups.set(key, group)
     }
-    const bookId = bookIds.get(candidate.book)!
-    const key = `${bookId}::${candidate.category}`
-    if (!categoryIds.has(key)) {
-      categoryIds.set(key, await ensureCategory(admin, bookId, candidate.category))
-    }
-  }
-
-  const rows = fresh.map((candidate) => {
-    const bookId = bookIds.get(candidate.book)!
-    const categoryId = categoryIds.get(`${bookId}::${candidate.category}`)!
     const options: Record<string, string> = {}
-    for (const key of OPTION_KEYS) options[key] = candidate.options[key]
-    return {
-      book_id: bookId,
-      category_id: categoryId,
+    for (const optionKey of OPTION_KEYS) options[optionKey] = candidate.options[optionKey]
+    group.rows.push({
       question_en: candidate.question_en,
       question_ur: candidate.question_ur,
       options,
       correct_text: candidate.correct_text,
       explanation: candidate.explanation,
       source_ref: candidate.source_ref,
-    }
-  })
+      exams: candidate.exams,
+    })
+  }
 
   let imported = 0
-  for (let i = 0; i < rows.length; i += 150) {
-    const chunk = rows.slice(i, i + 150)
-    const { data, error } = await admin
-      .from('mcqs')
-      .upsert(chunk, { onConflict: 'content_hash', ignoreDuplicates: true })
-      .select('id')
-    if (error) throw new Error(`Insert failed: ${error.message}`)
-    imported += (data ?? []).length
+  let skippedDuplicates = 0
+  for (const group of groups.values()) {
+    const { data, error } = await admin.rpc('import_book', {
+      p_book: {
+        title: group.title,
+        subject: group.subject,
+        category: group.category,
+        exams: group.exams,
+      },
+      p_rows: group.rows,
+    })
+    if (error) throw new Error(`Import failed: ${error.message}`)
+    const result = (data ?? {}) as { imported?: number; skipped?: number }
+    imported += Number(result.imported ?? 0)
+    skippedDuplicates += Number(result.skipped ?? 0)
   }
 
   return {
     imported,
-    skippedDuplicates: skippedDuplicates + (rows.length - imported),
+    skippedDuplicates,
     skippedInvalid,
-    books: Array.from(bookIds.keys()),
-    categories: Array.from(new Set(fresh.map((c) => c.category))),
+    books: Array.from(new Set(pending.map((c) => c.book))),
+    categories: Array.from(new Set(pending.map((c) => c.category.trim() || c.subject || 'General'))),
   }
 }

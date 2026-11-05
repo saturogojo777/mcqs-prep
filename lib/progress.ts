@@ -1,82 +1,58 @@
 'use client'
 
-const LANG_KEY = 'mcqprep.lang'
-const PROGRESS_KEY = 'mcqprep.progress.v1'
+import type { Answer } from '@/lib/types'
 
-export type Lang = 'en' | 'ur'
+/** localStorage only. No account, nothing sent to the server. */
+const MISTAKES_KEY = 'dailytest.mistakes.v1'
+const LAST_KEY = 'dailytest.last.v1'
 
-export type CategoryProgress = {
-  answered: number
-  correct: number
-  position: number
-  updatedAt: number
-}
+export type LastResult = { right: number; total: number; at: number; title: string }
 
-type ProgressMap = Record<string, CategoryProgress>
-
-const empty: CategoryProgress = { answered: 0, correct: 0, position: 0, updatedAt: 0 }
-
-function readProgress(): ProgressMap {
-  if (typeof window === 'undefined') return {}
+function readJson<T>(key: string, fallback: T): T {
+  if (typeof window === 'undefined') return fallback
   try {
-    const raw = window.localStorage.getItem(PROGRESS_KEY)
-    if (!raw) return {}
-    const parsed = JSON.parse(raw) as ProgressMap
-    return parsed && typeof parsed === 'object' ? parsed : {}
+    const raw = window.localStorage.getItem(key)
+    if (!raw) return fallback
+    return JSON.parse(raw) as T
   } catch {
-    return {}
+    return fallback
   }
 }
 
-export function getProgress(categoryId: string): CategoryProgress {
-  const value = readProgress()[categoryId]
-  if (!value) return empty
-  return {
-    answered: Number(value.answered) || 0,
-    correct: Number(value.correct) || 0,
-    position: Number(value.position) || 0,
-    updatedAt: Number(value.updatedAt) || 0,
-  }
-}
-
-export function saveProgress(categoryId: string, patch: Partial<CategoryProgress>) {
+function writeJson(key: string, value: unknown) {
   if (typeof window === 'undefined') return
   try {
-    const all = readProgress()
-    const next = { ...getProgress(categoryId), ...patch, updatedAt: Date.now() }
-    all[categoryId] = next
-    window.localStorage.setItem(PROGRESS_KEY, JSON.stringify(all))
+    window.localStorage.setItem(key, JSON.stringify(value))
   } catch {
-    /* storage can be full or blocked: progress is a nicety, never a blocker */
+    // storage full or blocked: progress is a convenience, never required
   }
 }
 
-export function resetProgress(categoryId: string) {
-  if (typeof window === 'undefined') return
-  try {
-    const all = readProgress()
-    delete all[categoryId]
-    window.localStorage.setItem(PROGRESS_KEY, JSON.stringify(all))
-  } catch {
-    /* ignore */
+export function getMistakeIds(): string[] {
+  const value = readJson<unknown>(MISTAKES_KEY, [])
+  return Array.isArray(value) ? value.filter((id): id is string => typeof id === 'string') : []
+}
+
+/** Wrong answers are remembered, correct answers remove the question from the list. */
+export function saveAnswers(answers: Answer[]) {
+  if (answers.length === 0) return
+  const current = new Set(getMistakeIds())
+  for (const answer of answers) {
+    if (answer.right) current.delete(answer.questionId)
+    else current.add(answer.questionId)
   }
+  writeJson(MISTAKES_KEY, Array.from(current).slice(-500))
 }
 
-export function getLang(): Lang {
-  if (typeof window === 'undefined') return 'en'
-  return window.localStorage.getItem(LANG_KEY) === 'ur' ? 'ur' : 'en'
+export function getLastResult(): LastResult | null {
+  const value = readJson<LastResult | null>(LAST_KEY, null)
+  return value && typeof value.total === 'number' ? value : null
 }
 
-export function setLang(lang: Lang) {
-  if (typeof window === 'undefined') return
-  try {
-    window.localStorage.setItem(LANG_KEY, lang)
-  } catch {
-    /* ignore */
-  }
+export function saveLastResult(result: LastResult) {
+  writeJson(LAST_KEY, result)
 }
 
-/** Snapshot of every topic's stored progress (front-end only). */
-export function getAllProgress(): Record<string, CategoryProgress> {
-  return readProgress()
+export function clearMistakes() {
+  writeJson(MISTAKES_KEY, [])
 }
