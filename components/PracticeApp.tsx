@@ -1,14 +1,8 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import {
-  getSupabase,
-  shapeCatalog,
-  type Book,
-  type Category,
-  type CatalogRow,
-  type Mcq,
-} from '@/lib/supabase'
+import { getSupabase, type CatalogRow } from '@/lib/supabase'
+import { shapeCatalog, type Book, type Category, type Mcq } from '@/lib/catalog'
 import { getLang, getProgress, saveProgress, resetProgress, setLang, type Lang } from '@/lib/progress'
 
 const TEST_SIZE = 10
@@ -361,9 +355,12 @@ export default function PracticeApp() {
             </p>
           )}
 
+          {books.length > 0 && (
+            <p className="section-label">{t.book}</p>
+          )}
+          {books.length === 1 && <p className="book-single">{books[0].title}</p>}
           {books.length > 1 && (
             <>
-              <p className="section-label">{t.book}</p>
               <div className="book-row">
                 {books.map((b: Book) => (
                   <button

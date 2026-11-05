@@ -212,6 +212,18 @@ a {
   padding-block: 6px 14px;
 }
 
+.book-single {
+  margin: -2px 0 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.urdu .book-single {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  line-height: 2;
+}
+
 .book-row {
   display: flex;
   gap: 8px;

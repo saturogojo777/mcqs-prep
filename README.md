@@ -1,5 +1,7 @@
 # MCQ Practice
 
+**Live:** https://mcqs-prep-eta.vercel.app · **Admin:** https://mcqs-prep-eta.vercel.app/admin
+
 A small, fast MCQ practice site for Pakistani exam preparation. Mobile first, English / اردو (RTL),
 light and dark following the device. No accounts, no tracking: progress lives in the browser.
 
@@ -31,6 +33,13 @@ mcqs        (id, book_id, category_id, question_en, question_ur, options jsonb {
 - RLS is on for all three tables: `select` for `anon` / `authenticated`, no write policies at all.
   Only the service role key (server side, never shipped to the browser) can write.
 
+## Admin access
+
+`/admin` asks for the admin email (`ADMIN_EMAIL`) and the access key (`ADMIN_ACCESS_KEY`). Both live in
+Vercel environment variables only. A successful sign in sets a signed, HttpOnly cookie; every admin API
+route re-checks the signature and the email against `ADMIN_EMAIL`, so nobody else can import. The
+browser never sees the service role key: writes only ever happen inside those server routes.
+
 ## Local development
 
 ```bash
@@ -38,6 +47,7 @@ npm install
 cp .env.example .env.local   # fill in the Supabase values
 npm run dev                  # http://localhost:3000
 npm test                     # import validation / dedupe tests
+npm run test:ui              # headless (jsdom) run of the practice + test flow
 ```
 
 ## Environment variables
