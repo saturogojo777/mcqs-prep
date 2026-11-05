@@ -114,13 +114,13 @@ const COPY = {
 
 type Copy = (typeof COPY)['en'] | (typeof COPY)['ur']
 
-export default function PracticeApp() {
+export default function PracticeApp({ initialCatalog }: { initialCatalog?: CatalogRow[] | null }) {
   const [lang, setLangState] = useState<Lang>('en')
   const [ready, setReady] = useState(false)
   const [view, setView] = useState<View>('home')
   const [mode, setMode] = useState<Mode>('practice')
 
-  const [catalog, setCatalog] = useState<CatalogRow[] | null>(null)
+  const [catalog, setCatalog] = useState<CatalogRow[] | null>(initialCatalog ?? null)
   const [catalogError, setCatalogError] = useState<string | null>(null)
   const [selectedBook, setSelectedBook] = useState<string | null>(null)
   const [busyCategory, setBusyCategory] = useState<string | null>(null)
@@ -152,6 +152,12 @@ export default function PracticeApp() {
 
   useEffect(() => {
     let cancelled = false
+    // The catalog is server rendered; only fall back to the browser fetch when it is missing.
+    if (initialCatalog) {
+      const shaped = shapeCatalog(initialCatalog)
+      setSelectedBook((prev) => prev ?? shaped.books[0]?.id ?? null)
+      return
+    }
     const supabase = getSupabase()
     if (!supabase) {
       setCatalogError(COPY.en.notConfigured)
@@ -174,7 +180,7 @@ export default function PracticeApp() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [initialCatalog])
 
   const { books, categories } = useMemo(() => shapeCatalog(catalog ?? []), [catalog])
 
