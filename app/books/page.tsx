@@ -1,28 +1,38 @@
 import type { Metadata } from 'next'
 import ListPage from '@/components/ListPage'
-import { loadCatalog, EMPTY_CATALOG } from '@/lib/catalog'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { EMPTY_CATALOG, loadCatalog } from '@/lib/catalog'
 import { getServerSupabase } from '@/lib/supabase'
-import { absolute } from '@/lib/site'
+import { SITE_NAME, absolute } from '@/lib/site'
 
 export const revalidate = 300
 
 export const metadata: Metadata = {
-  title: 'MCQ practice by book',
-  description: 'Every book on DailyTest with its question count. Pick a book and practise it from start to finish.',
+  title: 'MCQ books — one book per subject, chapter by chapter',
+  description:
+    'Work through a whole book: General Knowledge, Pakistan Studies, Islamic Studies, Current Affairs, Geography, Mathematics, English, Urdu, Everyday Science and Computer Skills.',
   alternates: { canonical: absolute('/books') },
+  openGraph: {
+    title: `Books · ${SITE_NAME}`,
+    description: 'Ten books, chapter by chapter, with explanations for every answer.',
+    url: absolute('/books'),
+  },
 }
 
 export default async function BooksPage() {
   const client = getServerSupabase()
-  const catalog = client ? await loadCatalog(client) : EMPTY_CATALOG
+  const catalog = client ? await loadCatalog(client).catch(() => EMPTY_CATALOG) : EMPTY_CATALOG
   return (
-    <ListPage
-      kind="book"
-      items={catalog.books}
-      title="Choose your book"
-      titleUr="اپنی کتاب چنیں"
-      intro="Every book with its question count. Practise any part of it."
-      introUr="ہر کتاب اور اس کے سوالات کی تعداد۔ جتنا چاہیں مشق کریں۔"
-    />
+    <>
+      <Breadcrumbs trail={[{ href: '/books', name: 'Books' }]} />
+      <ListPage
+        kind="book"
+        items={catalog.books}
+        title="Choose your book"
+        titleUr="اپنی کتاب چنیں"
+        intro="A book runs chapter by chapter. Start anywhere and come back to the ones that need work."
+        introUr="کتاب باب بہ باب چلتی ہے۔ کہیں سے بھی شروع کریں اور کمزور ابواب پر واپس آئیں۔"
+      />
+    </>
   )
 }

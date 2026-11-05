@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { IconBack, IconCheck, IconClock, IconClose } from '@/components/icons'
 import { Num, T } from '@/components/text'
+import ReportButton from '@/components/ReportButton'
 import { copyFor } from '@/lib/copy'
 import { formatClock, questionText } from '@/lib/session'
 import type { Lang, PreparedQuestion } from '@/lib/types'
@@ -122,6 +123,10 @@ export default function Quiz({
           </span>
         </div>
       )}
+
+      <div className="q-foot">
+        <ReportButton mcqId={question.id} />
+      </div>
 
       <div className="action-bar">
         <button type="button" className="btn btn-dark btn-lg btn-next" onClick={onNext} disabled={!answered}>

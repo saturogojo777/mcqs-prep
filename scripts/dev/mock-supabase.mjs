@@ -75,6 +75,7 @@ for (const item of dataset) {
     correct_text: correct,
     explanation: null,
     source_ref: String(item.id),
+    category: range.name,
     subjects: ['general-knowledge', ...subjectsFor(item.id, range.name)],
     exams: EXAMS.map((exam) => exam.slug),
   })
@@ -98,12 +99,22 @@ function shuffle(list) {
   return copy
 }
 
+const DIFFICULTIES = ['easy', 'medium', 'hard']
+const LEVELS = ['basic', 'intermediate', 'advanced']
+
 function filterPool(kind, key) {
   if (kind === 'exam') return questions.filter((row) => row.exams.includes(key))
   if (kind === 'subject') return questions.filter((row) => row.subjects.includes(key))
   if (kind === 'book') return questions.filter((row) => row.book_id === key)
   return questions
 }
+
+const metaFor = (row) => ({
+  chapter: row.category ?? null,
+  subject_slug: row.subjects[0] ?? null,
+  level: LEVELS[Number(row.id.replace(/\D/g, '')) % 3],
+  difficulty: DIFFICULTIES[Number(row.id.replace(/\D/g, '')) % 3],
+})
 
 const shape = (row) => ({
   id: row.id,
@@ -112,7 +123,15 @@ const shape = (row) => ({
   options: row.options,
   correct_text: row.correct_text,
   explanation: row.explanation,
+  ...metaFor(row),
 })
+
+function withFilters(pool, body) {
+  let rows = pool
+  if (body.p_difficulty) rows = rows.filter((row) => metaFor(row).difficulty === body.p_difficulty)
+  if (body.p_level) rows = rows.filter((row) => metaFor(row).level === body.p_level)
+  return rows
+}
 
 function subjectCatalog() {
   return SUBJECTS.map((subject) => ({
@@ -128,29 +147,90 @@ function examCatalog() {
   }))
 }
 
+const BOOK_SUBJECTS = [
+  ['General Knowledge', 'general-knowledge'],
+  ['Pakistan Studies', 'pakistan-studies'],
+  ['Islamic Studies', 'islamic-studies'],
+  ['Current Affairs', 'current-affairs'],
+  ['Geography', 'geography'],
+  ['Mathematics', 'mathematics'],
+  ['English', 'english'],
+  ['Urdu', 'urdu'],
+  ['Everyday Science', 'everyday-science'],
+  ['Computer Skills', 'computer-skills'],
+]
+
 function bookCatalog() {
-  const books = [...new Map(questions.map((row) => [row.book_id, row.book_id])).keys()]
-  return books.map((id) => ({
-    id,
-    title: id === BOOK.id ? BOOK.title : (extraBooks.get(id) ?? id),
-    question_count: questions.filter((row) => row.book_id === id).length,
+  const rows = [
+    {
+      id: BOOK.id,
+      title: 'General Knowledge',
+      description: 'General knowledge, Pakistan affairs, science and everyday awareness.',
+      subject_slug: 'general-knowledge',
+    },
+    ...BOOK_SUBJECTS.filter(([title]) => title !== 'General Knowledge').map(([title, slug]) => ({
+      id: `b-${slug}`,
+      title,
+      description: null,
+      subject_slug: slug,
+    })),
+    ...[...extraBooks.entries()].map(([id, title]) => ({ id, title, description: null, subject_slug: null })),
+  ]
+  return rows.map((row) => ({
+    ...row,
+    question_count: questions.filter((item) => item.book_id === row.id).length,
+    chapter_count: new Set(
+      questions.filter((item) => item.book_id === row.id).map((item) => item.category),
+    ).size,
   }))
 }
+
+function chapterCatalog() {
+  const chapters = new Map()
+  for (const row of questions) {
+    const key = `${row.book_id}::${row.category ?? 'General'}`
+    chapters.set(key, (chapters.get(key) ?? 0) + 1)
+  }
+  return [...chapters.entries()].map(([key, count]) => {
+    const [book_id, chapter] = key.split('::')
+    return { id: `c-${key}`, book_id, chapter, question_count: count }
+  })
+}
+
+const MOCK_PATTERN = {
+  question_count: 100,
+  minutes: 120,
+  marks_per_question: 1,
+  negative_marking: 0,
+  passing_percentage: 50,
+}
+
+const reports = []
 
 const extraBooks = new Map()
 const messages = []
 
 function rpc(name, body) {
   if (name === 'random_questions') {
-    const pool = shuffle(filterPool(body.p_kind, body.p_key))
+    const pool = shuffle(withFilters(filterPool(body.p_kind, body.p_key), body))
     return pool.slice(0, Math.max(1, Math.min(Number(body.p_limit) || 10, 500))).map(shape)
   }
   if (name === 'daily_questions') {
     const seed = String(body.p_seed ?? '')
-    const ordered = questions
+    const ordered = withFilters(questions, body)
       .map((row) => ({ row, key: crypto.createHash('md5').update(row.id + seed).digest('hex') }))
       .sort((a, b) => (a.key < b.key ? -1 : 1))
     return ordered.slice(0, Number(body.p_limit) || 10).map((entry) => shape(entry.row))
+  }
+  if (name === 'site_stats') {
+    return {
+      questions: questions.length,
+      subjects: SUBJECTS.length,
+      exams: EXAMS.length,
+      books: bookCatalog().length,
+      chapters: chapterCatalog().length,
+      explanations: 0,
+    }
   }
   if (name === 'questions_by_ids') {
     const ids = new Set(body.p_ids ?? [])
@@ -191,6 +271,7 @@ function rpc(name, body) {
         correct_text: row.correct_text,
         explanation: row.explanation ?? null,
         source_ref: row.source_ref ?? null,
+        category: row.chapter ?? null,
         subjects: [book.subject].filter(Boolean),
         exams: row.exams ?? book.exams ?? [],
       })
@@ -242,9 +323,18 @@ const server = http.createServer((request, response) => {
       messages.push(JSON.parse(raw || '{}'))
       return json(201, [])
     }
+    if (url.pathname === '/rest/v1/reports' && request.method === 'POST') {
+      reports.push(JSON.parse(raw || '{}'))
+      return json(201, [])
+    }
     if (table === 'subject_catalog') return json(200, subjectCatalog())
     if (table === 'exam_catalog') return json(200, examCatalog())
     if (table === 'book_catalog') return json(200, bookCatalog())
+    if (table === 'chapter_catalog') return json(200, chapterCatalog())
+    if (table === 'mock_patterns') {
+      const rows = EXAMS.map((exam) => ({ exam_id: exam.id, exams: { slug: exam.slug }, ...MOCK_PATTERN }))
+      return json(200, rows)
+    }
     if (table === 'subjects') return json(200, SUBJECTS)
     if (table === 'exams') return json(200, EXAMS)
     if (table === 'mcqs') {
@@ -254,7 +344,8 @@ const server = http.createServer((request, response) => {
       const wanted = match ? match[1].split(',').map((value) => value.replace(/^"|"$/g, '').trim()) : []
       return json(200, wanted.filter((hash) => knownHashes.has(hash)).map((hash) => ({ content_hash: hash })))
     }
-    if (url.pathname === '/__state') return json(200, { questions: questions.length, messages, books: bookCatalog() })
+    if (url.pathname === '/__state')
+      return json(200, { questions: questions.length, messages, reports, books: bookCatalog() })
     return json(200, [])
   })
 })

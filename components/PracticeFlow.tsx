@@ -1,19 +1,20 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Quiz from '@/components/Quiz'
+import MockTest from '@/components/MockTest'
 import Result from '@/components/Result'
-import { Num, T } from '@/components/text'
+import StartScreen, { type StartChoices } from '@/components/StartScreen'
 import { useLang } from '@/components/i18n'
 import { IconBack } from '@/components/icons'
 import { loadDailyQuestions, loadQuestions, loadQuestionsByIds } from '@/lib/catalog'
 import { copyFor } from '@/lib/copy'
-import { getMistakeIds, saveAnswers, saveLastResult } from '@/lib/progress'
-import { sizeChoices, shuffle, sessionOf } from '@/lib/session'
+import { getMistakeIds, recordTest, saveAnswers, saveLastResult } from '@/lib/progress'
+import { genericPattern, mockScore, sessionOf, shuffle } from '@/lib/session'
 import { getSupabase } from '@/lib/supabase'
-import type { Answer, PreparedQuestion, Session } from '@/lib/types'
+import type { Answer, MockPattern, PreparedQuestion, Session } from '@/lib/types'
 
 type Mode = 'exam' | 'subject' | 'book' | 'today' | 'mistakes'
 
@@ -24,23 +25,29 @@ type Props = {
   itemKey: string
   available: number
   autoStart?: boolean
+  pattern?: MockPattern | null
 }
 
 type Phase = 'start' | 'quiz' | 'result'
 
 const TODAY_SIZE = 10
 
-export default function PracticeFlow({ mode, title, titleUr, itemKey, available, autoStart = false }: Props) {
+export default function PracticeFlow({
+  mode,
+  title,
+  titleUr,
+  itemKey,
+  available,
+  autoStart = false,
+  pattern = null,
+}: Props) {
   const lang = useLang()
   const t = copyFor(lang)
   const router = useRouter()
 
-  const choices = useMemo(() => sizeChoices(available), [available])
-  const [size, setSize] = useState(() => Math.min(10, available))
-  const [custom, setCustom] = useState('')
-  const [timerOn, setTimerOn] = useState(false)
   const [phase, setPhase] = useState<Phase>(autoStart ? 'quiz' : 'start')
   const [session, setSession] = useState<Session | null>(null)
+  const [mockPattern, setMockPattern] = useState<MockPattern | null>(null)
   const [index, setIndex] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [answers, setAnswers] = useState<Answer[]>([])
@@ -48,13 +55,18 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [mistakeCount, setMistakeCount] = useState(0)
-  const [lastSetup, setLastSetup] = useState<{ size: number; timerOn: boolean } | null>(null)
-
-  const chosenSize = custom.trim() ? Math.min(available, Math.max(1, Number(custom) || 0)) : size
 
   const begin = useCallback(
-    async (questions: PreparedQuestion[], nextMode: Session['mode'], nextTitle: string, nextTitleUr: string, timer: boolean) => {
+    (
+      questions: PreparedQuestion[],
+      nextMode: Session['mode'],
+      nextTitle: string,
+      nextTitleUr: string,
+      timer: boolean,
+      mock: MockPattern | null,
+    ) => {
       setSession(sessionOf(nextMode, nextTitle, nextTitleUr, questions, timer))
+      setMockPattern(mock)
       setIndex(0)
       setSelected(null)
       setAnswers([])
@@ -65,26 +77,42 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
   )
 
   const startItem = useCallback(
-    async (count: number, timer: boolean) => {
+    async (choices: StartChoices) => {
       const client = getSupabase()
       setError(null)
       setBusy(true)
       try {
         if (!client) throw new Error('offline')
-        const questions = await loadQuestions(client, mode, itemKey, count, shuffle)
+        const questions = await loadQuestions(
+          client,
+          mode,
+          itemKey,
+          choices.size,
+          shuffle,
+          choices.difficulty,
+          choices.level,
+        )
         if (questions.length === 0) {
           setError(t.noQuestions)
           return
         }
-        setLastSetup({ size: count, timerOn: timer })
-        await begin(questions, mode, title, titleUr, timer)
+        const mock =
+          choices.quizMode === 'mock'
+            ? {
+                ...(pattern ?? genericPattern(questions.length)),
+                questionCount: questions.length,
+                minutes: choices.minutes,
+              }
+            : null
+        if (mock) setElapsed(0)
+        begin(questions, mode, title, titleUr, choices.quizMode === 'mock' ? true : choices.timerOn, mock)
       } catch {
         setError(t.loadError)
       } finally {
         setBusy(false)
       }
     },
-    [begin, itemKey, mode, t.loadError, t.noQuestions, title, titleUr],
+    [begin, itemKey, mode, pattern, t.loadError, t.noQuestions, title, titleUr],
   )
 
   const startToday = useCallback(async () => {
@@ -98,7 +126,7 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
         setError(t.noQuestions)
         return
       }
-      await begin(questions, 'today', t.todayTitle, t.todayTitle, false)
+      begin(questions, 'today', t.todayTitle, t.todayTitle, false, null)
     } catch {
       setError(t.loadError)
     } finally {
@@ -117,7 +145,7 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
         setError(t.noQuestions)
         return
       }
-      await begin(questions, 'mistakes', t.mistakesTitle, t.mistakesTitle, false)
+      begin(questions, 'mistakes', t.mistakesTitle, t.mistakesTitle, false, null)
     } catch {
       setError(t.loadError)
     } finally {
@@ -134,14 +162,21 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
   }, [])
 
   const finish = useCallback(
-    (finalAnswers: Answer[]) => {
-      const taken = session ? Math.round((Date.now() - session.startedAt) / 1000) : 0
+    (finalAnswers: Answer[], seconds?: number) => {
+      const taken = seconds ?? (session ? Math.round((Date.now() - session.startedAt) / 1000) : 0)
+      setAnswers(finalAnswers)
       setElapsed(taken)
       saveAnswers(finalAnswers)
+      recordTest(finalAnswers)
       const right = finalAnswers.filter((answer) => answer.right).length
       saveLastResult({ right, total: finalAnswers.length, at: Date.now(), title })
       setMistakeCount(getMistakeIds().length)
       setPhase('result')
+      try {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } catch {
+        // jsdom and some embedded browsers do not implement scrolling
+      }
     },
     [session, title],
   )
@@ -152,7 +187,14 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
     setSelected(option)
     setAnswers((prev) => [
       ...prev,
-      { questionId: question.id, chosen: option, correct: question.correct, right: option === question.correct },
+      {
+        questionId: question.id,
+        chosen: option,
+        correct: question.correct,
+        right: option === question.correct,
+        chapter: question.chapter ?? null,
+        subject: question.subject_slug ?? null,
+      },
     ])
   }
 
@@ -170,6 +212,7 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
     if (mode === 'exam' || mode === 'subject' || mode === 'book') {
       setPhase('start')
       setSession(null)
+      setMockPattern(null)
       return
     }
     router.push('/')
@@ -182,7 +225,7 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
     }
     setPhase('start')
     setSession(null)
-    setLastSetup(null)
+    setMockPattern(null)
   }
 
   // ---------------------------------------------------------------- render
@@ -191,13 +234,30 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
     if (!session) {
       return (
         <div className="container page">
-          <p className="empty">{busy ? t.loading : error ?? t.noQuestions}</p>
+          <p className="empty">{busy ? t.loadingQuestions : error ?? t.noQuestions}</p>
           <Link href={mode === 'today' || mode === 'mistakes' ? '/' : '/exams'} className="back-link">
             <IconBack size={16} /> {t.back}
           </Link>
         </div>
       )
     }
+
+    if (mockPattern && session.questions.length > 0) {
+      return (
+        <div className="container page page--quiz">
+          <MockTest
+            questions={session.questions}
+            pattern={mockPattern}
+            minutes={mockPattern.minutes}
+            lang={lang}
+            startedAt={session.startedAt}
+            onFinish={(finalAnswers, seconds) => finish(finalAnswers, seconds)}
+            onExit={exit}
+          />
+        </div>
+      )
+    }
+
     return (
       <div className="container page page--quiz">
         <Quiz
@@ -217,6 +277,19 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
   }
 
   if (phase === 'result' && session) {
+    const summary =
+      mockPattern && session.questions.length > 0
+        ? {
+            ...mockScore(answers, {
+              marksPerQuestion: mockPattern.marksPerQuestion,
+              negativeMarking: mockPattern.negativeMarking,
+              total: session.questions.length,
+              passingPercentage: mockPattern.passingPercentage,
+            }),
+            pattern: mockPattern,
+          }
+        : null
+
     return (
       <div className="container page">
         <Result
@@ -225,6 +298,7 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
           elapsed={elapsed}
           lang={lang}
           mistakeCount={mistakeCount}
+          mock={summary}
           onTryAgain={tryAgain}
           onMistakes={() => void startMistakes()}
           onHome={() => router.push('/')}
@@ -233,93 +307,27 @@ export default function PracticeFlow({ mode, title, titleUr, itemKey, available,
     )
   }
 
-  // start screen
-  return (
-    <div className="container page">
-      <Link href={mode === 'today' || mode === 'mistakes' ? '/' : `/${mode === 'exam' ? 'exams' : mode === 'subject' ? 'subjects' : 'books'}`} className="back-link">
-        <IconBack size={16} /> {t.back}
-      </Link>
-
-      <header className="page-head">
-        <h1 className="page-title">
-          {titleUr && titleUr !== title ? <T en={title} ur={titleUr} /> : title}
-        </h1>
-        <p className="page-sub">
-          <T
-            en={`${available} questions available`}
-            ur={`${available} سوالات دستیاب ہیں`}
-          />
-        </p>
-      </header>
-
-      <section className="card start-card">
-        <h2 className="card-title">{t.howMany}</h2>
-        <div className="chips">
-          {choices.map((choice) => (
-            <button
-              key={choice}
-              type="button"
-              className="chip"
-              data-on={!custom.trim() && size === choice}
-              onClick={() => {
-
-                setSize(choice)
-                setCustom('')
-              }}
-            >
-              <Num>{choice}</Num>
-            </button>
-          ))}
-          <input
-            className="chip-input"
-            type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            placeholder={t.custom}
-            aria-label={t.custom}
-            value={custom}
-            onChange={(event) => {
-              const raw = event.target.value.replace(/[^0-9]/g, '').slice(0, 3)
-              setCustom(raw)
-            }}
-          />
-        </div>
-
-        <div className="timer-row">
-          <div className="timer-text">
-            <span className="row-title">{t.timer}</span>
-            <span className="row-hint">{t.timerHint}</span>
-          </div>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={timerOn}
-            aria-label={t.timer}
-            className="switch"
-            data-on={timerOn}
-            onClick={() => setTimerOn((value) => !value)}
-          >
-            <span className="switch-knob" />
-          </button>
-        </div>
-
-        {error && <p className="form-error">{error}</p>}
-
-        <button
-          type="button"
-          className="btn btn-dark btn-lg btn-start"
-          disabled={busy || chosenSize < 1}
-          onClick={() => void startItem(chosenSize, timerOn)}
-        >
-          {busy ? t.loading : t.start}
+  if (mode === 'today' || mode === 'mistakes') {
+    return (
+      <div className="container page">
+        <p className="empty">{busy ? t.loadingQuestions : error ?? t.noQuestions}</p>
+        <button type="button" className="btn btn-outline" onClick={() => (mode === 'mistakes' ? void startMistakes() : void startToday())}>
+          {t.tryAgain}
         </button>
+      </div>
+    )
+  }
 
-        {lastSetup && (
-          <p className="start-hint">
-            <T en="Last time:" ur="پچھلی بار:" /> <Num>{lastSetup.size}</Num>
-          </p>
-        )}
-      </section>
-    </div>
+  return (
+    <StartScreen
+      title={title}
+      titleUr={titleUr}
+      available={available}
+      backHref={`/${mode === 'exam' ? 'exams' : mode === 'subject' ? 'subjects' : 'books'}`}
+      pattern={pattern}
+      busy={busy}
+      error={error}
+      onStart={(choices) => void startItem(choices)}
+    />
   )
 }

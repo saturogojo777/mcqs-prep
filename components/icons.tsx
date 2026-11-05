@@ -92,3 +92,68 @@ export function IconClock({ size }: Props) {
     </svg>
   )
 }
+
+export function IconSearch({ size }: Props) {
+  return (
+    <svg {...base(size)}>
+      <circle cx="11" cy="11" r="6.5" />
+      <path d="M16 16l4 4" />
+    </svg>
+  )
+}
+
+export function IconFlag({ size }: Props) {
+  return (
+    <svg {...base(size)}>
+      <path d="M6 21V4" />
+      <path d="M6 4h11l-2 4 2 4H6" />
+    </svg>
+  )
+}
+
+export function IconGrid({ size }: Props) {
+  return (
+    <svg {...base(size)}>
+      <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
+      <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
+      <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
+      <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+    </svg>
+  )
+}
+
+export function IconChart({ size }: Props) {
+  return (
+    <svg {...base(size)}>
+      <path d="M4 20V4" />
+      <path d="M4 20h16" />
+      <path d="M8 16v-4M12.5 16V8M17 16v-6" />
+    </svg>
+  )
+}
+
+export function IconShield({ size }: Props) {
+  return (
+    <svg {...base(size)}>
+      <path d="M12 3l7 3v6c0 4.2-2.9 7.7-7 9-4.1-1.3-7-4.8-7-9V6l7-3Z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  )
+}
+
+export function IconBolt({ size }: Props) {
+  return (
+    <svg {...base(size)}>
+      <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
+    </svg>
+  )
+}
+
+export function IconDevice({ size }: Props) {
+  return (
+    <svg {...base(size)}>
+      <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+      <path d="M10.5 5.5h3M11 18.5h2" />
+    </svg>
+  )
+}

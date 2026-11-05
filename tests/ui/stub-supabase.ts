@@ -9,6 +9,10 @@ export type Row = {
   correct_text: string
   explanation: string | null
   source_ref: string | null
+  chapter: string | null
+  subject_slug: string | null
+  level: string
+  difficulty: string
 }
 
 export const SUBJECT = 'general-knowledge'
@@ -41,6 +45,10 @@ export const QUESTIONS: Row[] = gk.map(([en, ur, correct, options], index) => {
     correct_text: correct,
     explanation: null,
     source_ref: String(index + 1),
+    chapter: 'Pakistan GK',
+    subject_slug: SUBJECT,
+    level: 'intermediate',
+    difficulty: 'medium',
   }
 })
 
