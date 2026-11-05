@@ -6,8 +6,11 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { createClient } from '@supabase/supabase-js'
 
-const BOOK_TITLE = 'General Knowledge (500 Questions)'
-const BOOK_DESCRIPTION = '500 general knowledge MCQs for Pakistani exam preparation.'
+// The canonical book from supabase/20261105_professional.sql. The demo book
+// used to be called "General Knowledge (500 Questions)"; that title is gone and
+// must not be re-created, or the site ends up with an empty duplicate book.
+const BOOK_TITLE = 'General Knowledge'
+const BOOK_DESCRIPTION = 'General knowledge, Pakistan affairs, science and everyday awareness.'
 
 // Subject tags for the seeded book, mirroring supabase/20261105_dailytest.sql.
 const SUBJECT_BY_CATEGORY = {

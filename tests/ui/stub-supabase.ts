@@ -11,8 +11,8 @@ export type Row = {
   source_ref: string | null
   chapter: string | null
   subject_slug: string | null
-  level: string
-  difficulty: string
+  level: 'basic' | 'intermediate' | 'advanced'
+  difficulty: 'easy' | 'medium' | 'hard'
 }
 
 export const SUBJECT = 'general-knowledge'
