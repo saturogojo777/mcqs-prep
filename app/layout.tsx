@@ -4,6 +4,7 @@ import '@fontsource/noto-nastaliq-urdu/400.css'
 import './globals.css'
 import Header from '@/components/site/Header'
 import Footer from '@/components/site/Footer'
+import { Reveal } from '@/components/Reveal'
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -35,7 +36,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#000000' },
@@ -52,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: LANG_SCRIPT }} />
       </head>
       <body>
+        <Reveal />
         <Header />
         <main className="main">{children}</main>
         <Footer />

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: absolute('/books') },
   openGraph: {
     title: `Books · ${SITE_NAME}`,
-    description: 'Ten books, chapter by chapter, with explanations for every answer.',
+    description: 'Chapter-by-chapter MCQ books. Live books are open now; the rest arrive week by week.',
     url: absolute('/books'),
   },
 }

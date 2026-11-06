@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { Num, T } from '@/components/text'
+import { Count, Num, T } from '@/components/text'
 import { IconArrow, IconBolt, IconBook, IconCalendar, IconChart, IconExam, IconShield, IconSubject } from '@/components/icons'
 import ExamIcon from '@/components/ExamIcon'
 import AdSlot from '@/components/site/AdSlot'
+import StatsStrip from '@/components/StatsStrip'
 import type { Catalog, CatalogItem, SiteStats } from '@/lib/types'
 
 const CHOICES = [
@@ -42,8 +43,8 @@ const STEPS = [
   {
     title: 'Choose the length',
     titleUr: 'لمبائی مقرر کریں',
-    body: '10, 20, 50, 100 or your own number. Practice or Mock Test.',
-    bodyUr: 'دس، بیس، پچاس، سو یا اپنی تعداد۔ مشق یا ماک ٹیسٹ۔',
+    body: 'Pick a length up to the pool size, or your own number. Practice or Mock Test.',
+    bodyUr: 'موجود سوالات تک لمبائی چنیں یا اپنی تعداد۔ مشق یا ماک ٹیسٹ۔',
   },
   {
     title: 'Start and review',
@@ -63,10 +64,10 @@ const WHY = [
   },
   {
     Icon: IconChart,
-    title: 'Explain every answer',
-    titleUr: 'ہر جواب کی وضاحت',
-    body: 'A one or two line explanation sits under each answer, in English and Urdu.',
-    bodyUr: 'ہر جواب کے نیچے انگریزی اور اردو میں مختصر وضاحت۔',
+    title: 'Clear explanations',
+    titleUr: 'واضح وضاحت',
+    body: 'Every new question carries a short explanation. Older sets show one wherever it is available.',
+    bodyUr: 'ہر نئے سوال کے ساتھ مختصر وضاحت ہوتی ہے۔ پرانے سیٹ میں جہاں دستیاب ہو وضاحت دکھتی ہے۔',
   },
   {
     Icon: IconBolt,
@@ -199,19 +200,10 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
         </span>
       </Link>
 
-      <section className="stats-strip" aria-label="Library size">
-        {statItems.map((stat) => (
-          <div className="stat" key={stat.en}>
-            <span className="stat-value num">{count(stat.value)}</span>
-            <span className="stat-label">
-              <T en={stat.en} ur={stat.ur} />
-            </span>
-          </div>
-        ))}
-      </section>
+      <StatsStrip stats={stats} />
 
       {exams.length > 0 && (
-        <section className="home-section">
+        <section className="home-section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">
               <T en="Popular exams" ur="مقبول امتحانات" />
@@ -229,7 +221,7 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
       )}
 
       {subjects.length > 0 && (
-        <section className="home-section">
+        <section className="home-section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">
               <T en="Subjects" ur="مضامین" />
@@ -244,8 +236,8 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
                 <span className="tile-name">
                   {item.nameUr ? <T en={item.name} ur={item.nameUr} /> : item.name}
                 </span>
-                <span className="tile-meta num">
-                  <T en={`${count(item.count)} questions`} ur={`${count(item.count)} سوالات`} />
+                <span className="tile-meta">
+                  <Count n={item.count} one="question" many="questions" oneUr="سوال" manyUr="سوالات" />
                 </span>
               </Link>
             ))}
@@ -254,7 +246,7 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
       )}
 
       {books.length > 0 && (
-        <section className="home-section">
+        <section className="home-section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">
               <T en="Books" ur="کتابیں" />
@@ -272,12 +264,11 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
                     {item.nameUr ? <T en={item.name} ur={item.nameUr} /> : item.name}
                   </span>
                   <span className="book-meta">
-                    <Num>{count(item.count)}</Num>{' '}
-                    <T en="questions" ur="سوالات" />
+                    <Count n={item.count} one="question" many="questions" oneUr="سوال" manyUr="سوالات" />
                     {item.chapters ? (
                       <>
                         {' · '}
-                        <Num>{item.chapters}</Num> <T en="chapters" ur="ابواب" />
+                        <Count n={item.chapters} one="chapter" many="chapters" oneUr="باب" manyUr="ابواب" />
                       </>
                     ) : null}
                   </span>
@@ -293,7 +284,7 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
 
       <AdSlot slot="home" />
 
-      <section className="home-section">
+      <section className="home-section" data-reveal>
         <h2 className="section-title">
           <T en="How it works" ur="طریقہ کار" />
         </h2>
@@ -312,7 +303,7 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
         </ol>
       </section>
 
-      <section className="home-section">
+      <section className="home-section" data-reveal>
         <h2 className="section-title">
           <T en="Why DailyTest" ur="ڈیلی ٹیسٹ کیوں" />
         </h2>
@@ -333,7 +324,7 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
         </div>
       </section>
 
-      <section className="home-section home-section--faq">
+      <section className="home-section home-section--faq" data-reveal>
         <h2 className="section-title">
           <T en="Questions students ask" ur="طلبہ کے عام سوالات" />
         </h2>

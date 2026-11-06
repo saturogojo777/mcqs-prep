@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { T } from '@/components/text'
 import { CONTACT_EMAIL, OWNER, SITE_NAME } from '@/lib/site'
-import { getSearchIndex } from '@/lib/search-index'
+import { getCatalog } from '@/lib/search-index'
 
 const LEGAL = [
   { href: '/about', en: 'About', ur: 'تعارف' },
@@ -12,9 +12,9 @@ const LEGAL = [
 ]
 
 export default async function Footer() {
-  const index = await getSearchIndex()
-  const subjects = index.filter((entry) => entry.kind === 'subject' && entry.count > 0).slice(0, 6)
-  const exams = index.filter((entry) => entry.kind === 'exam').slice(0, 6)
+  const catalog = await getCatalog()
+  const subjects = catalog.subjects
+  const exams = catalog.exams
 
   return (
     <footer className="footer">
@@ -36,7 +36,7 @@ export default async function Footer() {
           <ul>
             {exams.map((entry) => (
               <li key={entry.key}>
-                <Link href={entry.href}>{entry.name}</Link>
+                <Link href={`/practice/exam/${entry.key}`}>{entry.name}</Link>
               </li>
             ))}
             <li>
@@ -54,7 +54,7 @@ export default async function Footer() {
           <ul>
             {subjects.map((entry) => (
               <li key={entry.key}>
-                <Link href={entry.href}>{entry.name}</Link>
+                <Link href={`/practice/subject/${entry.key}`}>{entry.name}</Link>
               </li>
             ))}
             <li>

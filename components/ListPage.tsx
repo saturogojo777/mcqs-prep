@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Num, T } from '@/components/text'
+import { Count, Num, T } from '@/components/text'
 import ExamIcon from '@/components/ExamIcon'
 import type { CatalogItem, ItemKind } from '@/lib/types'
 
@@ -12,10 +12,10 @@ type Props = {
   introUr: string
 }
 
-const GROUPS: Record<string, { title: string; titleUr: string }> = {
-  exam: { title: 'exams', titleUr: 'امتحانات' },
-  subject: { title: 'subjects', titleUr: 'مضامین' },
-  book: { title: 'books', titleUr: 'کتابیں' },
+const GROUPS: Record<string, { one: string; many: string; oneUr: string; manyUr: string }> = {
+  exam: { one: 'live exam', many: 'live exams', oneUr: 'فعال امتحان', manyUr: 'فعال امتحانات' },
+  subject: { one: 'live subject', many: 'live subjects', oneUr: 'فعال مضمون', manyUr: 'فعال مضامین' },
+  book: { one: 'live book', many: 'live books', oneUr: 'فعال کتاب', manyUr: 'فعال کتابیں' },
 }
 
 /** One card per exam / subject / book, with its question count. */
@@ -24,7 +24,13 @@ export default function ListPage({ kind, items, title, titleUr, intro, introUr }
     <div className="container page">
       <header className="page-head">
         <p className="eyebrow">
-          <T en={`${items.filter((item) => item.count > 0).length} ${GROUPS[kind].title}`} ur={GROUPS[kind].titleUr} />
+          <Count
+            n={items.filter((item) => item.count > 0).length}
+            one={GROUPS[kind].one}
+            many={GROUPS[kind].many}
+            oneUr={GROUPS[kind].oneUr}
+            manyUr={GROUPS[kind].manyUr}
+          />
         </p>
         <h1 className="page-title">
           <T en={title} ur={titleUr} />
@@ -47,7 +53,7 @@ export default function ListPage({ kind, items, title, titleUr, intro, introUr }
           </Link>
         </div>
       ) : (
-        <ul className="item-grid">
+        <ul className="item-grid" data-reveal>
           {items.map((item) => {
             const empty = item.count === 0
             return (
@@ -77,11 +83,11 @@ export default function ListPage({ kind, items, title, titleUr, intro, introUr }
                       <span className="item-name">{item.nameUr ? <T en={item.name} ur={item.nameUr} /> : item.name}</span>
                       <span className="item-meta">
                         <span className="item-count">
-                          <Num>{item.count}</Num> <T en="questions" ur="سوالات" />
+                          <Count n={item.count} one="question" many="questions" oneUr="سوال" manyUr="سوالات" />
                         </span>
                         {kind === 'book' && item.chapters ? (
                           <span className="item-count item-count--muted">
-                            <Num>{item.chapters}</Num> <T en="chapters" ur="ابواب" />
+                            <Count n={item.chapters} one="chapter" many="chapters" oneUr="باب" manyUr="ابواب" />
                           </span>
                         ) : null}
                       </span>

@@ -1,0 +1,65 @@
+-- DailyTest 2026-11-06: Pakistan Studies import (29 MCQs).
+-- Generated from content files (validated + deduped). Idempotent.
+
+insert into public.books (title) values ('Pakistan Studies') on conflict (title) do nothing;
+
+insert into public.categories (book_id, name)
+select id, 'Sir Syed Ahmad Khan & Aligarh Movement' from public.books where title = 'Pakistan Studies'
+on conflict (book_id, name) do nothing;
+
+insert into public.mcqs (book_id, category_id, question_en, question_ur, options,
+  correct_text, explanation, source_ref, difficulty, level, review_status)
+select b.id, c.id, v.question_en, nullif(v.question_ur, ''), v.options::jsonb,
+  v.correct_text, v.explanation, v.source_ref, v.difficulty, v.level, v.review_status
+from public.books b join public.categories c on c.book_id = b.id
+join (values
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed Ahmad Khan was born in?', 'سر سید احمد خان کی پیدائش کب ہوئی؟', '{"A": "1898", "B": "1857", "C": "1875", "D": "1817"}', '1817', 'Born on 17 October 1817 in Delhi.', 'pak-studies-040', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed founded the Muhammadan Anglo-Oriental College in?', 'سر سید نے محمدن اینگلو اورینٹل کالج کب قائم کیا؟', '{"A": "1906", "B": "1857", "C": "1875", "D": "1885"}', '1875', 'Founded on 24 May 1875 at Aligarh.', 'pak-studies-041', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'MAO College later became?', 'MAO کالج بعد میں کیا بن گیا؟', '{"A": "Punjab University", "B": "Delhi University", "C": "Aligarh Muslim University", "D": "Osmania University"}', 'Aligarh Muslim University', 'It was raised to Aligarh Muslim University in 1920.', 'pak-studies-042', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'The Aligarh Movement aimed at?', 'علی گڑھ تحریک کا مقصد کیا تھا؟', '{"A": "Independence immediately", "B": "Armed revolt", "C": "Hindu-Muslim unity only", "D": "Modern education for Muslims and loyalty to British"}', 'Modern education for Muslims and loyalty to British', 'It promoted English and science for Muslims while keeping British goodwill.', 'pak-studies-043', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed died in?', 'سر سید کا انتقال کب ہوا؟', '{"A": "1911", "B": "1898", "C": "1906", "D": "1875"}', '1898', 'He died on 27 March 1898 at Aligarh.', 'pak-studies-044', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Scientific Society was founded by Sir Syed in?', 'سائنٹیفک سوسائٹی سر سید نے کب قائم کی؟', '{"A": "1875", "B": "1864", "C": "1886", "D": "1859"}', '1864', 'Set up at Ghazipur in 1864 to translate Western works into Urdu.', 'pak-studies-045', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed advised Muslims to stay away from?', 'سر سید نے مسلمانوں کو کس سے دور رہنے کا مشورہ دیا؟', '{"A": "British", "B": "Indian National Congress", "C": "Trade", "D": "Education"}', 'Indian National Congress', 'He feared Congress politics would harm Muslim interests.', 'pak-studies-046', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'The journal Tehzeeb-ul-Ikhlaq was started by?', 'تہذیب الاخلاق جریدہ کس نے شروع کیا؟', '{"A": "Hali", "B": "Allama Iqbal", "C": "Maulana Azad", "D": "Sir Syed Ahmad Khan"}', 'Sir Syed Ahmad Khan', 'His reform journal, first issued in 1870.', 'pak-studies-047', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Two-Nation Theory was first hinted by?', 'دو قومی نظریہ کا پہلا اشارہ کس نے دیا؟', '{"A": "Jinnah", "B": "Iqbal", "C": "Sir Syed Ahmad Khan", "D": "Rehman Ali"}', 'Sir Syed Ahmad Khan', 'His speeches after 1867 first argued that Hindus and Muslims were two nations.', 'pak-studies-048', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'United Indian Patriotic Association was formed by Sir Syed in?', 'یونائیٹڈ انڈین پیٹریاٹک ایسوسی ایشن سر سید نے کب بنائی؟', '{"A": "1857", "B": "1888", "C": "1875", "D": "1906"}', '1888', 'Founded in 1888 to counter the claims of the Congress.', 'pak-studies-049', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed believed Muslims should focus on?', 'سر سید کا خیال تھا کہ مسلمانوں کو کس پر توجہ دینی چاہیے؟', '{"A": "Politics only", "B": "Religion only", "C": "Agriculture only", "D": "Education and economic uplift"}', 'Education and economic uplift', 'Uplift through education, not agitation, was his message.', 'pak-studies-050', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Muhammadan Educational Conference was founded in?', 'محمدن ایجوکیشنل کانفرنس کب قائم ہوئی؟', '{"A": "1892", "B": "1875", "C": "1906", "D": "1886"}', '1886', 'Founded in 1886 to spread the Aligarh model across India.', 'pak-studies-051', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed worked as a?', 'سر سید نے کس حیثیت سے کام کیا؟', '{"A": "Soldier", "B": "Farmer", "C": "Trader", "D": "Judicial officer under British"}', 'Judicial officer under British', 'He served as a Sadr Amin (judge) in British service.', 'pak-studies-052', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'The pamphlet ''Loyal Muhammadans of India'' was written by?', '''لویال محمدنز آف انڈیا'' پمفلٹ کس نے لکھا؟', '{"A": "Sir Syed", "B": "Gandhi", "C": "Jinnah", "D": "Iqbal"}', 'Sir Syed', 'Written in 1860 to show Muslim loyalty after the 1857 rising.', 'pak-studies-053', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'The Aligarh Institute Gazette was?', 'علی گڑھ انسٹی ٹیوٹ گزٹ کیا تھا؟', '{"A": "A newspaper/journal by Sir Syed", "B": "A college", "C": "A party", "D": "A book"}', 'A newspaper/journal by Sir Syed', 'His weekly paper, published from Aligarh.', 'pak-studies-054', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed''s family background was?', 'سر سید کا خاندانی پس منظر کیا تھا؟', '{"A": "Soldier", "B": "Mughal aristocracy, Syed family", "C": "Merchant", "D": "Peasant"}', 'Mughal aristocracy, Syed family', 'He was born to a noble Delhi Syed family that served the Mughals.', 'pak-studies-055', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'During 1857, Sir Syed was posted at?', '1857 میں سر سید کہاں تعینات تھے؟', '{"A": "Bijnor", "B": "Lucknow", "C": "Delhi", "D": "Aligarh"}', 'Bijnor', 'As Sadr Amin at Bijnor, he saved British lives during the 1857 rising.', 'pak-studies-056', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed established a school at?', 'سر سید نے پہلا اسکول کہاں قائم کیا؟', '{"A": "Muradabad", "B": "Aligarh first", "C": "Delhi", "D": "Agra"}', 'Muradabad', 'His first modern school opened at Muradabad in 1859.', 'pak-studies-057', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed''s tomb is at?', 'سر سید کا مقبرہ کہاں ہے؟', '{"A": "Delhi", "B": "Karachi", "C": "Lahore", "D": "Aligarh Muslim University mosque premises"}', 'Aligarh Muslim University mosque premises', 'He is buried beside the mosque at Aligarh.', 'pak-studies-058', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed visited England in?', 'سر سید انگلینڈ کب گئے؟', '{"A": "1875", "B": "1885", "C": "1857", "D": "1869-70"}', '1869-70', 'His 1869 visit to England shaped his college plans.', 'pak-studies-059', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Mohammedan Anglo Oriental College was upgraded to university in?', 'محمدن اینگلو اورینٹل کالج کو یونیورسٹی کب بنایا گیا؟', '{"A": "1906", "B": "1920", "C": "1898", "D": "1875"}', '1920', 'MAO College became Aligarh Muslim University in 1920.', 'pak-studies-060', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'The slogan or idea ''Educate, Educate, Educate'' is associated with?', '''تعلیم، تعلیم، تعلیم'' کا نعرہ یا خیال کس سے وابستہ ہے؟', '{"A": "Iqbal", "B": "Jinnah", "C": "Syed Ameer Ali", "D": "Sir Syed Ahmad Khan"}', 'Sir Syed Ahmad Khan', 'No verified source for this slogan; held back for review.', 'pak-studies-061', 'medium', 'intermediate', 'needs_review'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'The Indian National Congress was founded in 1885, Sir Syed''s reaction?', 'انڈین نیشنل کانگریس 1885 میں قائم ہوئی، سر سید کا رد عمل؟', '{"A": "Ignored", "B": "Led it", "C": "Opposed Muslim participation", "D": "Joined it"}', 'Opposed Muslim participation', 'He called the Congress a Hindu body and kept Muslims out of it.', 'pak-studies-062', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'The college was open to?', 'کالج کس کے لیے کھلا تھا؟', '{"A": "Only Hindus", "B": "Only ulema", "C": "Primarily Muslims but others too", "D": "Only British"}', 'Primarily Muslims but others too', 'It served Muslims first but admitted Hindu and other students too.', 'pak-studies-063', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Controversy with Hindi-Urdu, Sir Syed defended?', 'ہندی اردو تنازعہ میں سر سید نے کس کا دفاع کیا؟', '{"A": "Urdu as lingua franca of Muslims", "B": "Hindi", "C": "Sanskrit", "D": "English only"}', 'Urdu as lingua franca of Muslims', 'In the 1867 Hindi-Urdu row he stood for Urdu.', 'pak-studies-064', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed accepted the title ''Sir'' in?', 'سر سید نے ''سر'' کا خطاب کب قبول کیا؟', '{"A": "1898", "B": "1888", "C": "1857", "D": "1875"}', '1888', 'He was knighted (KCSI) in 1888.', 'pak-studies-065', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'The magazine ''Tahzibul Akhlaq'' first issued in?', 'رسالہ ''تہذیب الاخلاق'' پہلی بار کب جاری ہوا؟', '{"A": "1885", "B": "1857", "C": "1870", "D": "1900"}', '1870', 'First issued in December 1870.', 'pak-studies-066', 'medium', 'intermediate', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed rejected the idea of?', 'سر سید نے کس خیال کو مسترد کیا؟', '{"A": "Education", "B": "Science", "C": "Muslims joining Congress as it was Hindu dominated", "D": "Urdu"}', 'Muslims joining Congress as it was Hindu dominated', 'He saw the Congress as Hindu-dominated and a risk for Muslims.', 'pak-studies-067', 'easy', 'basic', 'ai_verified'),
+  ('Sir Syed Ahmad Khan & Aligarh Movement', 'Sir Syed''s age when he founded the college?', 'کالج قائم کرتے وقت سر سید کی عمر کیا تھی؟', '{"A": "20", "B": "30", "C": "80", "D": "About 58 years"}', 'About 58 years', 'Born in 1817, he founded the college in 1875 at about 58.', 'pak-studies-068', 'medium', 'intermediate', 'ai_verified')
+) as v(chapter, question_en, question_ur, options, correct_text, explanation,
+  source_ref, difficulty, level, review_status) on c.name = v.chapter
+where b.title = 'Pakistan Studies'
+on conflict (content_hash) do nothing;
+
+insert into public.mcq_subjects (mcq_id, subject_id)
+select m.id, s.id from public.mcqs m cross join public.subjects s
+where s.slug = 'pakistan-studies' and m.source_ref = any (array['pak-studies-040', 'pak-studies-041', 'pak-studies-042', 'pak-studies-043', 'pak-studies-044', 'pak-studies-045', 'pak-studies-046', 'pak-studies-047', 'pak-studies-048', 'pak-studies-049', 'pak-studies-050', 'pak-studies-051', 'pak-studies-052', 'pak-studies-053', 'pak-studies-054', 'pak-studies-055', 'pak-studies-056', 'pak-studies-057', 'pak-studies-058', 'pak-studies-059', 'pak-studies-060', 'pak-studies-061', 'pak-studies-062', 'pak-studies-063', 'pak-studies-064', 'pak-studies-065', 'pak-studies-066', 'pak-studies-067', 'pak-studies-068'])
+on conflict do nothing;
+
+insert into public.mcq_exams (mcq_id, exam_id)
+select m.id, e.id from public.mcqs m cross join public.exams e
+where e.slug = any (array['ppsc', 'fpsc', 'spsc', 'nts-pts-ots', 'css-pms', 'police', 'teachers', 'forces'])
+  and m.source_ref = any (array['pak-studies-043', 'pak-studies-044', 'pak-studies-045', 'pak-studies-047', 'pak-studies-049', 'pak-studies-051', 'pak-studies-053', 'pak-studies-056', 'pak-studies-057', 'pak-studies-058', 'pak-studies-059', 'pak-studies-060', 'pak-studies-061', 'pak-studies-063', 'pak-studies-065', 'pak-studies-066', 'pak-studies-068'])
+on conflict do nothing;
+
+insert into public.mcq_exams (mcq_id, exam_id)
+select m.id, e.id from public.mcqs m cross join public.exams e
+where e.slug = any (array['ppsc', 'fpsc', 'spsc', 'nts-pts-ots', 'police', 'teachers', 'forces'])
+  and m.source_ref = any (array['pak-studies-040', 'pak-studies-041', 'pak-studies-042', 'pak-studies-046', 'pak-studies-048', 'pak-studies-050', 'pak-studies-052', 'pak-studies-054', 'pak-studies-055', 'pak-studies-062', 'pak-studies-064', 'pak-studies-067'])
+on conflict do nothing;

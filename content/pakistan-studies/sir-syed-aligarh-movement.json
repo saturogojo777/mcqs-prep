@@ -1,0 +1,802 @@
+[
+ {
+  "source_ref": "pak-studies-040",
+  "question_en": "Sir Syed Ahmad Khan was born in?",
+  "question_ur": "سر سید احمد خان کی پیدائش کب ہوئی؟",
+  "options": {
+   "A": "1898",
+   "B": "1857",
+   "C": "1875",
+   "D": "1817"
+  },
+  "correct_text": "1817",
+  "explanation": "Born on 17 October 1817 in Delhi.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-041",
+  "question_en": "Sir Syed founded the Muhammadan Anglo-Oriental College in?",
+  "question_ur": "سر سید نے محمدن اینگلو اورینٹل کالج کب قائم کیا؟",
+  "options": {
+   "A": "1906",
+   "B": "1857",
+   "C": "1875",
+   "D": "1885"
+  },
+  "correct_text": "1875",
+  "explanation": "Founded on 24 May 1875 at Aligarh.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-042",
+  "question_en": "MAO College later became?",
+  "question_ur": "MAO کالج بعد میں کیا بن گیا؟",
+  "options": {
+   "A": "Punjab University",
+   "B": "Delhi University",
+   "C": "Aligarh Muslim University",
+   "D": "Osmania University"
+  },
+  "correct_text": "Aligarh Muslim University",
+  "explanation": "It was raised to Aligarh Muslim University in 1920.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-043",
+  "question_en": "The Aligarh Movement aimed at?",
+  "question_ur": "علی گڑھ تحریک کا مقصد کیا تھا؟",
+  "options": {
+   "A": "Independence immediately",
+   "B": "Armed revolt",
+   "C": "Hindu-Muslim unity only",
+   "D": "Modern education for Muslims and loyalty to British"
+  },
+  "correct_text": "Modern education for Muslims and loyalty to British",
+  "explanation": "It promoted English and science for Muslims while keeping British goodwill.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-044",
+  "question_en": "Sir Syed died in?",
+  "question_ur": "سر سید کا انتقال کب ہوا؟",
+  "options": {
+   "A": "1911",
+   "B": "1898",
+   "C": "1906",
+   "D": "1875"
+  },
+  "correct_text": "1898",
+  "explanation": "He died on 27 March 1898 at Aligarh.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-045",
+  "question_en": "Scientific Society was founded by Sir Syed in?",
+  "question_ur": "سائنٹیفک سوسائٹی سر سید نے کب قائم کی؟",
+  "options": {
+   "A": "1875",
+   "B": "1864",
+   "C": "1886",
+   "D": "1859"
+  },
+  "correct_text": "1864",
+  "explanation": "Set up at Ghazipur in 1864 to translate Western works into Urdu.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-046",
+  "question_en": "Sir Syed advised Muslims to stay away from?",
+  "question_ur": "سر سید نے مسلمانوں کو کس سے دور رہنے کا مشورہ دیا؟",
+  "options": {
+   "A": "British",
+   "B": "Indian National Congress",
+   "C": "Trade",
+   "D": "Education"
+  },
+  "correct_text": "Indian National Congress",
+  "explanation": "He feared Congress politics would harm Muslim interests.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-047",
+  "question_en": "The journal Tehzeeb-ul-Ikhlaq was started by?",
+  "question_ur": "تہذیب الاخلاق جریدہ کس نے شروع کیا؟",
+  "options": {
+   "A": "Hali",
+   "B": "Allama Iqbal",
+   "C": "Maulana Azad",
+   "D": "Sir Syed Ahmad Khan"
+  },
+  "correct_text": "Sir Syed Ahmad Khan",
+  "explanation": "His reform journal, first issued in 1870.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-048",
+  "question_en": "Two-Nation Theory was first hinted by?",
+  "question_ur": "دو قومی نظریہ کا پہلا اشارہ کس نے دیا؟",
+  "options": {
+   "A": "Jinnah",
+   "B": "Iqbal",
+   "C": "Sir Syed Ahmad Khan",
+   "D": "Rehman Ali"
+  },
+  "correct_text": "Sir Syed Ahmad Khan",
+  "explanation": "His speeches after 1867 first argued that Hindus and Muslims were two nations.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-049",
+  "question_en": "United Indian Patriotic Association was formed by Sir Syed in?",
+  "question_ur": "یونائیٹڈ انڈین پیٹریاٹک ایسوسی ایشن سر سید نے کب بنائی؟",
+  "options": {
+   "A": "1857",
+   "B": "1888",
+   "C": "1875",
+   "D": "1906"
+  },
+  "correct_text": "1888",
+  "explanation": "Founded in 1888 to counter the claims of the Congress.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-050",
+  "question_en": "Sir Syed believed Muslims should focus on?",
+  "question_ur": "سر سید کا خیال تھا کہ مسلمانوں کو کس پر توجہ دینی چاہیے؟",
+  "options": {
+   "A": "Politics only",
+   "B": "Religion only",
+   "C": "Agriculture only",
+   "D": "Education and economic uplift"
+  },
+  "correct_text": "Education and economic uplift",
+  "explanation": "Uplift through education, not agitation, was his message.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-051",
+  "question_en": "Muhammadan Educational Conference was founded in?",
+  "question_ur": "محمدن ایجوکیشنل کانفرنس کب قائم ہوئی؟",
+  "options": {
+   "A": "1892",
+   "B": "1875",
+   "C": "1906",
+   "D": "1886"
+  },
+  "correct_text": "1886",
+  "explanation": "Founded in 1886 to spread the Aligarh model across India.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-052",
+  "question_en": "Sir Syed worked as a?",
+  "question_ur": "سر سید نے کس حیثیت سے کام کیا؟",
+  "options": {
+   "A": "Soldier",
+   "B": "Farmer",
+   "C": "Trader",
+   "D": "Judicial officer under British"
+  },
+  "correct_text": "Judicial officer under British",
+  "explanation": "He served as a Sadr Amin (judge) in British service.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-053",
+  "question_en": "The pamphlet 'Loyal Muhammadans of India' was written by?",
+  "question_ur": "'لویال محمدنز آف انڈیا' پمفلٹ کس نے لکھا؟",
+  "options": {
+   "A": "Sir Syed",
+   "B": "Gandhi",
+   "C": "Jinnah",
+   "D": "Iqbal"
+  },
+  "correct_text": "Sir Syed",
+  "explanation": "Written in 1860 to show Muslim loyalty after the 1857 rising.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-054",
+  "question_en": "The Aligarh Institute Gazette was?",
+  "question_ur": "علی گڑھ انسٹی ٹیوٹ گزٹ کیا تھا؟",
+  "options": {
+   "A": "A newspaper/journal by Sir Syed",
+   "B": "A college",
+   "C": "A party",
+   "D": "A book"
+  },
+  "correct_text": "A newspaper/journal by Sir Syed",
+  "explanation": "His weekly paper, published from Aligarh.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-055",
+  "question_en": "Sir Syed's family background was?",
+  "question_ur": "سر سید کا خاندانی پس منظر کیا تھا؟",
+  "options": {
+   "A": "Soldier",
+   "B": "Mughal aristocracy, Syed family",
+   "C": "Merchant",
+   "D": "Peasant"
+  },
+  "correct_text": "Mughal aristocracy, Syed family",
+  "explanation": "He was born to a noble Delhi Syed family that served the Mughals.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-056",
+  "question_en": "During 1857, Sir Syed was posted at?",
+  "question_ur": "1857 میں سر سید کہاں تعینات تھے؟",
+  "options": {
+   "A": "Bijnor",
+   "B": "Lucknow",
+   "C": "Delhi",
+   "D": "Aligarh"
+  },
+  "correct_text": "Bijnor",
+  "explanation": "As Sadr Amin at Bijnor, he saved British lives during the 1857 rising.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-057",
+  "question_en": "Sir Syed established a school at?",
+  "question_ur": "سر سید نے پہلا اسکول کہاں قائم کیا؟",
+  "options": {
+   "A": "Muradabad",
+   "B": "Aligarh first",
+   "C": "Delhi",
+   "D": "Agra"
+  },
+  "correct_text": "Muradabad",
+  "explanation": "His first modern school opened at Muradabad in 1859.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-058",
+  "question_en": "Sir Syed's tomb is at?",
+  "question_ur": "سر سید کا مقبرہ کہاں ہے؟",
+  "options": {
+   "A": "Delhi",
+   "B": "Karachi",
+   "C": "Lahore",
+   "D": "Aligarh Muslim University mosque premises"
+  },
+  "correct_text": "Aligarh Muslim University mosque premises",
+  "explanation": "He is buried beside the mosque at Aligarh.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-059",
+  "question_en": "Sir Syed visited England in?",
+  "question_ur": "سر سید انگلینڈ کب گئے؟",
+  "options": {
+   "A": "1875",
+   "B": "1885",
+   "C": "1857",
+   "D": "1869-70"
+  },
+  "correct_text": "1869-70",
+  "explanation": "His 1869 visit to England shaped his college plans.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-060",
+  "question_en": "Mohammedan Anglo Oriental College was upgraded to university in?",
+  "question_ur": "محمدن اینگلو اورینٹل کالج کو یونیورسٹی کب بنایا گیا؟",
+  "options": {
+   "A": "1906",
+   "B": "1920",
+   "C": "1898",
+   "D": "1875"
+  },
+  "correct_text": "1920",
+  "explanation": "MAO College became Aligarh Muslim University in 1920.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-061",
+  "question_en": "The slogan or idea 'Educate, Educate, Educate' is associated with?",
+  "question_ur": "'تعلیم، تعلیم، تعلیم' کا نعرہ یا خیال کس سے وابستہ ہے؟",
+  "options": {
+   "A": "Iqbal",
+   "B": "Jinnah",
+   "C": "Syed Ameer Ali",
+   "D": "Sir Syed Ahmad Khan"
+  },
+  "correct_text": "Sir Syed Ahmad Khan",
+  "explanation": "No verified source for this slogan; held back for review.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "needs_review",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-062",
+  "question_en": "The Indian National Congress was founded in 1885, Sir Syed's reaction?",
+  "question_ur": "انڈین نیشنل کانگریس 1885 میں قائم ہوئی، سر سید کا رد عمل؟",
+  "options": {
+   "A": "Ignored",
+   "B": "Led it",
+   "C": "Opposed Muslim participation",
+   "D": "Joined it"
+  },
+  "correct_text": "Opposed Muslim participation",
+  "explanation": "He called the Congress a Hindu body and kept Muslims out of it.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-063",
+  "question_en": "The college was open to?",
+  "question_ur": "کالج کس کے لیے کھلا تھا؟",
+  "options": {
+   "A": "Only Hindus",
+   "B": "Only ulema",
+   "C": "Primarily Muslims but others too",
+   "D": "Only British"
+  },
+  "correct_text": "Primarily Muslims but others too",
+  "explanation": "It served Muslims first but admitted Hindu and other students too.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-064",
+  "question_en": "Controversy with Hindi-Urdu, Sir Syed defended?",
+  "question_ur": "ہندی اردو تنازعہ میں سر سید نے کس کا دفاع کیا؟",
+  "options": {
+   "A": "Urdu as lingua franca of Muslims",
+   "B": "Hindi",
+   "C": "Sanskrit",
+   "D": "English only"
+  },
+  "correct_text": "Urdu as lingua franca of Muslims",
+  "explanation": "In the 1867 Hindi-Urdu row he stood for Urdu.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-065",
+  "question_en": "Sir Syed accepted the title 'Sir' in?",
+  "question_ur": "سر سید نے 'سر' کا خطاب کب قبول کیا؟",
+  "options": {
+   "A": "1898",
+   "B": "1888",
+   "C": "1857",
+   "D": "1875"
+  },
+  "correct_text": "1888",
+  "explanation": "He was knighted (KCSI) in 1888.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-066",
+  "question_en": "The magazine 'Tahzibul Akhlaq' first issued in?",
+  "question_ur": "رسالہ 'تہذیب الاخلاق' پہلی بار کب جاری ہوا؟",
+  "options": {
+   "A": "1885",
+   "B": "1857",
+   "C": "1870",
+   "D": "1900"
+  },
+  "correct_text": "1870",
+  "explanation": "First issued in December 1870.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-067",
+  "question_en": "Sir Syed rejected the idea of?",
+  "question_ur": "سر سید نے کس خیال کو مسترد کیا؟",
+  "options": {
+   "A": "Education",
+   "B": "Science",
+   "C": "Muslims joining Congress as it was Hindu dominated",
+   "D": "Urdu"
+  },
+  "correct_text": "Muslims joining Congress as it was Hindu dominated",
+  "explanation": "He saw the Congress as Hindu-dominated and a risk for Muslims.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-068",
+  "question_en": "Sir Syed's age when he founded the college?",
+  "question_ur": "کالج قائم کرتے وقت سر سید کی عمر کیا تھی؟",
+  "options": {
+   "A": "20",
+   "B": "30",
+   "C": "80",
+   "D": "About 58 years"
+  },
+  "correct_text": "About 58 years",
+  "explanation": "Born in 1817, he founded the college in 1875 at about 58.",
+  "chapter": "Sir Syed Ahmad Khan & Aligarh Movement",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ }
+]

@@ -154,20 +154,9 @@ export async function loadQuestions(
     p_level: cleanFilter(level),
   })
   if (error) throw new Error(error.message)
-  let rows = (data ?? []) as QuestionRow[]
-  // A filter (easy / advanced …) can be narrower than the pool. Rather than
-  // showing an empty screen, fall back to the unfiltered pool.
-  if (rows.length === 0 && (cleanFilter(difficulty) || cleanFilter(level))) {
-    const retry = await client.rpc('random_questions', {
-      p_kind: kind,
-      p_key: key,
-      p_limit: limit,
-      p_difficulty: null,
-      p_level: null,
-    })
-    if (!retry.error) rows = (retry.data ?? []) as QuestionRow[]
-  }
-  return rows.map((row) => prepareQuestion(row, shuffler))
+  // No silent fallback: when a filter (easy / advanced …) matches nothing,
+  // the caller shows an honest empty state instead of serving the wrong tier.
+  return ((data ?? []) as QuestionRow[]).map((row) => prepareQuestion(row, shuffler))
 }
 
 export async function loadDailyQuestions(

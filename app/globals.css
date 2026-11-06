@@ -3132,3 +3132,127 @@ html[dir='rtl'] .item {
     width: 100%;
   }
 }
+
+/* --------------------------------------- honest counts + motion polish */
+
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle page enter: first paint of a route fades up. Client-side navigations
+   remount main content, so this doubles as a lightweight route transition. */
+.page,
+.home {
+  animation: page-in 0.24s var(--ease);
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Press feedback: every tappable card/control compresses a touch. */
+.btn:active,
+.chip:active,
+.tile:active,
+.choice:active,
+.item:active,
+.seg-btn:active,
+.icon-btn:active,
+.faq-q:active {
+  transform: scale(0.985);
+}
+
+/* "All" size chip carries the full pool count; keep it visually anchored. */
+.chip--all {
+  border-style: double;
+  border-width: 3px;
+  font-weight: 650;
+}
+
+/* Honest "showing N of M" note on the start screen. */
+.row-hint--note {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+/* Empty-state action row (Come back / links). */
+.empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Legal pages: last-updated line. */
+.legal-updated {
+  color: var(--fg-faint);
+  font-size: 13px;
+}
+
+/* Smooth FAQ open: answer fades/slides in, marker rotates. */
+.faq-q::after {
+  transition: transform 0.22s var(--ease), color 0.15s var(--ease);
+}
+
+.faq-item[open] .faq-q::after {
+  transform: rotate(90deg);
+}
+
+.faq-item[open] .faq-a {
+  animation: faq-in 0.24s var(--ease);
+}
+
+@keyframes faq-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Answer reveal: feedback panel eases in (monochrome; green/red live only on
+   .option[data-state] and .feedback[data-kind] accents above). */
+.feedback {
+  transform-origin: top center;
+}
+
+/* Scroll-triggered reveal: elements annotated with data-reveal fade up once
+   visible. The .revealed class is added by a tiny IntersectionObserver helper.
+   Content is fully visible with JS disabled (or if the observer never runs)
+   because the hidden state is only applied when .js-reveal is on <html>. */
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+
+.js-reveal [data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js-reveal [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
