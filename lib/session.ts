@@ -76,9 +76,21 @@ export function questionText(question: PreparedQuestion, lang: Lang): string {
 
 export const SIZE_CHOICES = [10, 20, 50, 100]
 
-export function sizeChoices(available: number): number[] {
-  const list = SIZE_CHOICES.filter((size) => size < available)
-  return list.length > 0 ? [...list, Math.min(available, MAX_QUESTIONS)] : [Math.min(available, MAX_QUESTIONS)]
+export type SizeChoice = number | 'all'
+
+/**
+ * Count chips for the start screen: the standard sizes below the pool, then
+ * the pool itself. Big pools get an "All" chip instead of an odd number.
+ */
+export function sizeChoices(available: number): SizeChoice[] {
+  const capped = Math.min(Math.max(0, available), MAX_QUESTIONS)
+  const lows = SIZE_CHOICES.filter((size) => size < capped)
+  if (capped > 100) return [...lows, 'all']
+  return [...lows, capped].filter((value, index, list) => list.indexOf(value) === index)
+}
+
+export function sizeValue(choice: SizeChoice, available: number): number {
+  return choice === 'all' ? Math.min(Math.max(1, available), MAX_QUESTIONS) : choice
 }
 
 export const DIFFICULTY_CHOICES: DifficultyChoice[] = ['mixed', 'easy', 'medium', 'hard']

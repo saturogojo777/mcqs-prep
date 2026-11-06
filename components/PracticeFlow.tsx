@@ -26,6 +26,7 @@ type Props = {
   available: number
   autoStart?: boolean
   pattern?: MockPattern | null
+  libraryTotal?: number
 }
 
 type Phase = 'start' | 'quiz' | 'result'
@@ -40,6 +41,7 @@ export default function PracticeFlow({
   available,
   autoStart = false,
   pattern = null,
+  libraryTotal,
 }: Props) {
   const lang = useLang()
   const t = copyFor(lang)
@@ -93,7 +95,8 @@ export default function PracticeFlow({
           choices.level,
         )
         if (questions.length === 0) {
-          setError(t.noQuestions)
+          const filtered = choices.difficulty !== 'mixed' || choices.level !== 'mixed'
+          setError(filtered ? t.noFiltered : t.noQuestions)
           return
         }
         const mock =
@@ -327,6 +330,7 @@ export default function PracticeFlow({
       pattern={pattern}
       busy={busy}
       error={error}
+      libraryTotal={libraryTotal}
       onStart={(choices) => void startItem(choices)}
     />
   )

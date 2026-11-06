@@ -20,6 +20,13 @@ const picks = [
   ['privacy-1280', 'Privacy · 1280px'],
 ]
 
+const shotFiles = fs.readdirSync(OUT).filter((name) => name.endsWith('.png') && name !== 'overview.png')
+const shotCount = shotFiles.length
+const shotWidths = [...new Set(shotFiles.flatMap((name) => name.match(/(\d{3,4})(?=\.png$)/g) ?? []))]
+  .map(Number)
+  .sort((a, b) => a - b)
+  .join(' / ')
+
 const cells = picks
   .map(([name, label]) => {
     const file = path.join(OUT, `${name}.png`)
@@ -38,7 +45,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
   figcaption{padding:8px 10px;font-size:12px;color:#555;border-top:1px solid #eee}
 </style></head><body>
 <h1>DailyTest — delivered screens</h1>
-<p class="sub">76 screens audited in Chromium at 360 / 768 / 1280, English and اردو, light and dark. 0 horizontal scroll, 0 clipped text, 0 off-palette colours.</p>
+<p class="sub">${shotCount} screens audited in Chromium at ${shotWidths}, English and اردو, light and dark. 0 horizontal scroll, 0 clipped text, 0 off-palette colours.</p>
 <div class="grid">${cells}</div>
 </body></html>`
 

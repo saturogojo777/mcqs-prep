@@ -1,0 +1,1019 @@
+[
+ {
+  "source_ref": "pak-studies-001",
+  "question_en": "The Indus Valley Civilization is also known as?",
+  "question_ur": "وادی سندھ کی تہذیب کو اور کس نام سے جانا جاتا ہے؟",
+  "options": {
+   "A": "Egyptian Civilization",
+   "B": "Mesopotamian Civilization",
+   "C": "Chinese Civilization",
+   "D": "Harappan Civilization"
+  },
+  "correct_text": "Harappan Civilization",
+  "explanation": "Named after Harappa, the first site excavated in Punjab.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-002",
+  "question_en": "Which was the largest city of the Indus Valley Civilization?",
+  "question_ur": "وادی سندھ کی تہذیب کا سب سے بڑا شہر کون سا تھا؟",
+  "options": {
+   "A": "Lothal",
+   "B": "Kalibangan",
+   "C": "Mohenjo-Daro",
+   "D": "Harappa"
+  },
+  "correct_text": "Mohenjo-Daro",
+  "explanation": "Mohenjo-Daro in Sindh was the largest settlement, covering about 200 hectares.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-003",
+  "question_en": "The Great Bath was discovered at which site?",
+  "question_ur": "عظیم حمام کس مقام پر دریافت ہوا؟",
+  "options": {
+   "A": "Mohenjo-Daro",
+   "B": "Rakhigarhi",
+   "C": "Dholavira",
+   "D": "Harappa"
+  },
+  "correct_text": "Mohenjo-Daro",
+  "explanation": "The watertight Great Bath is the most famous structure at Mohenjo-Daro.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-004",
+  "question_en": "Which metal was unknown to the Indus Valley people?",
+  "question_ur": "وادی سندھ کے لوگوں کو کون سی دھات معلوم نہیں تھی؟",
+  "options": {
+   "A": "Silver",
+   "B": "Iron",
+   "C": "Gold",
+   "D": "Copper"
+  },
+  "correct_text": "Iron",
+  "explanation": "The Harappans used copper, bronze, gold and silver; iron reached India later.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-005",
+  "question_en": "The script of Indus Valley Civilization is?",
+  "question_ur": "وادی سندھ کی تہذیب کی رسم الخط کیا ہے؟",
+  "options": {
+   "A": "Undeciphered",
+   "B": "Pictographic only",
+   "C": "Alphabetical",
+   "D": "Deciphered"
+  },
+  "correct_text": "Undeciphered",
+  "explanation": "The Harappan script has never been deciphered, so much about them stays unknown.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-006",
+  "question_en": "Harappa is located on the bank of which river?",
+  "question_ur": "ہڑپہ کس دریا کے کنارے واقع ہے؟",
+  "options": {
+   "A": "Ravi",
+   "B": "Chenab",
+   "C": "Jhelum",
+   "D": "Indus"
+  },
+  "correct_text": "Ravi",
+  "explanation": "Harappa stands near the Ravi river in Sahiwal district, Punjab.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-007",
+  "question_en": "Mohenjo-Daro means?",
+  "question_ur": "موہن جو دڑو کا مطلب کیا ہے؟",
+  "options": {
+   "A": "Great Fort",
+   "B": "City of Gods",
+   "C": "Mound of the Dead",
+   "D": "Market Place"
+  },
+  "correct_text": "Mound of the Dead",
+  "explanation": "The Sindhi name Mohenjo-Daro means Mound of the Dead.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-008",
+  "question_en": "The Indus Valley Civilization belonged to which age?",
+  "question_ur": "وادی سندھ کی تہذیب کس دور سے تعلق رکھتی ہے؟",
+  "options": {
+   "A": "Iron Age",
+   "B": "Copper Age only",
+   "C": "Bronze Age",
+   "D": "Stone Age"
+  },
+  "correct_text": "Bronze Age",
+  "explanation": "Copper and bronze tools place it in the Bronze Age, about 2600 to 1900 BCE.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-009",
+  "question_en": "Lothal was a famous port of?",
+  "question_ur": "لوتھل کس تہذیب کا مشہور بندرگاہ تھا؟",
+  "options": {
+   "A": "Indus Valley",
+   "B": "Mauryan",
+   "C": "Vedic",
+   "D": "Gupta"
+  },
+  "correct_text": "Indus Valley",
+  "explanation": "Lothal in Gujarat had a dockyard and traded by sea.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-010",
+  "question_en": "Who discovered Harappa?",
+  "question_ur": "ہڑپہ کی دریافت کس نے کی؟",
+  "options": {
+   "A": "John Marshall",
+   "B": "Alexander Cunningham",
+   "C": "Dayaram Sahni",
+   "D": "R.D. Banerjee"
+  },
+  "correct_text": "Dayaram Sahni",
+  "explanation": "Dayaram Sahni excavated Harappa in 1921 under John Marshall.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-011",
+  "question_en": "Mohenjo-Daro was discovered by?",
+  "question_ur": "موہن جو دڑو کی دریافت کس نے کی؟",
+  "options": {
+   "A": "Mortimer Wheeler",
+   "B": "Dayaram Sahni",
+   "C": "John Marshall",
+   "D": "R.D. Banerjee"
+  },
+  "correct_text": "R.D. Banerjee",
+  "explanation": "R. D. Banerjee found Mohenjo-Daro in 1922.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-012",
+  "question_en": "The famous dancing girl statue is made of?",
+  "question_ur": "مشہور رقاصہ کا مجسمہ کس چیز سے بنا ہے؟",
+  "options": {
+   "A": "Gold",
+   "B": "Terracotta",
+   "C": "Stone",
+   "D": "Bronze"
+  },
+  "correct_text": "Bronze",
+  "explanation": "The small dancing-girl statue from Mohenjo-Daro is cast in bronze.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-013",
+  "question_en": "Which tree was sacred in Indus Valley?",
+  "question_ur": "وادی سندھ میں کون سا درخت مقدس تھا؟",
+  "options": {
+   "A": "Mango",
+   "B": "Neem",
+   "C": "Peepal",
+   "D": "Banyan"
+  },
+  "correct_text": "Peepal",
+  "explanation": "The peepal (sacred fig) appears on seals and was worshipped.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-014",
+  "question_en": "The Indus Valley Civilization extended to?",
+  "question_ur": "وادی سندھ کی تہذیب کہاں تک پھیلی ہوئی تھی؟",
+  "options": {
+   "A": "Only Sindh",
+   "B": "Bengal",
+   "C": "Only Punjab",
+   "D": "Present day Pakistan and NW India"
+  },
+  "correct_text": "Present day Pakistan and NW India",
+  "explanation": "At its peak it covered present-day Pakistan and northwestern India.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-015",
+  "question_en": "Which god was worshipped in Indus Valley resembling Shiva?",
+  "question_ur": "وادی سندھ میں شیو سے مشابہ کون سا دیوتا پوجا جاتا تھا؟",
+  "options": {
+   "A": "Pashupati",
+   "B": "Indra",
+   "C": "Agni",
+   "D": "Varuna"
+  },
+  "correct_text": "Pashupati",
+  "explanation": "A seal shows a horned figure among animals, linked to Pashupati, an early Shiva.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-016",
+  "question_en": "Decline of Indus Valley is attributed to?",
+  "question_ur": "وادی سندھ کی تہذیب کے زوال کی وجہ کیا بتائی جاتی ہے؟",
+  "options": {
+   "A": "Volcanic eruption",
+   "B": "Floods, climate change, Aryan invasion theories",
+   "C": "Only wars",
+   "D": "Only earthquakes"
+  },
+  "correct_text": "Floods, climate change, Aryan invasion theories",
+  "explanation": "No single cause is proven; floods, river shifts, climate change and invasions are all suggested.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-017",
+  "question_en": "Cotton was first grown in?",
+  "question_ur": "کپاس سب سے پہلے کہاں اگائی گئی؟",
+  "options": {
+   "A": "Egypt",
+   "B": "Mesopotamia",
+   "C": "China",
+   "D": "Indus Valley"
+  },
+  "correct_text": "Indus Valley",
+  "explanation": "The earliest cotton threads and cloth come from Indus sites.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-018",
+  "question_en": "The seals of Indus Valley were mostly made of?",
+  "question_ur": "وادی سندھ کی مہریں زیادہ تر کس چیز کی بنی ہوتی تھیں؟",
+  "options": {
+   "A": "Gold",
+   "B": "Wood",
+   "C": "Steatite",
+   "D": "Iron"
+  },
+  "correct_text": "Steatite",
+  "explanation": "Most seals were cut from steatite (soapstone) and glazed white.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-019",
+  "question_en": "Which site has a dockyard?",
+  "question_ur": "کس مقام پر گودی (ڈاک یارڈ) ہے؟",
+  "options": {
+   "A": "Banawali",
+   "B": "Mohenjo-Daro",
+   "C": "Harappa",
+   "D": "Lothal"
+  },
+  "correct_text": "Lothal",
+  "explanation": "Lothal brick dockyard is the earliest known in the world.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-020",
+  "question_en": "The Indus people traded with?",
+  "question_ur": "وادی سندھ کے لوگ کس کے ساتھ تجارت کرتے تھے؟",
+  "options": {
+   "A": "Mesopotamia",
+   "B": "Rome",
+   "C": "Greece",
+   "D": "America"
+  },
+  "correct_text": "Mesopotamia",
+  "explanation": "Mesopotamian texts call the Indus region Meluha and record trade with it.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-021",
+  "question_en": "Bead making factory was found at?",
+  "question_ur": "موتی بنانے کی فیکٹری کہاں ملی؟",
+  "options": {
+   "A": "Chanhudaro",
+   "B": "Mohenjo-Daro",
+   "C": "Kalibangan",
+   "D": "Harappa"
+  },
+  "correct_text": "Chanhudaro",
+  "explanation": "Chanhudaro in Sindh had bead-making workshops but no citadel.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-022",
+  "question_en": "The streets of Indus cities were?",
+  "question_ur": "وادی سندھ کے شہروں کی سڑکیں کیسی تھیں؟",
+  "options": {
+   "A": "Grid pattern, right angles",
+   "B": "Narrow only",
+   "C": "Irregular",
+   "D": "Circular"
+  },
+  "correct_text": "Grid pattern, right angles",
+  "explanation": "Streets were laid out in a grid at right angles.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-023",
+  "question_en": "IVC was a?",
+  "question_ur": "وادی سندھ کی تہذیب کیا تھی؟",
+  "options": {
+   "A": "Rural only",
+   "B": "Tribal",
+   "C": "Nomadic",
+   "D": "Urban civilization"
+  },
+  "correct_text": "Urban civilization",
+  "explanation": "Planned cities with drains and granaries make it an urban civilization.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-024",
+  "question_en": "Which river is associated with IVC mainly?",
+  "question_ur": "وادی سندھ کی تہذیب بنیادی طور پر کس دریا سے وابستہ ہے؟",
+  "options": {
+   "A": "Yamuna",
+   "B": "Brahmaputra",
+   "C": "Indus and its tributaries",
+   "D": "Ganga"
+  },
+  "correct_text": "Indus and its tributaries",
+  "explanation": "Its settlements cluster along the Indus river system.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-025",
+  "question_en": "The citadel in IVC cities was used for?",
+  "question_ur": "وادی سندھ کے شہروں میں قلعہ نما حصہ کس لیے استعمال ہوتا تھا؟",
+  "options": {
+   "A": "Markets only",
+   "B": "Public buildings, granaries, baths",
+   "C": "Only residences",
+   "D": "Farms"
+  },
+  "correct_text": "Public buildings, granaries, baths",
+  "explanation": "The raised citadel held the granary, baths and public halls.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-026",
+  "question_en": "Dholavira is famous for?",
+  "question_ur": "دھولاویرا کس چیز کے لیے مشہور ہے؟",
+  "options": {
+   "A": "Great Bath",
+   "B": "Dancing girl",
+   "C": "Water management and reservoirs",
+   "D": "Dockyard"
+  },
+  "correct_text": "Water management and reservoirs",
+  "explanation": "Dholavira in Kutch is noted for its reservoirs and water harvesting.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-027",
+  "question_en": "The standard weight in IVC was?",
+  "question_ur": "وادی سندھ میں معیاری وزن کیا تھا؟",
+  "options": {
+   "A": "20",
+   "B": "12",
+   "C": "10 only",
+   "D": "16 ratio system"
+  },
+  "correct_text": "16 ratio system",
+  "explanation": "Weights followed a 16-based ratio that survived in South Asia for centuries.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-028",
+  "question_en": "Which crop was known to IVC?",
+  "question_ur": "وادی سندھ کو کون سی فصل معلوم تھی؟",
+  "options": {
+   "A": "Only rice",
+   "B": "Potato",
+   "C": "Wheat, barley, cotton, peas",
+   "D": "Maize"
+  },
+  "correct_text": "Wheat, barley, cotton, peas",
+  "explanation": "They grew wheat, barley, peas and cotton; potato and maize came from America much later.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-029",
+  "question_en": "The IVC had knowledge of?",
+  "question_ur": "وادی سندھ کو کس چیز کا علم تھا؟",
+  "options": {
+   "A": "Gunpowder",
+   "B": "Only pottery",
+   "C": "Drainage system, town planning",
+   "D": "Iron tools"
+  },
+  "correct_text": "Drainage system, town planning",
+  "explanation": "Covered drains and grid streets show their town planning; they had no iron or gunpowder.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-030",
+  "question_en": "Banawali is located in?",
+  "question_ur": "بناولی کہاں واقع ہے؟",
+  "options": {
+   "A": "Haryana",
+   "B": "Punjab Pakistan",
+   "C": "Sindh",
+   "D": "Balochistan"
+  },
+  "correct_text": "Haryana",
+  "explanation": "Banawali is a Harappan site in Haryana, India.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-031",
+  "question_en": "The period of mature Harappan phase is?",
+  "question_ur": "پختہ ہڑپہ دور کا عرصہ کیا ہے؟",
+  "options": {
+   "A": "3000-2500 BCE",
+   "B": "2600-1900 BCE",
+   "C": "1000-500 BCE",
+   "D": "1500-1000 BCE"
+  },
+  "correct_text": "2600-1900 BCE",
+  "explanation": "The mature urban phase ran about 2600 to 1900 BCE.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-032",
+  "question_en": "Which animal is most depicted on seals?",
+  "question_ur": "مہروں پر سب سے زیادہ کون سا جانور دکھایا گیا ہے؟",
+  "options": {
+   "A": "Unicorn / Bull",
+   "B": "Horse",
+   "C": "Elephant",
+   "D": "Tiger"
+  },
+  "correct_text": "Unicorn / Bull",
+  "explanation": "The one-horned unicorn is the commonest animal on the seals.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-033",
+  "question_en": "The IVC script has how many signs approximately?",
+  "question_ur": "وادی سندھ کی رسم الخط میں تقریباً کتنے علامات ہیں؟",
+  "options": {
+   "A": "400-600",
+   "B": "50",
+   "C": "1000",
+   "D": "26"
+  },
+  "correct_text": "400-600",
+  "explanation": "About 400 to 600 distinct script signs are known.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-034",
+  "question_en": "Alamgirpur is the easternmost site of IVC in?",
+  "question_ur": "عالمگیرپور وادی سندھ کا مشرقی ترین مقام ہے؟",
+  "options": {
+   "A": "Punjab",
+   "B": "Gujarat",
+   "C": "Uttar Pradesh",
+   "D": "Sindh"
+  },
+  "correct_text": "Uttar Pradesh",
+  "explanation": "Alamgirpur in Uttar Pradesh marks the eastern limit of the civilization.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "hard",
+  "level": "advanced",
+  "review_status": "ai_verified",
+  "exams": [
+   "css-pms"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-035",
+  "question_en": "The famous priest-king statue is from?",
+  "question_ur": "مشہور پجاری بادشاہ کا مجسمہ کہاں سے ہے؟",
+  "options": {
+   "A": "Harappa",
+   "B": "Lothal",
+   "C": "Mohenjo-Daro",
+   "D": "Dholavira"
+  },
+  "correct_text": "Mohenjo-Daro",
+  "explanation": "The bearded priest-king bust comes from Mohenjo-Daro.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-036",
+  "question_en": "IVC houses were made of?",
+  "question_ur": "وادی سندھ کے گھروں کی تعمیر کس سے ہوئی تھی؟",
+  "options": {
+   "A": "Mud only",
+   "B": "Stone only",
+   "C": "Wood",
+   "D": "Baked bricks"
+  },
+  "correct_text": "Baked bricks",
+  "explanation": "Standard-size baked bricks were used for houses and drains.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-037",
+  "question_en": "Which feature is unique to IVC town planning?",
+  "question_ur": "وادی سندھ کی شہر منصوبہ بندی کی منفرد خصوصیت کیا ہے؟",
+  "options": {
+   "A": "Pyramids",
+   "B": "Covered drains and wells",
+   "C": "Ziggurats",
+   "D": "Colosseum"
+  },
+  "correct_text": "Covered drains and wells",
+  "explanation": "No other Bronze Age culture had such covered drains and wells.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "easy",
+  "level": "basic",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-038",
+  "question_en": "The term 'Meluha' in Mesopotamian texts refers to?",
+  "question_ur": "میسوپوٹیمیائی متون میں 'میلوہا' سے مراد کیا ہے؟",
+  "options": {
+   "A": "Indus Valley",
+   "B": "China",
+   "C": "Egypt",
+   "D": "Greece"
+  },
+  "correct_text": "Indus Valley",
+  "explanation": "Mesopotamian tablets call the Indus region Meluha.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ },
+ {
+  "source_ref": "pak-studies-039",
+  "question_en": "The IVC ended around?",
+  "question_ur": "وادی سندھ کی تہذیب کا خاتمہ تقریباً کب ہوا؟",
+  "options": {
+   "A": "500 BCE",
+   "B": "1900-1300 BCE",
+   "C": "3000 BCE",
+   "D": "1000 CE"
+  },
+  "correct_text": "1900-1300 BCE",
+  "explanation": "Cities declined after about 1900 BCE; the late phase lasted to around 1300 BCE.",
+  "chapter": "Indus Valley Civilization",
+  "subject": "pakistan-studies",
+  "difficulty": "medium",
+  "level": "intermediate",
+  "review_status": "ai_verified",
+  "exams": [
+   "ppsc",
+   "fpsc",
+   "spsc",
+   "nts-pts-ots",
+   "css-pms",
+   "police",
+   "teachers",
+   "forces"
+  ]
+ }
+]

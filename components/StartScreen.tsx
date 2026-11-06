@@ -11,6 +11,8 @@ import {
   LEVEL_CHOICES,
   genericPattern,
   sizeChoices,
+  sizeValue,
+  type SizeChoice,
 } from '@/lib/session'
 import type { DifficultyChoice, LevelChoice, MockPattern, QuizMode } from '@/lib/types'
 
@@ -31,6 +33,8 @@ type Props = {
   pattern?: MockPattern | null
   busy: boolean
   error: string | null
+  /** Site-wide live total; shown only to explain a smaller matched pool. */
+  libraryTotal?: number
   onStart: (choices: StartChoices) => void
 }
 
@@ -56,19 +60,22 @@ export default function StartScreen({
   pattern,
   busy,
   error,
+  libraryTotal,
   onStart,
 }: Props) {
   const lang = useLang()
   const t = copyFor(lang)
   const choices = useMemo(() => sizeChoices(available), [available])
-  const [size, setSize] = useState(() => Math.min(10, available))
+  const [size, setSize] = useState<SizeChoice>(() => Math.min(10, Math.max(1, available)))
   const [custom, setCustom] = useState('')
   const [difficulty, setDifficulty] = useState<DifficultyChoice>('mixed')
   const [level, setLevel] = useState<LevelChoice>('mixed')
   const [quizMode, setQuizMode] = useState<QuizMode>('practice')
   const [timerOn, setTimerOn] = useState(false)
 
-  const chosenSize = custom.trim() ? Math.min(available, Math.max(1, Number(custom) || 0)) : size
+  const chosenSize = custom.trim()
+    ? Math.min(available, Math.max(1, Number(custom) || 0))
+    : sizeValue(size, available)
   const mockPattern = quizMode === 'mock' ? pattern ?? genericPattern(chosenSize) : null
   const minutes =
     quizMode === 'mock' && mockPattern
@@ -116,14 +123,20 @@ export default function StartScreen({
               <button
                 key={choice}
                 type="button"
-                className="chip"
+                className={choice === 'all' ? 'chip chip--all' : 'chip'}
                 data-on={!custom.trim() && size === choice}
                 onClick={() => {
                   setSize(choice)
                   setCustom('')
                 }}
               >
-                <Num>{choice}</Num>
+                {choice === 'all' ? (
+                  <>
+                    {t.allQuestions} · <Num>{available}</Num>
+                  </>
+                ) : (
+                  <Num>{choice}</Num>
+                )}
               </button>
             ))}
             <input
@@ -140,11 +153,12 @@ export default function StartScreen({
               }}
             />
           </div>
-          <p className="row-hint">
-            <T en={t.ofAvailable(String(available))} ur={t.ofAvailable(String(available))} />
-          </p>
+          {libraryTotal != null && libraryTotal > available ? (
+            <p className="row-hint">{t.matchedPool(String(available), String(libraryTotal))}</p>
+          ) : null}
 
           <h2 className="card-title card-title--gap">{t.difficulty}</h2>
+          <p className="row-hint row-hint--note">{t.difficultyNote}</p>
           <div className="seg seg--wrap" role="group" aria-label={t.difficulty}>
             {DIFFICULTY_CHOICES.map((value) => (
               <button

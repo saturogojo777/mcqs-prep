@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export const revalidate = 300
 
 export const metadata: Metadata = {
-  title: 'MCQ practice by exam — PPSC, FPSC, SPSC, NTS, CSS, MDCAT, Police, Teachers',
+  title: 'MCQ practice by exam — PPSC, FPSC, SPSC, NTS, CSS, MDCAT, Forces, Police, Teachers',
   description:
     'Pick your exam and practise free multiple choice questions online. PPSC, FPSC, SPSC, NTS/PTS/OTS, CSS/PMS, MDCAT/ECAT, Forces, Police and Teachers.',
   alternates: { canonical: absolute('/exams') },

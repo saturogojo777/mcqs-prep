@@ -190,15 +190,14 @@ node scripts/dev/shots.mjs http://127.0.0.1:3100   # screenshots/ (76 screens)
 
 ## Seed
 
-`npm run seed` inserts `data/mcqs_all_1to500.json` as **General Knowledge (500 Questions)** and tags
-it with the subjects and exams, then runs automatically during the Vercel build (`vercel-build`).
-It is idempotent: questions use `on conflict (content_hash) do nothing` and tags use
-`ignoreDuplicates`, so re-deploys never duplicate anything.
+`npm run seed` inserts `data/mcqs_all_1to500.json` plus every batch in `content/`, then runs
+automatically during the Vercel build (`vercel-build`). It is idempotent: questions use
+`on conflict (content_hash) do nothing` and tags use `ignoreDuplicates`, so re-deploys never
+duplicate anything.
 
-The dataset holds 500 rows and 11 exact repeats, so 489 unique questions are stored. Categories come
-from the source ids: 1–100 Pakistan GK & Constitution, 101–200 Pakistan Geography & Symbols,
-201–300 International Organizations & Days, 301–400 Science & Computer, 401–500 Math & English.
-Subject tags follow the same ranges — Everyday Science (301–350) / Computer Skills (351–400),
-Mathematics (401–450) / English (451–500) — and every question is also tagged General Knowledge and
-offered for all nine exams. Islamic Studies and Urdu have no questions yet, so their list cards show
-"Coming soon".
+Every question carries one real subject tag and an audited difficulty/level tier
+(`content/audit/difficulty-489.json` for the legacy rows; each content batch declares its own).
+Exam tags follow per-exam syllabus windows over those tiers, so counts are honest everywhere:
+each card shows its own tag count, and subjects or exams with no questions show "Coming soon".
+`needs_review` rows are stored but never served to tests. As of 6 Nov 2026 production holds
+597 live questions across 7 subjects, 9 exams, 3 books and 8 chapters.

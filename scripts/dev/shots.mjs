@@ -28,6 +28,28 @@ for (const item of dataset) {
   if (item.question_ur) answerByQuestion.set(item.question_ur.trim(), correct)
 }
 
+// Phase-3 chapter files (content/<book>/<chapter>.json), same normalisation.
+{
+  const dir = path.join(process.cwd(), 'content')
+  const walk = (folder) => {
+    for (const entry of fs.readdirSync(folder, { withFileTypes: true })) {
+      if (entry.name === 'audit') continue
+      const full = path.join(folder, entry.name)
+      if (entry.isDirectory()) walk(full)
+      else if (entry.name.endsWith('.json')) {
+        for (const row of JSON.parse(fs.readFileSync(full, 'utf8'))) {
+          const values = ['A', 'B', 'C', 'D'].map((key) => String(row.options?.[key] ?? '').trim())
+          const correct = String(row.correct_text ?? '').trim()
+          if (!row.question_en || values.some((v) => !v) || !values.includes(correct)) continue
+          answerByQuestion.set(String(row.question_en).trim(), correct)
+          if (row.question_ur) answerByQuestion.set(String(row.question_ur).trim(), correct)
+        }
+      }
+    }
+  }
+  if (fs.existsSync(dir)) walk(dir)
+}
+
 const ISOLATE = /[\u2066-\u2069]/g
 const clean = (value) => String(value ?? '').replace(ISOLATE, '').trim()
 
@@ -54,6 +76,11 @@ async function goto(page, route) {
   await page.goto(BASE + route, { waitUntil: 'domcontentloaded' })
   await page.waitForLoadState('networkidle').catch(() => {})
   await page.waitForTimeout(250)
+  // Scroll-reveal elements below the fold stay un-revealed in full-page
+  // captures; force them visible so audits screenshot the real page.
+  await page.evaluate(() => {
+    document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('revealed'))
+  })
 }
 
 async function audit(page, label, expectedDir) {
@@ -192,7 +219,7 @@ const browser = await playwright.launch({
   headless: true,
 })
 
-const WIDTHS = [360, 768, 1280]
+const WIDTHS = process.env.SHOT_WIDTHS ? process.env.SHOT_WIDTHS.split(',').map(Number) : [360, 768, 1280]
 const LANGS = ['en', 'ur']
 const THEMES = ['light', 'dark']
 const checks = []
@@ -285,8 +312,8 @@ await capture({
   theme: 'light',
   action: async (page) => {
     await goto(page, '/subjects')
-    await page.waitForSelector('.item')
-    await page.locator('.item').first().click()
+    await page.waitForSelector('a.item')
+    await page.locator('a.item').first().click()
     await page.waitForSelector('.btn-start')
   },
   name: 'start-click-through-1280',

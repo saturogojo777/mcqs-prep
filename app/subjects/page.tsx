@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: absolute('/subjects') },
   openGraph: {
     title: `Subjects · ${SITE_NAME}`,
-    description: 'Ten subjects, one chapter tree, thousands of explained MCQs.',
+    description: 'Free MCQ practice by subject, with new sets added every week.',
     url: absolute('/subjects'),
   },
 }
@@ -30,8 +30,8 @@ export default async function SubjectsPage() {
         items={catalog.subjects}
         title="Choose your subject"
         titleUr="اپنا مضمون چنیں"
-        intro="Every subject is split into chapters. Pick one and answer 10, 20, 50 or 100 questions."
-        introUr="ہر مضمون ابواب میں تقسیم ہے۔ ایک چنیں اور دس، بیس، پچاس یا سو سوالات کے جواب دیں۔"
+        intro="Pick a subject, then choose a test size that fits its question pool."
+        introUr="مضمون چنیں، پھر اس کے سوالات کے مطابق ٹیسٹ کا حجم چنیں۔"
       />
     </>
   )
