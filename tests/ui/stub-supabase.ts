@@ -1,5 +1,5 @@
 // Test double for the browser Supabase client (used only by the UI harness).
-// It mirrors the three RPCs the app calls, nothing else.
+// It mirrors the RPCs the app calls, nothing else.
 
 export type Row = {
   id: string
@@ -54,9 +54,19 @@ export const QUESTIONS: Row[] = gk.map(([en, ur, correct, options], index) => {
 
 export const QUESTION_COUNT = QUESTIONS.length
 
-/** Deterministic "random": takes the requested slice in insertion order. */
-function randomQuestions(_kind: string, _key: string, limit: number): Row[] {
-  return QUESTIONS.slice(0, Math.max(1, Math.min(limit, QUESTIONS.length)))
+const excludeList = (params: Record<string, unknown>): string[] =>
+  Array.isArray(params.p_exclude_ids) ? (params.p_exclude_ids as unknown[]).map(String) : []
+
+/** Deterministic mirror of the server rule: unseen first, then the exclude list in order. */
+function randomQuestions(_kind: string, _key: string, limit: number, excluded: string[]): Row[] {
+  const order = new Map(excluded.map((id, index) => [id, index]))
+  const ranked = [
+    ...QUESTIONS.filter((row) => !order.has(row.id)),
+    ...QUESTIONS.filter((row) => order.has(row.id)).sort(
+      (a, b) => order.get(a.id)! - order.get(b.id)!,
+    ),
+  ]
+  return ranked.slice(0, Math.max(1, Math.min(limit, QUESTIONS.length)))
 }
 
 export function getSupabase() {
@@ -64,7 +74,34 @@ export function getSupabase() {
     rpc(name: string, params: Record<string, unknown>) {
       if (name === 'random_questions') {
         return Promise.resolve({
-          data: randomQuestions(String(params.p_kind), String(params.p_key), Number(params.p_limit)),
+          data: randomQuestions(
+            String(params.p_kind),
+            String(params.p_key),
+            Number(params.p_limit),
+            excludeList(params),
+          ),
+          error: null,
+        })
+      }
+      if (name === 'pool_seen_stats') {
+        const excluded = new Set(excludeList(params))
+        return Promise.resolve({
+          data: [{ total: QUESTIONS.length, unseen: QUESTIONS.filter((row) => !excluded.has(row.id)).length }],
+          error: null,
+        })
+      }
+      if (name === 'pool_question_ids') {
+        return Promise.resolve({ data: QUESTIONS.map((row) => ({ id: row.id })), error: null })
+      }
+      if (name === 'subject_seen_counts') {
+        const excluded = new Set(excludeList(params))
+        return Promise.resolve({
+          data: [
+            {
+              subject_slug: SUBJECT,
+              seen_count: QUESTIONS.filter((row) => excluded.has(row.id)).length,
+            },
+          ],
           error: null,
         })
       }

@@ -145,6 +145,7 @@ export async function loadQuestions(
   shuffler: <T>(list: T[]) => T[],
   difficulty?: DifficultyChoice,
   level?: LevelChoice,
+  excludeIds?: string[],
 ): Promise<PreparedQuestion[]> {
   const { data, error } = await client.rpc('random_questions', {
     p_kind: kind,
@@ -152,11 +153,66 @@ export async function loadQuestions(
     p_limit: limit,
     p_difficulty: cleanFilter(difficulty),
     p_level: cleanFilter(level),
+    p_exclude_ids: excludeIds ?? [],
   })
   if (error) throw new Error(error.message)
   // No silent fallback: when a filter (easy / advanced …) matches nothing,
   // the caller shows an honest empty state instead of serving the wrong tier.
-  return ((data ?? []) as QuestionRow[]).map((row) => prepareQuestion(row, shuffler))
+  // Belt and braces: a question in two books still counts once per test.
+  const seen = new Set<string>()
+  return ((data ?? []) as QuestionRow[])
+    .filter((row) => (seen.has(row.id) ? false : (seen.add(row.id), true)))
+    .map((row) => prepareQuestion(row, shuffler))
+}
+
+/** Pool size and unseen-in-this-browser count for the start screen. */
+export async function loadPoolSeenStats(
+  client: SupabaseClient,
+  kind: string,
+  key: string,
+  difficulty?: DifficultyChoice,
+  level?: LevelChoice,
+  excludeIds?: string[],
+): Promise<{ total: number; unseen: number }> {
+  const { data, error } = await client.rpc('pool_seen_stats', {
+    p_kind: kind,
+    p_key: key,
+    p_difficulty: cleanFilter(difficulty),
+    p_level: cleanFilter(level),
+    p_exclude_ids: excludeIds ?? [],
+  })
+  if (error) throw new Error(error.message)
+  const row = (Array.isArray(data) ? data[0] : data) as { total?: unknown; unseen?: unknown } | undefined
+  return { total: Number(row?.total) || 0, unseen: Number(row?.unseen) || 0 }
+}
+
+/** Every live question id in a pool (unfiltered): powers "start a fresh round". */
+export async function loadPoolQuestionIds(
+  client: SupabaseClient,
+  kind: string,
+  key: string,
+): Promise<string[]> {
+  const { data, error } = await client.rpc('pool_question_ids', { p_kind: kind, p_key: key })
+  if (error) throw new Error(error.message)
+  return ((Array.isArray(data) ? data : []) as Array<{ id?: unknown }>)
+    .map((row) => String(row.id ?? ''))
+    .filter(Boolean)
+}
+
+/** How many of the given seen ids belong to each subject (Progress page). */
+export async function loadSubjectSeenCounts(
+  client: SupabaseClient,
+  excludeIds: string[],
+): Promise<Record<string, number>> {
+  const { data, error } = await client.rpc('subject_seen_counts', { p_exclude_ids: excludeIds ?? [] })
+  if (error) throw new Error(error.message)
+  const counts: Record<string, number> = {}
+  for (const row of (Array.isArray(data) ? data : []) as Array<{ subject_slug?: unknown; seen_count?: unknown }>) {
+    if (typeof row.subject_slug === 'string' && row.subject_slug) {
+      counts[row.subject_slug] = Number(row.seen_count) || 0
+    }
+  }
+  return counts
 }
 
 export async function loadDailyQuestions(

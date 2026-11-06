@@ -13,9 +13,10 @@ export default function PrivacyPage() {
     <LegalPage title="Privacy Policy" titleUr="پرائیویسی پالیسی">
       <h2>What we store</h2>
       <p>
-        DailyTest does not have accounts and does not ask for your name or email to practise. Your language choice and
-        your list of wrong answers are saved in your own browser using <strong>localStorage</strong>. That data never
-        leaves your device and you can clear it at any time from your browser settings.
+        DailyTest does not have accounts and does not ask for your name or email to practise. Your language choice, your
+        list of wrong answers and the questions you have already seen are saved in your own browser using{' '}
+        <strong>localStorage</strong>. That data never leaves your device and you can clear it at any time from your
+        browser settings or the Progress page.
       </p>
       <h2>Cookies</h2>
       <p>

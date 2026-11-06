@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { IconBack, IconCheck, IconClock, IconFlag, IconGrid } from '@/components/icons'
 import { Num, T } from '@/components/text'
 import { copyFor } from '@/lib/copy'
+import { recordSeenResult } from '@/lib/seen'
 import { formatClock, questionText } from '@/lib/session'
 import ReportButton from '@/components/ReportButton'
 import type { Answer, Lang, MockPattern, PreparedQuestion } from '@/lib/types'
@@ -147,14 +148,19 @@ export default function MockTest({ questions, pattern, minutes, lang, startedAt,
                   data-state={chosen ? 'selected' : 'idle'}
                   style={{ '--i': i } as React.CSSProperties}
                   aria-pressed={chosen}
-                  onClick={() =>
+                  onClick={() => {
+                    // Shown questions are already marked seen when the test
+                    // starts; here only the right/wrong signal is recorded.
+                    if (answers[question.id] !== option) {
+                      recordSeenResult(question.id, option === question.correct)
+                    }
                     setAnswers((current) => {
                       const next = { ...current }
                       if (next[question.id] === option) delete next[question.id]
                       else next[question.id] = option
                       return next
                     })
-                  }
+                  }}
                 >
                   <span className="option-text" dir="auto">
                     {option}

@@ -30,3 +30,9 @@ Difficulty tiers (cognitive demand, BS-5–BS-17 — never CSS-essay level):
 | 6 | Computer Skills | — | 0 | queued |
 
 Production total: **597 live questions** (6 Nov 2026).
+
+## No-repeat tests (6 Nov 2026)
+
+Seen questions live in the browser (`dailytest.seen.v1`, newest 5000). The newest ids ride along
+to `random_questions` as `p_exclude_ids`: unseen pool questions first, then the longest-ago seen
+(wrong answers first). Same rule in the mock builder, the local mock server and the UI stub.

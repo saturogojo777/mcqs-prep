@@ -31,6 +31,8 @@ type Props = {
   onMistakes: () => void
   onHome: () => void
   onPracticeTopic?: (chapter: string) => void
+  /** Honesty note under the actions (e.g. mistake practice may repeat). */
+  footNote?: string | null
 }
 
 function Bars({ rows, empty }: { rows: { label: string; right: number; total: number; percent: number }[]; empty: string }) {
@@ -65,6 +67,7 @@ export default function Result({
   onMistakes,
   onHome,
   onPracticeTopic,
+  footNote = null,
 }: Props) {
   const t = copyFor(lang)
   const { right, total, percent } = score(answers)
@@ -181,6 +184,7 @@ export default function Result({
             {t.home}
           </button>
         </div>
+        {footNote ? <p className="note">{footNote}</p> : null}
       </section>
 
       {answers.length > 0 && (

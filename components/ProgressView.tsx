@@ -5,16 +5,59 @@ import Link from 'next/link'
 import { Num, T } from '@/components/text'
 import { useLang } from '@/components/i18n'
 import { copyFor } from '@/lib/copy'
+import { loadCatalog, loadSubjectSeenCounts } from '@/lib/catalog'
 import { accuracyPercent, clearProgress, getProgress, type ProgressState } from '@/lib/progress'
+import { SEEN_CAP, clearSeen, excludeIdsForSend, readSeen } from '@/lib/seen'
+import { getSupabase } from '@/lib/supabase'
 
 export default function ProgressView() {
   const lang = useLang()
   const t = copyFor(lang)
   const [state, setState] = useState<ProgressState | null>(null)
+  const [seenRows, setSeenRows] = useState<{ slug: string; name: string; seen: number; total: number }[] | null>(null)
+  const [confirmReset, setConfirmReset] = useState(false)
+  const [seenMsg, setSeenMsg] = useState<string | null>(null)
 
   useEffect(() => {
     setState(getProgress())
+    // "Seen N of M" per subject. The whole seen map is matched server-side
+    // (not just the 1500-id send window), so the counts stay exact.
+    const client = getSupabase()
+    if (!client) return
+    let cancelled = false
+    void (async () => {
+      try {
+        const seenIds = excludeIdsForSend(readSeen(), SEEN_CAP)
+        const [catalog, counts] = await Promise.all([
+          loadCatalog(client),
+          loadSubjectSeenCounts(client, seenIds),
+        ])
+        if (cancelled) return
+        setSeenRows(
+          catalog.subjects
+            .filter((subject) => subject.count > 0)
+            .map((subject) => ({
+              slug: subject.key,
+              name: subject.name,
+              seen: Math.min(counts[subject.key] ?? 0, subject.count),
+              total: subject.count,
+            })),
+        )
+      } catch {
+        if (!cancelled) setSeenRows([])
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
   }, [])
+
+  const resetSeenHistory = () => {
+    clearSeen()
+    setSeenRows(null)
+    setSeenMsg(t.resetSeenDone)
+    setConfirmReset(false)
+  }
 
   if (!state) {
     return (
@@ -110,6 +153,59 @@ export default function ProgressView() {
           </div>
         </>
       )}
+
+      {seenMsg ? <p className="row-hint">{seenMsg}</p> : null}
+
+      {seenRows && seenRows.some((row) => row.seen > 0) ? (
+        <section className="home-section">
+          <h2 className="section-title">{t.seenProgress}</h2>
+          <ul className="bars">
+            {seenRows.map((row) => (
+              <li className="bar-row" key={row.slug}>
+                <span className="bar-label">{row.name}</span>
+                <span className="bar-track" aria-hidden="true">
+                  <span
+                    className="bar-fill"
+                    style={{ width: `${row.total === 0 ? 0 : Math.round((row.seen / row.total) * 100)}%` }}
+                  />
+                </span>
+                <span className="bar-value num">{t.seenCount(String(row.seen), String(row.total))}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="row-hint">{t.browserOnlyNote}</p>
+          <div className="result-actions result-actions--left">
+            <button type="button" className="btn btn-outline" onClick={() => setConfirmReset(true)}>
+              {t.resetSeen}
+            </button>
+          </div>
+        </section>
+      ) : null}
+
+      {confirmReset ? (
+        <div className="dialog-backdrop" role="presentation" onClick={() => setConfirmReset(false)}>
+          <div
+            className="dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reset-seen-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <h2 className="dialog-title" id="reset-seen-title">
+              {t.resetSeenTitle}
+            </h2>
+            <p className="dialog-body">{t.resetSeenBody}</p>
+            <div className="dialog-actions">
+              <button type="button" className="btn btn-dark" onClick={resetSeenHistory}>
+                {t.resetSeenYes}
+              </button>
+              <button type="button" className="btn btn-ghost" onClick={() => setConfirmReset(false)}>
+                {t.cancel}
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <p className="page-foot-note">
         <Num>·</Num> <T en="Mistakes are kept separately." ur="غلطیاں الگ محفوظ رہتی ہیں۔" />{' '}

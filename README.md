@@ -201,3 +201,10 @@ Exam tags follow per-exam syllabus windows over those tiers, so counts are hones
 each card shows its own tag count, and subjects or exams with no questions show "Coming soon".
 `needs_review` rows are stored but never served to tests. As of 6 Nov 2026 production holds
 597 live questions across 7 subjects, 9 exams, 3 books and 8 chapters.
+
+Tests never repeat a question without asking: every question shown is recorded in the browser's
+`dailytest.seen.v1` map (`lib/seen.ts`, newest 5000 kept), and `random_questions`/`pool_seen_stats`
+take the newest ids as `p_exclude_ids` — unseen first, then longest-ago seen (wrong answers ahead).
+The start screen shows "X new for you of Y" with an "Only new questions" switch and an all-seen
+empty state ("Start a fresh round" clears that pool only); Progress shows "Seen N of M" per subject
+with a history reset; Today's Test finishes once per day and then shows a Done card with the score.

@@ -7,6 +7,7 @@ import { createRoot } from 'react-dom/client'
 import PracticeFlow from '@/components/PracticeFlow'
 import { applyLang } from '@/components/i18n'
 import { prepareQuestion } from '@/lib/catalog'
+import { SEEN_KEY, type SeenMap } from '@/lib/seen'
 import { shuffle } from '@/lib/session'
 import { QUESTION_COUNT, QUESTIONS, SUBJECT, correctFor } from '@/tests/ui/stub-supabase'
 
@@ -92,6 +93,36 @@ async function render(available = QUESTION_COUNT) {
   return root
 }
 
+async function renderToday(seed: string) {
+  const container = document.getElementById('root')!
+  const root = createRoot(container)
+  await act(async () => {
+    root.render(
+      <PracticeFlow mode="today" title="Today's Test" titleUr="آج کا ٹیسٹ" itemKey={seed} available={10} autoStart />,
+    )
+  })
+  await flush(50)
+  return root
+}
+
+async function toggleOnlyNew() {
+  const box = document.querySelector('.checkline input[type="checkbox"]') as HTMLInputElement | null
+  assert.ok(box, 'the only-new checkbox is offered')
+  await act(async () => {
+    box!.click()
+  })
+  await flush(20)
+}
+
+async function clickFreshRound() {
+  assert.ok(
+    textOf(document.body).includes("You've seen them all"),
+    'the all-seen empty state is shown',
+  )
+  await click(document.querySelector('.empty-state .btn-dark')!)
+  await flush(50)
+}
+
 async function main() {
   window.localStorage.clear()
   let root = await render()
@@ -151,6 +182,13 @@ async function main() {
   assert.equal(q('.option[data-state="correct"]').length, 1, 'exactly one option is revealed as correct')
   assert.ok(document.querySelector('.option[data-state="wrong"]'), 'the wrong pick is marked')
   ok('a wrong pick is marked red, reveals the right answer and cannot be changed')
+
+  const seenNow = storage<SeenMap>(SEEN_KEY, {})
+  const secondRow = QUESTIONS.find((entry) => entry.question_en === secondText)!
+  assert.equal(seenNow[row.id]?.lastResult, 'right', 'the right answer is recorded as seen-right')
+  assert.equal(seenNow[secondRow.id]?.lastResult, 'wrong', 'the wrong answer is recorded as seen-wrong')
+  assert.equal(seenNow[row.id]?.timesSeen, 1, 'showing a question counts one viewing')
+  ok('shown questions are marked seen with their right/wrong result')
 
   // ------------------------------------------------------------- Urdu
   await act(async () => {
@@ -217,6 +255,32 @@ async function main() {
   assert.equal(document.querySelector('.result-percent'), null, 'the result screen is gone')
   ok('"Try again" goes back to the setup screen')
 
+  // ------------------------------------------------------------- no repeats
+  await flush(50)
+  const seenAfterRun = storage<SeenMap>(SEEN_KEY, {})
+  assert.equal(Object.keys(seenAfterRun).length, 10, 'the ten shown questions are all remembered')
+  assert.equal(seenAfterRun[secondRow.id]?.timesSeen, 2, 'the replayed mistake counts two viewings')
+  assert.ok(
+    textOf(document.body).includes('2 new for you of 12'),
+    'the setup screen says how many are new',
+  )
+  assert.equal(
+    (document.querySelector('.btn-start') as HTMLButtonElement).disabled,
+    true,
+    'start is gated while fewer than ten are new',
+  )
+  assert.ok(
+    textOf(document.querySelector('.shortfall-note')).includes('Only 2 of these 10 are new'),
+    'the shortfall is explained honestly',
+  )
+  await toggleOnlyNew()
+  assert.equal(
+    (document.querySelector('.btn-start') as HTMLButtonElement).disabled,
+    false,
+    'switching only-new off allows filling up with seen questions',
+  )
+  ok('seen questions are skipped: counts, gating and the only-new switch all work')
+
   // ------------------------------------------------------------- timer + custom size
   await click(document.querySelector('.switch')!)
   await click(q('.chip')[0])
@@ -227,7 +291,18 @@ async function main() {
   ok('the timer switch shows a running mm:ss clock and the chosen size is respected')
 
   await click(document.querySelector('.icon-btn')!)
-  assert.ok(document.querySelector('.btn-start'), 'exiting the quiz returns to setup')
+  assert.ok(document.querySelector('.start-card'), 'exiting the quiz returns to setup')
+  await clickFreshRound()
+  assert.ok(
+    textOf(document.body).includes('12 new for you of 12'),
+    'a fresh round makes the whole pool new again',
+  )
+  assert.equal(
+    (document.querySelector('.btn-start') as HTMLButtonElement).disabled,
+    false,
+    'start is enabled again after a fresh round',
+  )
+  ok('"Start a fresh round" clears the pool and only that pool')
   const input = document.querySelector('.chip-input') as HTMLInputElement
   assert.ok(input, 'a custom number field is offered')
   await act(async () => {
@@ -247,6 +322,7 @@ async function main() {
   assert.ok(mockTab, 'the mock test mode is offered')
   await click(mockTab!)
   assert.ok(document.querySelector('.pattern'), 'the test pattern is shown before starting')
+  await clickFreshRound()
   await click(document.querySelector('.btn-start')!)
   assert.ok(document.querySelector('.mock'), 'mock mode renders the exam-hall layout')
   assert.equal(q('.palette-btn').length, 10, 'the palette has one button per question')
@@ -267,6 +343,34 @@ async function main() {
   assert.ok(document.querySelector('.mock-verdict'), 'the result states pass or below passing')
   assert.ok(document.querySelector('.bars'), 'accuracy bars are shown')
   ok('mock mode runs with a palette, confirmation, marks and pass line')
+
+  // ------------------------------------------------------------- today's test, done once
+  await act(async () => {
+    root.unmount()
+  })
+  root = await renderToday('2026-11-06')
+  assert.equal(counter(), 'Question 1 of 10', "today's test opens straight into the questions")
+  guard = 0
+  while (!document.querySelector('.result-percent') && guard < 20) {
+    if (!document.querySelector('.feedback')) {
+      const correct = correctFor(questionText())
+      await clickOption(correct)
+    }
+    await clickNext()
+    guard++
+  }
+  assert.ok(document.querySelector('.result-percent'), "today's test ends on the result screen")
+  await click(document.querySelector('.btn-try-again')!)
+  assert.ok(textOf(document.body).includes('Done for today'), 'the done card replaces a retake')
+  assert.ok(textOf(document.body).includes('10 of 10'), 'the done card carries the score')
+  assert.equal(document.querySelector('.quiz'), null, 'no second run of the same daily test')
+  await act(async () => {
+    root.unmount()
+  })
+  root = await renderToday('2026-11-06')
+  assert.ok(textOf(document.body).includes('Done for today'), 'the done card survives a reload')
+  assert.equal(document.querySelector('.quiz'), null, 'still no questions after reloading')
+  ok("today's test finishes once per day, then shows a done card with the score")
 
   await act(async () => {
     root.unmount()

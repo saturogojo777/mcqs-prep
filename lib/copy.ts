@@ -114,6 +114,28 @@ export const COPY = {
     allQuestions: 'All',
     difficultyNote: 'Advanced/Hard is tougher than Basic/Easy — not CSS-essay level.',
     matchedPool: (n: string, total: string) => `${n} of ${total} library questions matched to this paper`,
+    newForYou: (unseen: string, total: string) => `${unseen} new for you of ${total}`,
+    shortfallNote: (fresh: string, size: string) =>
+      `Only ${fresh} of these ${size} are new here — the rest are questions you have seen before.`,
+    onlyNew: 'Only new questions',
+    onlyNewHint: 'On: start only when everything is new. Off: fill up with seen questions.',
+    unseenEmptyTitle: "You've seen them all",
+    unseenEmptyBody: (count: string) =>
+      `All ${count} questions in this pool have passed your screen. Start a fresh round, or revise what you got wrong.`,
+    freshRound: 'Start a fresh round',
+    freshRoundDone: (count: string) => `${count} questions are new for you again.`,
+    browserOnlyNote: 'Your seen questions are remembered on this device only — no login, no tracking.',
+    repeatNote: 'Retakes and mistake practice can repeat questions. That is how revision works.',
+    todayDoneTitle: 'Done for today',
+    todayDoneBody: (right: string, total: string) =>
+      `You scored ${right} of ${total} on today's test. Tomorrow's test arrives at midnight.`,
+    seenProgress: 'Seen questions',
+    seenCount: (seen: string, total: string) => `Seen ${seen} of ${total}`,
+    resetSeen: 'Reset my seen history',
+    resetSeenTitle: 'Reset seen history?',
+    resetSeenBody: 'Every question becomes new again on this device. Your test scores stay.',
+    resetSeenYes: 'Yes, reset',
+    resetSeenDone: 'Seen history cleared. Everything is new again.',
   },
   ur: {
     exam: 'امتحان',
@@ -224,6 +246,28 @@ export const COPY = {
     backToList: 'فہرست پر واپس',
     loadingQuestions: 'سوالات تیار کیے جا رہے ہیں…',
     attemptsLeft: 'آپ اسے جتنی بار چاہیں دہرا سکتے ہیں۔',
+    newForYou: (unseen: string, total: string) => `${total} میں سے ${unseen} آپ کے لیے نئے`,
+    shortfallNote: (fresh: string, size: string) =>
+      `ان ${size} میں صرف ${fresh} نئے ہیں — باقی آپ پہلے دیکھ چکے ہیں۔`,
+    onlyNew: 'صرف نئے سوالات',
+    onlyNewHint: 'آن: صرف تب شروع کریں جب سب نئے ہوں۔ آف: دیکھے ہوئے سوالات سے مکمل کریں۔',
+    unseenEmptyTitle: 'آپ سب دیکھ چکے',
+    unseenEmptyBody: (count: string) =>
+      `اس مجموعے کے تمام ${count} سوالات آپ کی سکرین سے گزر چکے۔ نیا دور شروع کریں، یا غلط جوابات دہرائیں۔`,
+    freshRound: 'نیا دور شروع کریں',
+    freshRoundDone: (count: string) => `${count} سوالات آپ کے لیے دوبارہ نئے ہو گئے۔`,
+    browserOnlyNote: 'دیکھے گئے سوالات صرف اس ڈیوائس پر یاد رکھے جاتے ہیں — نہ لاگ اِن، نہ نگرانی۔',
+    repeatNote: 'دوبارہ ٹیسٹ اور غلطیوں کی مشق میں سوالات دہرائے جا سکتے ہیں۔ نظرثانی ایسے ہی ہوتی ہے۔',
+    todayDoneTitle: 'آج کا کام مکمل',
+    todayDoneBody: (right: string, total: string) =>
+      `آج کے ٹیسٹ میں آپ نے ${total} میں سے ${right} نمبر حاصل کیے۔ کل کا ٹیسٹ آدھی رات کو آئے گا۔`,
+    seenProgress: 'دیکھے گئے سوالات',
+    seenCount: (seen: string, total: string) => `${total} میں سے ${seen} دیکھے`,
+    resetSeen: 'دیکھی ہوئی تاریخ صاف کریں',
+    resetSeenTitle: 'دیکھی ہوئی تاریخ صاف کریں؟',
+    resetSeenBody: 'اس ڈیوائس پر ہر سوال آپ کے لیے دوبارہ نئے ہوں گے۔ آپ کے ٹیسٹ اسکور محفوظ رہیں گے۔',
+    resetSeenYes: 'ہاں، صاف کریں',
+    resetSeenDone: 'دیکھی ہوئی تاریخ صاف ہو گئی۔ سب کچھ دوبارہ نیا ہے۔',
   },
 } as const
 
