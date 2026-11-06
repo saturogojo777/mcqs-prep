@@ -137,16 +137,9 @@ function ExamCard({ item }: { item: CatalogItem }) {
 }
 
 export default function Home({ catalog, stats }: { catalog: Catalog; stats: SiteStats }) {
-  const exams = catalog.exams.filter((item) => item.count > 0)
+  const exams = catalog.exams.filter((item) => item.count > 0).sort((a, b) => b.count - a.count)
   const subjects = catalog.subjects.filter((item) => item.count > 0)
   const books = catalog.books.filter((item) => item.count > 0).sort((a, b) => b.count - a.count)
-
-  const statItems = [
-    { value: stats.questions, en: 'questions', ur: 'سوالات' },
-    { value: stats.subjects, en: 'subjects', ur: 'مضامین' },
-    { value: stats.exams, en: 'exams', ur: 'امتحانات' },
-    { value: stats.books, en: 'books', ur: 'کتابیں' },
-  ]
 
   return (
     <div className="container home">
@@ -213,7 +206,7 @@ export default function Home({ catalog, stats }: { catalog: Catalog; stats: Site
             </Link>
           </div>
           <div className="tile-grid">
-            {exams.slice(0, 9).map((item) => (
+            {exams.slice(0, 6).map((item) => (
               <ExamCard key={item.key} item={item} />
             ))}
           </div>

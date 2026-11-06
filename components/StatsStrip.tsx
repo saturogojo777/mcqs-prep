@@ -7,17 +7,16 @@ import type { SiteStats } from '@/lib/types'
 type Stat = { value: number; one: string; many: string; oneUr: string; manyUr: string }
 
 function useCountUp(target: number, duration = 900): number {
-  const [value, setValue] = useState(0)
+  // SSR (and no-JS) HTML carries the true value; the count-up restarts from
+  // zero only after mount, so crawlers and readers never see a mid-flight lie.
+  const [value, setValue] = useState(target)
   const frame = useRef(0)
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      setValue(target)
-      return
-    }
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
       setValue(target)
       return
     }
+    setValue(0)
     const start = performance.now()
     const tick = (now: number) => {
       const progress = Math.min(1, (now - start) / duration)
