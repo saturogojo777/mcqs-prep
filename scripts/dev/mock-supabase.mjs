@@ -305,10 +305,42 @@ const reports = []
 const extraBooks = new Map()
 const messages = []
 
+// STEP 4B: mirror random_questions unseen-first + exclude-ordered fill.
+function rankUnseenFirst(pool, body) {
+  const excluded = Array.isArray(body.p_exclude_ids) ? body.p_exclude_ids.map(String) : []
+  const order = new Map(excluded.map((id, index) => [id, index]))
+  const unseen = shuffle(pool.filter((row) => !order.has(String(row.id))))
+  const fill = pool
+    .filter((row) => order.has(String(row.id)))
+    .sort((a, b) => order.get(String(a.id)) - order.get(String(b.id)))
+  return [...unseen, ...fill]
+}
+
 function rpc(name, body) {
   if (name === 'random_questions') {
-    const pool = shuffle(withFilters(filterPool(body.p_kind, body.p_key), body))
+    const pool = rankUnseenFirst(withFilters(filterPool(body.p_kind, body.p_key), body), body)
     return pool.slice(0, Math.max(1, Math.min(Number(body.p_limit) || 10, 500))).map(shape)
+  }
+  if (name === 'pool_seen_stats') {
+    const pool = withFilters(filterPool(body.p_kind, body.p_key), body)
+    const excluded = new Set(
+      (Array.isArray(body.p_exclude_ids) ? body.p_exclude_ids : []).map(String),
+    )
+    return [{ total: pool.length, unseen: pool.filter((row) => !excluded.has(String(row.id))).length }]
+  }
+  if (name === 'pool_question_ids') {
+    return filterPool(body.p_kind, body.p_key).map((row) => ({ id: row.id }))
+  }
+  if (name === 'subject_seen_counts') {
+    const wanted = new Set(
+      (Array.isArray(body.p_exclude_ids) ? body.p_exclude_ids : []).map(String),
+    )
+    const counts = new Map()
+    for (const row of live) {
+      if (!wanted.has(String(row.id))) continue
+      for (const slug of row.subjects) counts.set(slug, (counts.get(slug) ?? 0) + 1)
+    }
+    return [...counts.entries()].map(([subject_slug, seen_count]) => ({ subject_slug, seen_count }))
   }
   if (name === 'daily_questions') {
     const seed = String(body.p_seed ?? '')

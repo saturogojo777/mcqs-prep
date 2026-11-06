@@ -12,6 +12,15 @@ import { IconBack } from '@/components/icons'
 import { loadDailyQuestions, loadQuestions, loadQuestionsByIds } from '@/lib/catalog'
 import { copyFor } from '@/lib/copy'
 import { getMistakeIds, recordTest, saveAnswers, saveLastResult } from '@/lib/progress'
+import {
+  excludeIdsForSend,
+  getTodayDone,
+  markSeenMany,
+  readSeen,
+  recordSeenResult,
+  saveTodayDone,
+  type TodayDone,
+} from '@/lib/seen'
 import { genericPattern, mockScore, sessionOf, shuffle } from '@/lib/session'
 import { getSupabase } from '@/lib/supabase'
 import type { Answer, MockPattern, PreparedQuestion, Session } from '@/lib/types'
@@ -57,6 +66,7 @@ export default function PracticeFlow({
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [mistakeCount, setMistakeCount] = useState(0)
+  const [todayDone, setTodayDone] = useState<TodayDone | null>(null)
 
   const begin = useCallback(
     (
@@ -67,6 +77,7 @@ export default function PracticeFlow({
       timer: boolean,
       mock: MockPattern | null,
     ) => {
+      markSeenMany(questions.map((question) => question.id))
       setSession(sessionOf(nextMode, nextTitle, nextTitleUr, questions, timer))
       setMockPattern(mock)
       setIndex(0)
@@ -85,6 +96,7 @@ export default function PracticeFlow({
       setBusy(true)
       try {
         if (!client) throw new Error('offline')
+        const exclude = choices.onlyNew ? [] : excludeIdsForSend(readSeen())
         const questions = await loadQuestions(
           client,
           mode,
@@ -93,10 +105,16 @@ export default function PracticeFlow({
           shuffle,
           choices.difficulty,
           choices.level,
+          exclude,
         )
         if (questions.length === 0) {
           const filtered = choices.difficulty !== 'mixed' || choices.level !== 'mixed'
           setError(filtered ? t.noFiltered : t.noQuestions)
+          return
+        }
+        if (choices.onlyNew && questions.length < choices.size) {
+          // The start screen normally gates this; this is the race-safe backstop.
+          setError(t.shortfallNote(String(questions.length), String(choices.size)))
           return
         }
         const mock =
@@ -157,10 +175,22 @@ export default function PracticeFlow({
   }, [begin, t.loadError, t.noQuestions, t.mistakesTitle])
 
   // "Today's Test" and "Practice my mistakes" open straight into the questions.
+  // Today's Test is the same for everyone and finishes once per day; after
+  // that the Done card (with the score) replaces the questions until tomorrow.
   useEffect(() => {
     if (!autoStart) return
-    if (mode === 'mistakes') void startMistakes()
-    else void startToday()
+    if (mode === 'mistakes') {
+      void startMistakes()
+      return
+    }
+    const done = mode === 'today' ? getTodayDone(itemKey) : null
+    if (done) {
+      // autoStart opens on the quiz phase; the Done card lives on 'start'.
+      setTodayDone(done)
+      setPhase('start')
+      return
+    }
+    void startToday()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -173,6 +203,10 @@ export default function PracticeFlow({
       recordTest(finalAnswers)
       const right = finalAnswers.filter((answer) => answer.right).length
       saveLastResult({ right, total: finalAnswers.length, at: Date.now(), title })
+      if (mode === 'today') {
+        saveTodayDone(itemKey, right, finalAnswers.length)
+        setTodayDone({ seed: itemKey, right, total: finalAnswers.length, at: Date.now() })
+      }
       setMistakeCount(getMistakeIds().length)
       setPhase('result')
       try {
@@ -181,12 +215,13 @@ export default function PracticeFlow({
         // jsdom and some embedded browsers do not implement scrolling
       }
     },
-    [session, title],
+    [itemKey, mode, session, title],
   )
 
   const select = (option: string) => {
     if (!session || selected !== null) return
     const question = session.questions[index]
+    recordSeenResult(question.id, option === question.correct)
     setSelected(option)
     setAnswers((prev) => [
       ...prev,
@@ -223,7 +258,10 @@ export default function PracticeFlow({
 
   const tryAgain = () => {
     if (mode === 'today') {
-      void startToday()
+      setTodayDone(getTodayDone(itemKey))
+      setPhase('start')
+      setSession(null)
+      setMockPattern(null)
       return
     }
     setPhase('start')
@@ -302,10 +340,30 @@ export default function PracticeFlow({
           lang={lang}
           mistakeCount={mistakeCount}
           mock={summary}
+          footNote={session.mode === 'mistakes' ? t.repeatNote : null}
           onTryAgain={tryAgain}
           onMistakes={() => void startMistakes()}
           onHome={() => router.push('/')}
         />
+      </div>
+    )
+  }
+
+  if (mode === 'today' && todayDone) {
+    return (
+      <div className="container page">
+        <div className="empty-state">
+          <p className="empty-title">{t.todayDoneTitle}</p>
+          <p className="empty-body">{t.todayDoneBody(String(todayDone.right), String(todayDone.total))}</p>
+          <div className="result-actions result-actions--left">
+            <button type="button" className="btn btn-dark" onClick={() => router.push('/')}>
+              {t.home}
+            </button>
+            <button type="button" className="btn btn-outline" onClick={() => void startMistakes()}>
+              {t.practiceMistakes}
+            </button>
+          </div>
+        </div>
       </div>
     )
   }
@@ -327,6 +385,8 @@ export default function PracticeFlow({
       titleUr={titleUr}
       available={available}
       backHref={`/${mode === 'exam' ? 'exams' : mode === 'subject' ? 'subjects' : 'books'}`}
+      kind={mode}
+      itemKey={itemKey}
       pattern={pattern}
       busy={busy}
       error={error}

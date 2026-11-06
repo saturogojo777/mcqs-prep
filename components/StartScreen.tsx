@@ -1,11 +1,14 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { IconBack, IconClock } from '@/components/icons'
 import { Num, T } from '@/components/text'
 import { useLang } from '@/components/i18n'
+import { loadPoolQuestionIds, loadPoolSeenStats } from '@/lib/catalog'
 import { copyFor } from '@/lib/copy'
+import { clearSeenForIds, excludeIdsForSend, readSeen } from '@/lib/seen'
+import { getSupabase } from '@/lib/supabase'
 import {
   DIFFICULTY_CHOICES,
   LEVEL_CHOICES,
@@ -23,6 +26,7 @@ export type StartChoices = {
   quizMode: QuizMode
   timerOn: boolean
   minutes: number
+  onlyNew: boolean
 }
 
 type Props = {
@@ -30,6 +34,9 @@ type Props = {
   titleUr: string
   available: number
   backHref: string
+  /** Pool identity, for the seen-aware counts ("X new for you of Y"). */
+  kind: string
+  itemKey: string
   pattern?: MockPattern | null
   busy: boolean
   error: string | null
@@ -57,6 +64,8 @@ export default function StartScreen({
   titleUr,
   available,
   backHref,
+  kind,
+  itemKey,
   pattern,
   busy,
   error,
@@ -72,10 +81,52 @@ export default function StartScreen({
   const [level, setLevel] = useState<LevelChoice>('mixed')
   const [quizMode, setQuizMode] = useState<QuizMode>('practice')
   const [timerOn, setTimerOn] = useState(false)
+  const [onlyNew, setOnlyNew] = useState(true)
+  const [stats, setStats] = useState<{ total: number; unseen: number } | null>(null)
+  const [seenRefresh, setSeenRefresh] = useState(0)
+  const [freshNote, setFreshNote] = useState<string | null>(null)
+  const [freshBusy, setFreshBusy] = useState(false)
+
+  // Seen-aware counts for the chosen filters. When this fails (offline, or an
+  // old database without the RPC), the start screen fails open: no gating.
+  useEffect(() => {
+    let cancelled = false
+    const client = getSupabase()
+    if (!client) return
+    void loadPoolSeenStats(client, kind, itemKey, difficulty, level, excludeIdsForSend(readSeen()))
+      .then((value) => {
+        if (!cancelled) setStats(value)
+      })
+      .catch(() => {
+        if (!cancelled) setStats(null)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [kind, itemKey, difficulty, level, seenRefresh])
+
+  const freshRound = async () => {
+    const client = getSupabase()
+    if (!client || freshBusy) return
+    setFreshBusy(true)
+    try {
+      const ids = await loadPoolQuestionIds(client, kind, itemKey)
+      const cleared = clearSeenForIds(ids)
+      setFreshNote(t.freshRoundDone(String(cleared)))
+      setSeenRefresh((value) => value + 1)
+    } catch {
+      // The empty state stays, with its button, for a retry.
+    } finally {
+      setFreshBusy(false)
+    }
+  }
 
   const chosenSize = custom.trim()
     ? Math.min(available, Math.max(1, Number(custom) || 0))
     : sizeValue(size, available)
+  const allSeen = stats !== null && stats.total > 0 && stats.unseen === 0
+  const shortfall = stats !== null && stats.unseen > 0 && onlyNew && stats.unseen < chosenSize
+  const gated = onlyNew && stats !== null && stats.unseen < chosenSize
   const mockPattern = quizMode === 'mock' ? pattern ?? genericPattern(chosenSize) : null
   const minutes =
     quizMode === 'mock' && mockPattern
@@ -95,6 +146,12 @@ export default function StartScreen({
         <p className="page-sub">
           <T en={`${available} questions available`} ur={`${available} سوالات دستیاب ہیں`} /> ·{' '}
           <T en="free, no sign-up" ur="مفت، بغیر اکاؤنٹ" />
+          {stats !== null && stats.total > 0 ? (
+            <>
+              {' '}·{' '}
+              <span className="seen-line">{t.newForYou(String(stats.unseen), String(stats.total))}</span>
+            </>
+          ) : null}
         </p>
       </header>
 
@@ -241,23 +298,63 @@ export default function StartScreen({
 
           {error && <p className="form-error">{error}</p>}
 
-          <button
-            type="button"
-            className="btn btn-dark btn-lg btn-start"
-            disabled={busy || chosenSize < 1}
-            onClick={() =>
-              onStart({
-                size: chosenSize,
-                difficulty,
-                level,
-                quizMode,
-                timerOn: quizMode === 'mock' ? true : timerOn,
-                minutes: quizMode === 'mock' ? minutes : 0,
-              })
-            }
-          >
-            {busy ? t.loadingQuestions : quizMode === 'mock' ? t.mockTest : t.start}
-          </button>
+          <label className="checkline">
+            <input
+              type="checkbox"
+              checked={onlyNew}
+              onChange={(event) => setOnlyNew(event.target.checked)}
+            />
+            <span className="checkline-text">
+              <span className="row-title">{t.onlyNew}</span>
+              <span className="row-hint">{t.onlyNewHint}</span>
+            </span>
+          </label>
+          <p className="row-hint">{t.browserOnlyNote}</p>
+          {freshNote ? <p className="row-hint">{freshNote}</p> : null}
+
+          {allSeen ? (
+            <div className="empty-state">
+              <p className="empty-title">{t.unseenEmptyTitle}</p>
+              <p className="empty-body">{t.unseenEmptyBody(String(stats?.total ?? 0))}</p>
+              <div className="result-actions result-actions--left">
+                <button
+                  type="button"
+                  className="btn btn-dark"
+                  disabled={freshBusy}
+                  onClick={() => void freshRound()}
+                >
+                  {freshBusy ? t.loading : t.freshRound}
+                </button>
+                <Link href="/mistakes" className="btn btn-outline">
+                  {t.practiceMistakes}
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <>
+              {shortfall ? (
+                <p className="shortfall-note">{t.shortfallNote(String(stats?.unseen ?? 0), String(chosenSize))}</p>
+              ) : null}
+              <button
+                type="button"
+                className="btn btn-dark btn-lg btn-start"
+                disabled={busy || chosenSize < 1 || gated}
+                onClick={() =>
+                  onStart({
+                    size: chosenSize,
+                    difficulty,
+                    level,
+                    quizMode,
+                    timerOn: quizMode === 'mock' ? true : timerOn,
+                    minutes: quizMode === 'mock' ? minutes : 0,
+                    onlyNew,
+                  })
+                }
+              >
+                {busy ? t.loadingQuestions : quizMode === 'mock' ? t.mockTest : t.start}
+              </button>
+            </>
+          )}
           <p className="start-hint">{t.attemptsLeft}</p>
         </section>
       </div>

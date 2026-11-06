@@ -802,6 +802,39 @@ a.item:hover {
   color: var(--fg-muted);
 }
 
+/* STEP 4B: the "Only new questions" checkbox line. A plain checkbox (not the
+   .switch control) keeps the preference visually distinct from the timer. */
+.checkline {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 18px 0 0;
+  cursor: pointer;
+}
+
+.checkline input[type='checkbox'] {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  accent-color: var(--accent);
+}
+
+.checkline-text {
+  display: grid;
+  gap: 2px;
+}
+
+.shortfall-note {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  font-size: 13.5px;
+  color: var(--fg-muted);
+}
+
 .switch {
   position: relative;
   flex: 0 0 auto;
